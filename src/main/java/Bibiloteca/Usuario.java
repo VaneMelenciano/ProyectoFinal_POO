@@ -10,8 +10,20 @@ package Bibiloteca;
  * @author Vanessa
  */
 public class Usuario {
-    public static void main(String args[]){
-        System.out.println( "HOLA");
-        System.out.println( "Nuevo");
+    private String nombre, direccion, numero, correo, fecha_registro, fecha_nac, lugar_nac;
+    private float adeudos;
+    private int edad;
+    
+    public Usuario(){
+        
+    }
+    public Usuario(String nom, String dir, String num, String cor, String fr, String fn, String ln){
+        nombre = nom;
+        direccion = dir;
+        numero = num;
+        correo = cor;
+        fecha_registro = fr;
+        fecha_nac=fn;
+        lugar_nac = ln;
     }
 }

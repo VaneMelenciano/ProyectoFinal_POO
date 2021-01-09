@@ -10,5 +10,16 @@ package Bibiloteca;
  * @author Vanessa
  */
 public class Autor {
+    private int libros_publicados;
+    private String nombre, fecha_nacimiento, lugar_nacimiento;
+    public Autor(){
+        
+    }
+    public Autor(String nom, String fn, String ln, int lp){
+        nombre = nom;
+        fecha_nacimiento = fn;
+        lugar_nacimiento = ln;
+        libros_publicados=lp;
+    }
     
 }
