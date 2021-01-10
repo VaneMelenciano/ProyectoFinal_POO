@@ -17,7 +17,7 @@ public class Usuario {
     public Usuario(){
         
     }
-    public Usuario(String nom, String dir, String num, String cor, String fr, String fn, String ln){
+    public Usuario(String nom, String dir, String num, String cor, String fr, String fn, String ln, float ad, int ed){
         nombre = nom;
         direccion = dir;
         numero = num;
@@ -25,5 +25,7 @@ public class Usuario {
         fecha_registro = fr;
         fecha_nac=fn;
         lugar_nac = ln;
+        adeudos = ad;
+        edad = ed;
     }
 }
