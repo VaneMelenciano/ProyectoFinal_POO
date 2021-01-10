@@ -9,6 +9,8 @@ package Bibiloteca;
  *
  * @author Vanessa
  */
+
+/skvnecivnoie nmfwf r c
 public class Autor {
     private int libros_publicados;
     private String nombre, fecha_nacimiento, lugar_nacimiento;
