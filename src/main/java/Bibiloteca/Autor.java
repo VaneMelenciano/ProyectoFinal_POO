@@ -9,6 +9,7 @@ package Bibiloteca;
  *
  * @author Vanessa
  */
+//ofvnoic sdogi jsvopjf povgf vrsc 
 public class Autor {
     private int libros_publicados;
     private String nombre, fecha_nacimiento, lugar_nacimiento;
