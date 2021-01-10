@@ -7,6 +7,7 @@ package Bibiloteca;
 
 /**
  *
+ * @author Aaron
  * @author Vanessa
  */
 public class Libro {
