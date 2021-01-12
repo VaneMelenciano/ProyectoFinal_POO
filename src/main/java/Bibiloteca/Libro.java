@@ -11,13 +11,11 @@ package Bibiloteca;
  * @author Vanessa
  */
 public class Libro {
-    private Autor autor;
     private String titulo, clave_libro, editorial, anio, pais;
     public Libro(){
         
     }
-    public Libro(Autor au, String tit, String cl, String edi, String a, String p){
-        autor=au;
+    public Libro(String tit, String cl, String edi, String a, String p){
         titulo=tit;
         clave_libro = cl;
         editorial = edi;
