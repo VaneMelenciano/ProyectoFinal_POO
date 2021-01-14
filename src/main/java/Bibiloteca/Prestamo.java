@@ -4,27 +4,36 @@
  * and open the template in the editor.
  */
 package Bibiloteca;
-import java.util.ArrayList;
 /**
  *
  * @author Aaron
  * @author Vanessa
  */
 public class Prestamo {
-    private Usuario usuario;
-    private ArrayList<Libro> libros;
-    private String fecha_salida, fecha_max, fecha_devolucion;
+    private String fechaPrestamo, plazodev, fechaDev;
     public Prestamo(){
-       libros = new ArrayList(); 
     }
-    public Prestamo(Usuario u, ArrayList<Libro> lib, String fs, String fm, String fd){
-        libros = new ArrayList(); 
-        usuario = u;
-        libros = lib;
-        fecha_salida = fs;
-        fecha_max = fm;
-        fecha_devolucion = fd;
+    public Prestamo(String fp, String pd, String de){
+        fechaPrestamo = fp;
+        plazodev = pd;
+        fechaDev = de;
+    }
+    public void setFechaPres(String fp){
+        fechaPrestamo = fp;
+    }
+    public String getFechaPres(){
+        return fechaPrestamo;
+    }
+    public void setFechaDev(String fd){
+        fechaDev = fd;
+    }
+    public String getFechaDev(){
+        return fechaDev;
+    }
+    public void setPlazoDev(String pd){
+        plazodev = pd;
+    }
+    public String getPlazoDev(){
+        return plazodev;
     }
 }
-
-//callateeedflkmvdfkvmdpvkbg

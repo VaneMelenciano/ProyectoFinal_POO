@@ -10,5 +10,29 @@ package Bibiloteca;
  * @author Vanessa
  */
 public class Multa {
-    
+    private int diasRetraso;
+    private float costoMulta;
+    public Multa(){
+        
+    }
+    public Multa(int dR, int cM){
+        diasRetraso = dR;
+        costoMulta = cM;
+    }
+    public void setDias(int d){
+        diasRetraso = d;
+    }
+    public int getDias(){
+        return diasRetraso;
+    }
+    public void setCosto(float c){
+        costoMulta = c;
+    }
+    public float getCosto(){
+        return costoMulta;
+    }
+    public float Calcular(){
+        costoMulta = 20*diasRetraso;
+        return costoMulta;
+    }
 }

@@ -11,5 +11,6 @@ package Bibiloteca;
  * @author Aaron
  */
 public class Documentos {
+    protected Usuario usuario;
     
 }
