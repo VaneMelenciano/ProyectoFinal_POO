@@ -5,19 +5,27 @@
  */
 package Bibiloteca;
 
+import java.util.ArrayList;
+
 /**
  * @author Aaron
  * @author Vanessa
  */
-public class Multa {
+public class Multa extends Documentos{
     private int diasRetraso;
     private float costoMulta;
     public Multa(){
-        
+        super();
+        diasRetraso = 0;
+        costoMulta = 0;
     }
-    public Multa(int dR, int cM){
-        diasRetraso = dR;
-        costoMulta = cM;
+    public Multa(int dR, int cM, ArrayList<Libro> lib, Usuario u, String fa, int id){
+        super();
+        this.diasRetraso = dR;
+        this.costoMulta = cM;
+        this.librosPrestados = lib;
+        this.usuario = u;
+        this.fechaAct = fa;
     }
     public void setDias(int d){
         diasRetraso = d;
@@ -34,5 +42,10 @@ public class Multa {
     public float Calcular(){
         costoMulta = 20*diasRetraso;
         return costoMulta;
+    }
+    @Override
+    public String getDescripcion(){
+        return super.getDescripcion()
+                +"Dias de retraso: " + diasRetraso + "   Costo de la multa: " + costoMulta;
     }
 }

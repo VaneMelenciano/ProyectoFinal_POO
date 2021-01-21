@@ -7,7 +7,9 @@ package Bibiloteca;
 public class Usuario extends Persona{
     private String fechaRegistro;
     
-    public Usuario(){}
+    public Usuario(){
+        fechaRegistro = " ";
+    }
     public Usuario(int id, String nombre, String fechaNacimiento, String telefono, String direccion, String correo, int edad, String fechaRegistro){
         super(id, nombre, fechaNacimiento, telefono, direccion, correo, edad);
         this.fechaRegistro = fechaRegistro;

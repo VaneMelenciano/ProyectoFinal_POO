@@ -4,25 +4,26 @@
  * and open the template in the editor.
  */
 package Bibiloteca;
+import java.util.ArrayList;
 /**
  *
  * @author Aaron
  * @author Vanessa
  */
-public class Prestamo {
-    private String fechaPrestamo, plazodev, fechaDev;
+public class Prestamo extends Documentos{
+    private String plazoDev, fechaDev;
     public Prestamo(){
+        super();
+        plazoDev = "";
+        fechaDev = "";
     }
-    public Prestamo(String fp, String pd, String de){
-        fechaPrestamo = fp;
-        plazodev = pd;
-        fechaDev = de;
-    }
-    public void setFechaPres(String fp){
-        fechaPrestamo = fp;
-    }
-    public String getFechaPres(){
-        return fechaPrestamo;
+    public Prestamo(String pd, String de, ArrayList<Libro> lib, Usuario u, String fa, int id){
+        super();
+        this.plazoDev = pd;
+        this.fechaDev = de;
+        this.librosPrestados = lib;
+        this.usuario = u;
+        this.fechaAct = fa;
     }
     public void setFechaDev(String fd){
         fechaDev = fd;
@@ -31,9 +32,14 @@ public class Prestamo {
         return fechaDev;
     }
     public void setPlazoDev(String pd){
-        plazodev = pd;
+        plazoDev = pd;
     }
     public String getPlazoDev(){
-        return plazodev;
+        return plazoDev;
+    }
+    @Override
+    public String getDescripcion() {
+        return super.getDescripcion()
+                +"Plazo de devolución: " + plazoDev + "   Fecha de devolucion: " + fechaDev;
     }
 }

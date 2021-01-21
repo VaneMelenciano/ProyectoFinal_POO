@@ -7,7 +7,10 @@ public class Empleado extends Persona{
     private String puesto;
     private float sueldo;
     
-    public Empleado(){}
+    public Empleado(){
+        puesto = "";
+        sueldo = 0;
+    }
     public Empleado(int id, String nombre, String fechaNacimiento, String telefono, String direccion, String correo, int edad, String puesto, float sueldo){
         super(id, nombre, fechaNacimiento, telefono, direccion, correo, edad);
         this.puesto = puesto;

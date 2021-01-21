@@ -8,7 +8,9 @@ public class Libro extends Descripcion{
     private String titulo, autor, editorial, pais;
     private int anioEdicion, numUnidades, numPrestados;
     
-    public Libro(){}
+    public Libro(){
+        numUnidades =0; numPrestados =0;
+    }
     public Libro(int id, String titulo, String autor, String editorial, String pais, int anioEdicion, int numUnidades, int numPrestados){
         this.id = id;
         this.titulo = titulo;
