@@ -18,6 +18,7 @@ public class Usuario extends Persona{
     
     @Override
     public String getDescripcion(){
-        return super.getDescripcion()+" FechaRegistro:"+fechaRegistro;
+        return super.getDescripcion()
+                +"\nFechaRegistro:"+fechaRegistro;
     }
 }

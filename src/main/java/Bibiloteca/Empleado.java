@@ -22,6 +22,7 @@ public class Empleado extends Persona{
     
     @Override
     public String getDescripcion(){
-        return super.getDescripcion()+" Puesto: "+puesto+" Sueldo: "+sueldo;
+        return super.getDescripcion()
+                +"\nPuesto: "+puesto+" Sueldo: "+sueldo;
     }
 }

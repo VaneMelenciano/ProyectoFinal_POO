@@ -34,8 +34,8 @@ public abstract class  Persona extends Descripcion{
     
     @Override
     public String getDescripcion(){
-        //se le pueden poner "\n" para que no esté todo en una sola linea.
-        return "ID: "+id+" Nombre: "+nombre+" Fecha de Nacimiento: "+fechaNacimiento+" Telefono: "+telefono
-                +" Direccion: "+direccion+" Correo: "+correo+" Edad: "+edad;
+        return "ID: "+id+" Nombre: "+nombre+" Fecha de Nacimiento: "+fechaNacimiento
+                +"\nTelefono: "+telefono+" Direccion: "+direccion
+                +"\nCorreo: "+correo+" Edad: "+edad;
     }
 }
