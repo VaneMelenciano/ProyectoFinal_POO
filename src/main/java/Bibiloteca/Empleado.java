@@ -1,14 +1,27 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Bibiloteca;
-
 /**
  * @author Aaron
  * @author Vanessa
  */
-public class Empleado {
+public class Empleado extends Persona{
+    private String puesto;
+    private float sueldo;
     
+    public Empleado(){}
+    public Empleado(int id, String nombre, String fechaNacimiento, String telefono, String direccion, String correo, int edad, String puesto, float sueldo){
+        super(id, nombre, fechaNacimiento, telefono, direccion, correo, edad);
+        this.puesto = puesto;
+        this.sueldo = sueldo;
+    }
+    
+    public void setPuesto(String puesto){this.puesto = puesto;}
+    public void setSueldo(float sueldo){this.sueldo = sueldo;}
+    
+    public String getPuesto(){return puesto;}
+    public float getSueldo(){return sueldo;}
+    
+    @Override
+    public String getDescripcion(){
+        return super.getDescripcion()+" Puesto: "+puesto+" Sueldo: "+sueldo;
+    }
 }

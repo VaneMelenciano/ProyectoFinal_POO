@@ -1,32 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Bibiloteca;
-
 /**
  *
  * @author Aaron
  * @author Vanessa
  */
-public class Usuario {
-    private String nombre, direccion, numero, correo, fecha_registro, fecha_nac, lugar_nac;
-    private float adeudos;
-    private int edad;
+public class Usuario extends Persona{
+    private String fechaRegistro;
     
-    public Usuario(){
-        
+    public Usuario(){}
+    public Usuario(int id, String nombre, String fechaNacimiento, String telefono, String direccion, String correo, int edad, String fechaRegistro){
+        super(id, nombre, fechaNacimiento, telefono, direccion, correo, edad);
+        this.fechaRegistro = fechaRegistro;
     }
-    public Usuario(String nom, String dir, String num, String cor, String fr, String fn, String ln, float ad, int ed){
-        nombre = nom;
-        direccion = dir;
-        numero = num;
-        correo = cor;
-        fecha_registro = fr;
-        fecha_nac=fn;
-        lugar_nac = ln;
-        adeudos = ad;
-        edad = ed;
+    
+    public void setFechaRegistro(String fechaRegistro){this.fechaRegistro = fechaRegistro;}
+    public String getFechaRegistro(){return fechaRegistro;}
+    
+    @Override
+    public String getDescripcion(){
+        return super.getDescripcion()+" FechaRegistro:"+fechaRegistro;
     }
 }

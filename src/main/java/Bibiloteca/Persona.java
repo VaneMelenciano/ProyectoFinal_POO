@@ -1,58 +1,41 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Bibiloteca;
-
 /**
  * @author Aaron
  * @author Vanessa
  */
-public abstract class  Persona {
-    protected String nombre, fechaNac, telefono, direccion, correo;
-    protected int edad, id;
-    public void setNombre(String nom){
-        nombre = nom;
+public abstract class  Persona extends Descripcion{
+    protected String nombre, fechaNacimiento, telefono, direccion, correo;
+    protected int edad;
+    
+    public Persona(){}
+    public Persona(int id, String nombre, String fechaNacimiento, String telefono, String direccion, String correo, int edad){
+        this.id = id;
+        this.nombre = nombre;
+        this.fechaNacimiento = fechaNacimiento;
+        this.telefono = telefono;
+        this.direccion = direccion;
+        this.correo = correo;
+        this.edad = edad;
     }
-    public String getNombre(){
-        return nombre;
+    
+    public void setNombre(String nombre){this.nombre = nombre;}
+    public void setFechaNacimiento(String fechaNacimiento){this.fechaNacimiento = fechaNacimiento;}
+    public void setTelefono(String telefono){this.telefono = telefono;}
+    public void setDireccion(String direccion){this.direccion = direccion;}
+    public void setCorreo(String correo){this.correo = correo;}
+    public void setEdad(int edad){this.edad = edad;}
+    
+    public String getNombre(){return nombre;}
+    public String getFechaNacimiento(){return fechaNacimiento;}
+    public String getTelefono(){return telefono;}
+    public String getDireccion(){return direccion;}
+    public String getCorreo(){return correo;}
+    public int getEdad(){return edad;}
+    
+    @Override
+    public String getDescripcion(){
+        //se le pueden poner "\n" para que no esté todo en una sola linea.
+        return "ID: "+id+" Nombre: "+nombre+" Fecha de Nacimiento: "+fechaNacimiento+" Telefono: "+telefono
+                +" Direccion: "+direccion+" Correo: "+correo+" Edad: "+edad;
     }
-    public void setDireccion(String dir){
-        direccion = dir;
-    }
-    public String getDireccion(){
-        return direccion;
-    }
-    public void setTelefono(String tel){
-        telefono = tel;
-    }
-    public String getTelefono(){
-        return telefono;
-    }
-    public void setCorreco(String cor){
-        correo=cor;
-    }
-    public String getCorreco(){
-        return correo;
-    }
-    public void setFechaNac(String fn){
-        fechaNac = fn;
-    }
-    public String getFechaNac(){
-        return fechaNac;
-    }
-    public void setEdad(int e){
-        edad = e;
-    }
-    public int getEdad(){
-        return edad;
-    }
-    public void setId(int i){
-        id = i;
-    }
-    public int getId(){
-        return id;
-    }
-    public abstract String DameDatos();
 }
