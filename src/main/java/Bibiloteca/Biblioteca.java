@@ -119,7 +119,7 @@ public class Biblioteca {
     
     
     
-    public void AgregarEmpleado(String nombre, String fechaNac, int edad, String tel, String dir, String correo, String puesto, String sueldo, String contraseña){
+    public void AgregarEmpleado(String nombre, String fechaNac, int edad, String tel, String dir, String correo, String puesto, float sueldo, String contraseña){
         Empleado newEmp = new Empleado(nombre, fechaNac, tel, dir, correo, edad, puesto, sueldo, contraseña);
         empleados.add(newEmp);
     }
