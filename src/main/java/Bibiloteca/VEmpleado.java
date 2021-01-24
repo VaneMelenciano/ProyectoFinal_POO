@@ -72,7 +72,6 @@ public class VEmpleado extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        BorrarPM = new java.awt.Button();
         BuscarPM = new java.awt.Button();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -116,6 +115,7 @@ public class VEmpleado extends javax.swing.JFrame {
         opcNombre4 = new javax.swing.JRadioButton();
         BoxBorrarUE = new javax.swing.JComboBox<>();
         BorrarUE = new java.awt.Button();
+        BorrarPM = new java.awt.Button();
 
         jMenu1.setText("jMenu1");
 
@@ -191,18 +191,6 @@ public class VEmpleado extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Yu Gothic UI", 2, 14)); // NOI18N
         jLabel7.setText("Buscar");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 275, 54, -1));
-
-        BorrarPM.setActionCommand("Borrar");
-        BorrarPM.setBackground(new java.awt.Color(71, 63, 75));
-        BorrarPM.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        BorrarPM.setForeground(new java.awt.Color(255, 255, 255));
-        BorrarPM.setLabel("Borrar");
-        BorrarPM.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BorrarPMActionPerformed(evt);
-            }
-        });
-        getContentPane().add(BorrarPM, new org.netbeans.lib.awtextra.AbsoluteConstraints(395, 599, -1, -1));
 
         BuscarPM.setBackground(new java.awt.Color(71, 63, 75));
         BuscarPM.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -470,6 +458,17 @@ public class VEmpleado extends javax.swing.JFrame {
             }
         });
 
+        BorrarPM.setActionCommand("Borrar");
+        BorrarPM.setBackground(new java.awt.Color(71, 63, 75));
+        BorrarPM.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        BorrarPM.setForeground(new java.awt.Color(255, 255, 255));
+        BorrarPM.setLabel("Borrar");
+        BorrarPM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BorrarPMActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -530,14 +529,6 @@ public class VEmpleado extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(BAgregarPM)
                         .addGap(75, 75, 75))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(TBorrarUE, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BVerEmpleados)
-                    .addComponent(BVerUsuarios))
-                .addGap(49, 49, 49))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -572,6 +563,19 @@ public class VEmpleado extends javax.swing.JFrame {
                                 .addComponent(opcTitulo2))
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(TBorrarUE, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(BVerEmpleados)
+                            .addComponent(BVerUsuarios))
+                        .addGap(49, 49, 49))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(BorrarPM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(385, 385, 385))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -645,7 +649,9 @@ public class VEmpleado extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(BoxBorrarPM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(10, 10, 10)))))
-                        .addGap(94, 94, 94))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BorrarPM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(BVerPrestamos)
                         .addGap(18, 18, 18)
