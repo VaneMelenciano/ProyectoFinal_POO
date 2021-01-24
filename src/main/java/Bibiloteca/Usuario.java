@@ -10,8 +10,8 @@ public class Usuario extends Persona{
     public Usuario(){
         fechaRegistro = " ";
     }
-    public Usuario(int id, String nombre, String fechaNacimiento, String telefono, String direccion, String correo, int edad, String fechaRegistro){
-        super(id, nombre, fechaNacimiento, telefono, direccion, correo, edad);
+    public Usuario(int id, String nombre, String fechaNacimiento, String telefono, String direccion, String correo, int edad, String fechaRegistro, String con){
+        super(id, nombre, fechaNacimiento, telefono, direccion, correo, edad, con);
         this.fechaRegistro = fechaRegistro;
     }
     

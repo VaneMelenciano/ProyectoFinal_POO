@@ -4,11 +4,11 @@ package Bibiloteca;
  * @author Vanessa
  */
 public abstract class  Persona extends Descripcion{
-    protected String nombre, fechaNacimiento, telefono, direccion, correo;
+    protected String nombre, fechaNacimiento, telefono, direccion, correo, contraseña;
     protected int edad;
     
     public Persona(){}
-    public Persona(int id, String nombre, String fechaNacimiento, String telefono, String direccion, String correo, int edad){
+    public Persona(int id, String nombre, String fechaNacimiento, String telefono, String direccion, String correo, int edad, String con){
         this.id = id;
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
@@ -16,6 +16,7 @@ public abstract class  Persona extends Descripcion{
         this.direccion = direccion;
         this.correo = correo;
         this.edad = edad;
+        this.contraseña=con;
     }
     
     public void setNombre(String nombre){this.nombre = nombre;}
