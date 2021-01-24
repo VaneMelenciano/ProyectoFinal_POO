@@ -28,78 +28,50 @@ public class VentanaPricipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        ButtonIniciar = new javax.swing.JButton();
+        ButtonReg = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        ButtonUsuario = new javax.swing.JButton();
-        ButtonEmpleado = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Sitka Small", 1, 24)); // NOI18N
-        jLabel1.setText("Iniciar Sesión");
+        ButtonIniciar.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        ButtonIniciar.setText("Iniciar sesion");
 
-        ButtonUsuario.setText("Usuario");
-        ButtonUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonUsuarioActionPerformed(evt);
-            }
-        });
+        ButtonReg.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        ButtonReg.setText("Registrarse");
 
-        ButtonEmpleado.setText("Empleado");
-        ButtonEmpleado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonEmpleadoActionPerformed(evt);
-            }
-        });
-
-        jButton1.setText("jButton1");
+        jLabel1.setFont(new java.awt.Font("Zilla Slab", 1, 24)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setLabelFor(this);
+        jLabel1.setText("Biblioteca");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(125, 125, 125)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(105, 105, 105)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(159, 159, 159)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(ButtonEmpleado)
-                            .addComponent(ButtonUsuario))))
-                .addContainerGap(119, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(36, 36, 36))
+                    .addComponent(ButtonReg)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(ButtonIniciar)
+                        .addComponent(jLabel1)))
+                .addContainerGap(160, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
+                .addGap(57, 57, 57)
                 .addComponent(jLabel1)
-                .addGap(30, 30, 30)
-                .addComponent(ButtonUsuario)
-                .addGap(18, 18, 18)
-                .addComponent(ButtonEmpleado)
-                .addGap(43, 43, 43)
-                .addComponent(jButton1)
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addGap(38, 38, 38)
+                .addComponent(ButtonIniciar)
+                .addGap(26, 26, 26)
+                .addComponent(ButtonReg)
+                .addContainerGap(91, Short.MAX_VALUE))
         );
-
-        jButton1.getAccessibleContext().setAccessibleParent(jButton1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void ButtonEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEmpleadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonEmpleadoActionPerformed
-
-    private void ButtonUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonUsuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonUsuarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -137,9 +109,8 @@ public class VentanaPricipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ButtonEmpleado;
-    private javax.swing.JButton ButtonUsuario;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton ButtonIniciar;
+    private javax.swing.JButton ButtonReg;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
