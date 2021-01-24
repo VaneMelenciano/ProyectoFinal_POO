@@ -40,7 +40,7 @@ public class Libro extends Descripcion{
     
     @Override
     public String getDescripcion(){
-        return "ID: "+id+" Titulo: "+titulo+" Autor: "+autor
+        return "ID: "+this.getId()+" Titulo: "+titulo+" Autor: "+autor
                 +"\nEditorial: "+editorial+" Pais: "+pais+" Año de Edicion: "+anioEdicion
                 +"\nNumero de Unidades: "+numUnidades+" Numero de unidades prestadas: "+numPrestados;
     }

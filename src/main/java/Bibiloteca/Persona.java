@@ -25,7 +25,7 @@ public abstract class  Persona extends Descripcion{
     public void setDireccion(String direccion){this.direccion = direccion;}
     public void setCorreo(String correo){this.correo = correo;}
     public void setEdad(int edad){this.edad = edad;}
-    public void setCon(String con){this.contrasenia = con;}
+    public void setContrasenia(String contrasenia){this.contrasenia = contrasenia;}
     
     public String getNombre(){return nombre;}
     public String getFechaNacimiento(){return fechaNacimiento;}
@@ -33,11 +33,11 @@ public abstract class  Persona extends Descripcion{
     public String getDireccion(){return direccion;}
     public String getCorreo(){return correo;}
     public int getEdad(){return edad;}
-    public String getCon(){return contrasenia;}
+    public String getContrasenia(){return contrasenia;}
     
     @Override
     public String getDescripcion(){
-        return "ID: "+id+" Nombre: "+nombre+" Fecha de Nacimiento: "+fechaNacimiento
+        return "ID: "+this.getId()+" Nombre: "+nombre+" Fecha de Nacimiento: "+fechaNacimiento
                 +"\nTelefono: "+telefono+" Direccion: "+direccion
                 +"\nCorreo: "+correo+" Edad: "+edad;
     }

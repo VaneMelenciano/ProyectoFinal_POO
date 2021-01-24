@@ -4,8 +4,13 @@ package Bibiloteca;
  * @author Vanessa
  */
 public abstract class Descripcion {
-    protected int id;
-
+    private int id;
+    
+    public Descripcion(){}
+    public Descripcion(int id){
+        this.id = id;
+    }
+    
     public void setId(int id){this.id = id;}
     public int getId(){return id;}
     

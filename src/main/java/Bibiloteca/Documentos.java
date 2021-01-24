@@ -19,11 +19,11 @@ public abstract class Documentos extends Descripcion{
         librosPrestados = new ArrayList();
     }
     public Documentos (ArrayList<Libro> lib, Usuario u, String fa, int id){ 
+        super(id);
         librosPrestados = new ArrayList();
         librosPrestados = lib;
         usuario = u;
         fechaAct = fa;
-        this.id = id;
     }
     public void setLibrosP(ArrayList<Libro> lib){
         librosPrestados=lib;
@@ -40,13 +40,16 @@ public abstract class Documentos extends Descripcion{
     public void setUsuario(Usuario u){
         usuario = u;
     }
+    public Usuario getUsuario(){
+        return usuario;
+    }
     
      @Override
     public String getDescripcion(){
-        String descripcion = "ID: "+id+" Fecha Solicitud: "+fechaAct+" Usuario: "+ usuario.getNombre() + "Usuario id:"
-                + usuario.id +"\n Libros: \n"; 
+        String descripcion = "ID: "+this.getId()+" Fecha Solicitud: "+fechaAct+" Usuario: "+ usuario.getNombre() + "Usuario id:"
+                + usuario.getId() +"\n Libros: \n"; 
         for(Libro l : librosPrestados){
-            descripcion += l.getTitulo() + "id: " + l.id +"\n";
+            descripcion += l.getTitulo() + "id: " + l.getId() +"\n";
         }
         return descripcion;
     }
