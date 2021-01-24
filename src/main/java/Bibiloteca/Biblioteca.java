@@ -200,14 +200,14 @@ public class Biblioteca {
         }
         return null;
     }
-    public ArrayList<Prestamo> BuscarPrestamoUsuario(String nombreUsuario){
+    public ArrayList<Prestamo> BuscarPrestamosUsuario(String nombreUsuario){
         ArrayList<Prestamo> aux = new ArrayList();
         for(Documentos d : documentos){
             if(nombreUsuario.equals(d.getUsuario().getNombre()) && d instanceof Prestamo) aux.add((Prestamo)d);
         }
         return aux;
     }
-    public ArrayList<Prestamo> BuscarPrestamo(String fecha){
+    public ArrayList<Prestamo> BuscarPrestamosFecha(String fecha){
         ArrayList<Prestamo> aux = new ArrayList();
         for(Documentos d : documentos){
             if(fecha.equals(d.getFecha()) && d instanceof Prestamo) aux.add((Prestamo)d);
