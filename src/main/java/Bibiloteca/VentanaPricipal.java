@@ -20,7 +20,8 @@ public class VentanaPricipal extends javax.swing.JFrame {
     public VentanaPricipal() {
         super("Biblioteca"); //le pone titulo a la ventana
         initComponents();
-        //jLabel2 = new JLabel(new ImageIcon(getClass().getResource("2.jpg")));
+        //jLabel2 = new JLabel(new ImageIcon("2.jpg"));
+        //add(jLabel2);
     }
 
     /**
@@ -55,8 +56,9 @@ public class VentanaPricipal extends javax.swing.JFrame {
         jLabel1.setText("Biblioteca");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Vanessa\\Documents\\NetBeansProjects\\ProyectoFinal_POO\\2.jpg")); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, -1));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/2.jpg"))); // NOI18N
+        jLabel2.setText("dvfsd");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
