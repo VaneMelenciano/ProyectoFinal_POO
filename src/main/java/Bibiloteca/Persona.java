@@ -8,8 +8,8 @@ public abstract class  Persona extends Descripcion{
     protected int edad;
     
     public Persona(){}
-    public Persona(int id, String nombre, String fechaNacimiento, String telefono, String direccion, String correo, int edad, String con){
-        this.id = id;
+    public Persona(String nombre, String fechaNacimiento, String telefono, String direccion, String correo, int edad, String con){
+        //this.id = id;
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
         this.telefono = telefono;

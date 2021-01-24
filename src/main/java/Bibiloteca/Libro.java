@@ -11,15 +11,15 @@ public class Libro extends Descripcion{
     public Libro(){
         numUnidades =0; numPrestados =0;
     }
-    public Libro(int id, String titulo, String autor, String editorial, String pais, int anioEdicion, int numUnidades, int numPrestados){
-        this.id = id;
+    public Libro(String titulo, String autor, String editorial, String pais, int anioEdicion, int numUnidades){
+        //this.id = id;
         this.titulo = titulo;
         this.autor = autor;
         this.editorial = editorial;
         this.pais = pais;
         this.anioEdicion = anioEdicion;
         this.numUnidades = numUnidades;
-        this.numPrestados = numPrestados;
+        this.numPrestados = 0;
     }
     
     public void setTitulo(String titulo){this.titulo = titulo;}

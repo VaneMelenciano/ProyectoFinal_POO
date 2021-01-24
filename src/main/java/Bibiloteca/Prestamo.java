@@ -17,7 +17,7 @@ public class Prestamo extends Documentos{
         plazoDev = "";
         fechaDev = "";
     }
-    public Prestamo(String pd, String de, ArrayList<Libro> lib, Usuario u, String fa, int id){
+    public Prestamo(String pd, String de, ArrayList<Libro> lib, Usuario u, String fa){
         super();
         this.plazoDev = pd;
         this.fechaDev = de;

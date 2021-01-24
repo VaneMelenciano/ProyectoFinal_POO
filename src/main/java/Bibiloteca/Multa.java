@@ -19,10 +19,9 @@ public class Multa extends Documentos{
         diasRetraso = 0;
         costoMulta = 0;
     }
-    public Multa(int dR, int cM, ArrayList<Libro> lib, Usuario u, String fa, int id){
+    public Multa(int dR, ArrayList<Libro> lib, Usuario u, String fa){
         super();
         this.diasRetraso = dR;
-        this.costoMulta = cM;
         this.librosPrestados = lib;
         this.usuario = u;
         this.fechaAct = fa;
@@ -46,6 +45,6 @@ public class Multa extends Documentos{
     @Override
     public String getDescripcion(){
         return super.getDescripcion()
-                +"Dias de retraso: " + diasRetraso + "   Costo de la multa: " + costoMulta;
+                +"Dias de retraso: " + diasRetraso + "   Costo de la multa: " + Calcular();
     }
 }
