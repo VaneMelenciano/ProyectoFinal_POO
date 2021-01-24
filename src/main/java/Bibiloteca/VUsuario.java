@@ -25,6 +25,7 @@ public class VUsuario extends javax.swing.JFrame {
         grupoOpciones.add(opcEditorial);
         String nombre = "Bienvenido  " + "Vanessa"; //´+ usuario.getNombre();
         NomUsuario.setText(nombre);
+        jLabel1.setVisible(false); //si no eligue ninguna opcion para buscar
     }
 
     /**
@@ -37,22 +38,70 @@ public class VUsuario extends javax.swing.JFrame {
     private void initComponents() {
 
         grupoOpciones = new javax.swing.ButtonGroup();
-        BuscarLibro = new java.awt.Button();
         jLabel2 = new javax.swing.JLabel();
+        NomUsuario = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
-        ButtonPedir = new javax.swing.JButton();
-        opcTitulo = new javax.swing.JRadioButton();
         opcID = new javax.swing.JRadioButton();
+        opcTitulo = new javax.swing.JRadioButton();
         opcAutor = new javax.swing.JRadioButton();
         opcEditorial = new javax.swing.JRadioButton();
-        NomUsuario = new javax.swing.JLabel();
+        BuscarLibro = new java.awt.Button();
+        jLabel1 = new javax.swing.JLabel();
         ButtonLibros = new javax.swing.JButton();
         ButtonDatos = new javax.swing.JButton();
         ButtonPrestamos = new javax.swing.JButton();
         ButtonMultas = new javax.swing.JButton();
+        ButtonPedir = new javax.swing.JButton();
         ButtonSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel2.setText("Buscar Libro");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 70, -1, -1));
+
+        NomUsuario.setFont(new java.awt.Font("Sitka Small", 0, 18)); // NOI18N
+        NomUsuario.setText("jLabel4");
+        getContentPane().add(NomUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(68, 29, -1, -1));
+
+        jPanel1.setBackground(new java.awt.Color(178, 183, 187));
+
+        jTextField1.setBackground(new java.awt.Color(68, 96, 114));
+        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
+
+        opcID.setBackground(new java.awt.Color(178, 183, 187));
+        opcID.setText("ID");
+        opcID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcIDActionPerformed(evt);
+            }
+        });
+
+        opcTitulo.setBackground(new java.awt.Color(178, 183, 187));
+        opcTitulo.setText("Titulo");
+        opcTitulo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcTituloActionPerformed(evt);
+            }
+        });
+
+        opcAutor.setBackground(new java.awt.Color(178, 183, 187));
+        opcAutor.setText("Autor");
+        opcAutor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcAutorActionPerformed(evt);
+            }
+        });
+
+        opcEditorial.setBackground(new java.awt.Color(178, 183, 187));
+        opcEditorial.setText("Editorial");
+        opcEditorial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcEditorialActionPerformed(evt);
+            }
+        });
 
         BuscarLibro.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         BuscarLibro.setLabel("Buscar");
@@ -62,47 +111,8 @@ public class VUsuario extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
-        jLabel2.setText("Buscar Libro");
-
-        ButtonPedir.setFont(new java.awt.Font("Lucida Bright", 1, 14)); // NOI18N
-        ButtonPedir.setText("Pedir Prestamo");
-        ButtonPedir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonPedirActionPerformed(evt);
-            }
-        });
-
-        opcTitulo.setText("Titulo");
-        opcTitulo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcTituloActionPerformed(evt);
-            }
-        });
-
-        opcID.setText("ID");
-        opcID.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcIDActionPerformed(evt);
-            }
-        });
-
-        opcAutor.setText("Autor");
-        opcAutor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcAutorActionPerformed(evt);
-            }
-        });
-
-        opcEditorial.setText("Editorial");
-        opcEditorial.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcEditorialActionPerformed(evt);
-            }
-        });
-
-        NomUsuario.setFont(new java.awt.Font("Sitka Small", 0, 18)); // NOI18N
-        NomUsuario.setText("jLabel4");
+        jLabel1.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel1.setText("Elegir una opción");
 
         ButtonLibros.setFont(new java.awt.Font("Lucida Bright", 1, 14)); // NOI18N
         ButtonLibros.setText("Todos los libros");
@@ -136,81 +146,79 @@ public class VUsuario extends javax.swing.JFrame {
             }
         });
 
-        ButtonSalir.setText("Cerrar Sesión");
+        ButtonPedir.setFont(new java.awt.Font("Lucida Bright", 1, 14)); // NOI18N
+        ButtonPedir.setText("Pedir Prestamo");
+        ButtonPedir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonPedirActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(ButtonLibros, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(ButtonPrestamos, javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addGroup(layout.createSequentialGroup()
-                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addGroup(layout.createSequentialGroup()
-                                                            .addGap(15, 15, 15)
-                                                            .addComponent(ButtonDatos))
-                                                        .addGroup(layout.createSequentialGroup()
-                                                            .addGap(19, 19, 19)
-                                                            .addComponent(ButtonMultas)))
-                                                    .addGap(8, 8, 8)))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(1, 1, 1)
-                                                .addComponent(ButtonPedir)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(opcID)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(opcTitulo)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(opcAutor)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(opcEditorial)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGap(21, 21, 21)
+        ButtonSalir.setText("Cerrar Sesión");
+        ButtonSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonSalirActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(24, 24, 24)
-                                .addComponent(BuscarLibro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 42, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(ButtonSalir)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(68, 68, 68)
-                .addComponent(NomUsuario)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(BuscarLibro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(opcID)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(opcTitulo)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(opcAutor)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(opcEditorial)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel1))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(79, 79, 79)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(ButtonLibros)
+                                .addComponent(ButtonPrestamos))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addComponent(ButtonPedir))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(105, 105, 105)
+                        .addComponent(ButtonDatos))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(106, 106, 106)
+                        .addComponent(ButtonMultas))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(114, 114, 114)
+                        .addComponent(ButtonSalir)))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(NomUsuario)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(102, 102, 102)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BuscarLibro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(opcTitulo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(opcID)
+                    .addComponent(opcTitulo)
                     .addComponent(opcAutor)
-                    .addComponent(opcEditorial))
-                .addGap(37, 37, 37)
+                    .addComponent(opcEditorial)
+                    .addComponent(jLabel1))
+                .addGap(18, 18, 18)
                 .addComponent(ButtonLibros)
                 .addGap(18, 18, 18)
                 .addComponent(ButtonDatos)
@@ -220,10 +228,12 @@ public class VUsuario extends javax.swing.JFrame {
                 .addComponent(ButtonMultas)
                 .addGap(18, 18, 18)
                 .addComponent(ButtonPedir)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                 .addComponent(ButtonSalir)
                 .addContainerGap())
         );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 340, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -250,13 +260,19 @@ public class VUsuario extends javax.swing.JFrame {
 
     private void BuscarLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarLibroActionPerformed
         if(opcID.isSelected()){
-
+            jLabel1.setVisible(false);
+              //buscar por id
         }else if(opcTitulo.isSelected()){
+            jLabel1.setVisible(false);
 
         }else if(opcAutor.isSelected()){
+            jLabel1.setVisible(false);
 
         }else if(opcEditorial.isSelected()){
+            jLabel1.setVisible(false);
 
+        }else{
+            jLabel1.setVisible(true);
         }
     }//GEN-LAST:event_BuscarLibroActionPerformed
 
@@ -275,6 +291,15 @@ public class VUsuario extends javax.swing.JFrame {
     private void ButtonMultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonMultasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ButtonMultasActionPerformed
+
+    private void ButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSalirActionPerformed
+        if(evt.getSource()==ButtonSalir){           
+            VentanaPricipal regresar = new VentanaPricipal();
+            regresar.setVisible(true);
+            dispose();
+        }
+        
+    }//GEN-LAST:event_ButtonSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -321,7 +346,9 @@ public class VUsuario extends javax.swing.JFrame {
     private javax.swing.JButton ButtonSalir;
     private javax.swing.JLabel NomUsuario;
     private javax.swing.ButtonGroup grupoOpciones;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JRadioButton opcAutor;
     private javax.swing.JRadioButton opcEditorial;

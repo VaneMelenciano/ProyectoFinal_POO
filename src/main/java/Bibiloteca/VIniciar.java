@@ -17,6 +17,7 @@ public class VIniciar extends javax.swing.JFrame {
     public VIniciar() {
         super("Iniciar sesion");
         initComponents();
+        Button.setVisible(false);
     }
 
     /**
@@ -35,79 +36,90 @@ public class VIniciar extends javax.swing.JFrame {
         ComboBox = new javax.swing.JComboBox<>();
         Button = new javax.swing.JButton();
         TextFCon = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Sitka Subheading", 0, 14)); // NOI18N
         jLabel1.setText("ID");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 52, -1, -1));
+
+        TextFID.setBackground(new java.awt.Color(255, 240, 201));
+        getContentPane().add(TextFID, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 51, 150, -1));
 
         jLabel3.setFont(new java.awt.Font("Sitka Subheading", 0, 14)); // NOI18N
         jLabel3.setText("Contraseña");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 107, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Sitka Subheading", 0, 14)); // NOI18N
         jLabel4.setText("Tipo");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 144, -1, -1));
 
+        ComboBox.setBackground(new java.awt.Color(232, 195, 158));
         ComboBox.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
-        ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario", "Empleado" }));
+        ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Elegir", "Usuario", "Empleado" }));
+        ComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComboBoxActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 144, 150, -1));
 
+        Button.setBackground(new java.awt.Color(210, 180, 140));
         Button.setText("Iniciar");
         Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(148, 204, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel3)
-                                .addComponent(jLabel4))
-                            .addGap(18, 18, 18)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(TextFCon, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                                .addComponent(ComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(76, 76, 76)
-                            .addComponent(Button)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(TextFID, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(113, Short.MAX_VALUE))
+        TextFCon.setBackground(new java.awt.Color(255, 240, 201));
+        getContentPane().add(TextFCon, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 106, 150, -1));
+
+        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jLabel2.setText("Iniciar sesión");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(126, 11, -1, -1));
+
+        jPanel1.setBackground(new java.awt.Color(139, 99, 50));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 393, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(TextFID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(TextFCon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addGap(45, 45, 45)
-                .addComponent(Button)
-                .addContainerGap(45, Short.MAX_VALUE))
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 253, Short.MAX_VALUE)
         );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonActionPerformed
-        // TODO add your handling code here:
+        int opcion = ComboBox.getSelectedIndex();
+        if(opcion ==1){
+            //veridicar que el usuario exista
+            VUsuario u = new VUsuario(); //se manda a Usuario, el usuario que inició
+            u.setVisible(true);
+            dispose();
+            
+        }else if(opcion == 2){
+            //veridicar que el empleado exista
+            VEmpleado e = new VEmpleado(); //se manda a Empleado, el empleado que inició
+            e.setVisible(true);
+            dispose();
+        }
     }//GEN-LAST:event_ButtonActionPerformed
+
+    private void ComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxActionPerformed
+       Button.setVisible(true);
+    }//GEN-LAST:event_ComboBoxActionPerformed
 
     /**
      * @param args the command line arguments
@@ -151,7 +163,9 @@ public class VIniciar extends javax.swing.JFrame {
     private javax.swing.JTextField TextFCon;
     private javax.swing.JTextField TextFID;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

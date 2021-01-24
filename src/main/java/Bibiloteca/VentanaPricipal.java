@@ -5,6 +5,8 @@
  */
 package Bibiloteca;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
@@ -44,10 +46,20 @@ public class VentanaPricipal extends javax.swing.JFrame {
 
         ButtonIniciar.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         ButtonIniciar.setText("Iniciar sesion");
+        ButtonIniciar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonIniciarActionPerformed(evt);
+            }
+        });
         getContentPane().add(ButtonIniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, -1, -1));
 
         ButtonReg.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         ButtonReg.setText("Registrarse");
+        ButtonReg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonRegActionPerformed(evt);
+            }
+        });
         getContentPane().add(ButtonReg, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Zilla Slab", 1, 24)); // NOI18N
@@ -56,12 +68,24 @@ public class VentanaPricipal extends javax.swing.JFrame {
         jLabel1.setText("Biblioteca");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/2.jpg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Vanessa\\Documents\\Universidad\\semestre_21-1\\ProgramacionOrientaObjetos\\TF\\Imagenes para ventanas\\2.jpg")); // NOI18N
         jLabel2.setText("dvfsd");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ButtonIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonIniciarActionPerformed
+       VIniciar vi = new VIniciar();
+       vi.setVisible(true);
+       dispose();
+    }//GEN-LAST:event_ButtonIniciarActionPerformed
+
+    private void ButtonRegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonRegActionPerformed
+       VRegistrarse vr = new VRegistrarse();
+       vr.setVisible(true);
+       dispose();
+    }//GEN-LAST:event_ButtonRegActionPerformed
 
     /**
      * @param args the command line arguments
