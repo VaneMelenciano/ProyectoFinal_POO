@@ -5,6 +5,9 @@
  */
 package Bibiloteca;
 
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+
 /**
  *
  * @author Vanessa
@@ -17,6 +20,7 @@ public class VentanaPricipal extends javax.swing.JFrame {
     public VentanaPricipal() {
         super("Biblioteca"); //le pone titulo a la ventana
         initComponents();
+        //jLabel2 = new JLabel(new ImageIcon(getClass().getResource("2.jpg")));
     }
 
     /**
@@ -31,44 +35,28 @@ public class VentanaPricipal extends javax.swing.JFrame {
         ButtonIniciar = new javax.swing.JButton();
         ButtonReg = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setIconImage(getIconImage());
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         ButtonIniciar.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         ButtonIniciar.setText("Iniciar sesion");
+        getContentPane().add(ButtonIniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, -1, -1));
 
         ButtonReg.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         ButtonReg.setText("Registrarse");
+        getContentPane().add(ButtonReg, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Zilla Slab", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setLabelFor(this);
         jLabel1.setText("Biblioteca");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(125, 125, 125)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ButtonReg)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(ButtonIniciar)
-                        .addComponent(jLabel1)))
-                .addContainerGap(160, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addComponent(jLabel1)
-                .addGap(38, 38, 38)
-                .addComponent(ButtonIniciar)
-                .addGap(26, 26, 26)
-                .addComponent(ButtonReg)
-                .addContainerGap(91, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Vanessa\\Documents\\NetBeansProjects\\ProyectoFinal_POO\\2.jpg")); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -112,5 +100,6 @@ public class VentanaPricipal extends javax.swing.JFrame {
     private javax.swing.JButton ButtonIniciar;
     private javax.swing.JButton ButtonReg;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
