@@ -15,4 +15,6 @@ public abstract class Descripcion {
     public int getId(){return id;}
     
     public abstract String getDescripcion();
+    
+    //MI DESCRIPCIÓN
 }
