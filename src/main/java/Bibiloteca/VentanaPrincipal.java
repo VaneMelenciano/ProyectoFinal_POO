@@ -94,7 +94,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void IniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IniciarActionPerformed
-        VIniciar vi = new VIniciar();
+        VIniciar vi = null;
+        try {
+            vi = new VIniciar();
+        } catch (IOException ex) {
+            Logger.getLogger(VentanaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
         vi.setVisible(true);
         dispose();
     }//GEN-LAST:event_IniciarActionPerformed

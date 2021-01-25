@@ -1,6 +1,7 @@
 package Bibiloteca;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -16,6 +17,12 @@ public class Biblioteca {
     private ArrayList<Usuario> usuarios;
     private ArrayList<Empleado> empleados;
     private ArrayList<Documentos> documentos;
+    
+    //rutas de los archivos txt (favor de no tocarlas).
+    private static final String rutaLibros = "ArchivoLibros.txt";
+    private static final String rutaUsuarios = "ArchivoUsuarios.txt";
+    private static final String rutaEmpleados = "ArchivoEmpleados.txt";
+    private static final String rutaDocumentos = "ArchivoDocumentos.txt";
    
     private static Biblioteca instance; //variable del singleton
     
@@ -64,7 +71,7 @@ public class Biblioteca {
         }
         newLib.setId(id);
         libros.add(newLib);
-        guardarEnArchivo("ArchivoLibros.txt", newLib.objetoATexto(), true);
+        guardarEnArchivo(rutaLibros, newLib.objetoATexto(), true);
         return id;
     } //con atributos
     //se muestra TODOS los encontreados
@@ -119,7 +126,7 @@ public class Biblioteca {
         }
         newUsu.setId(id);
         usuarios.add(newUsu);
-        guardarEnArchivo("ArchivoUsuarios.txt", newUsu.objetoATexto(), true);
+        guardarEnArchivo(rutaUsuarios, newUsu.objetoATexto(), true);
         return id;
     }
     //se muestra TODOS los encontreados
@@ -158,7 +165,7 @@ public class Biblioteca {
         }
         newEmp.setId(id);
         empleados.add(newEmp);
-        guardarEnArchivo("ArchivoEmpleados.txt", newEmp.objetoATexto(), true);
+        guardarEnArchivo(rutaEmpleados, newEmp.objetoATexto(), true);
         return id;
     }
     //se muestra TODOS los encontreados
@@ -197,7 +204,7 @@ public class Biblioteca {
         }
         newMul.setId(id);
         documentos.add(newMul);
-        guardarEnArchivo("ArchivoDocumentos.txt", newMul.objetoATexto(), true);
+        guardarEnArchivo(rutaDocumentos, newMul.objetoATexto(), true);
         return id;
     }
     //se muestra TODOS los encontreados
@@ -243,7 +250,7 @@ public class Biblioteca {
         }
         newPre.setId(id);
         documentos.add(newPre);
-        guardarEnArchivo("ArchivoDocumentos.txt", newPre.objetoATexto(), true);
+        guardarEnArchivo(rutaDocumentos, newPre.objetoATexto(), true);
         return id;
     }
     //se muestra TODOS los encontreados
@@ -283,12 +290,42 @@ public class Biblioteca {
         pw.println(texto);
         pw.close();
     }
-    public static void eliminarEnArchivo(String nombreArchivo, String texto, boolean append){
+    public static void eliminarEnArchivo(String nombreArchivo, int id){
+        String stringId = Integer.toString(id);
+        ArrayList<String> auxArray = new ArrayList();
+        
+        try{
+            try(FileReader fr = new FileReader(nombreArchivo)){
+                Scanner reader = new Scanner(fr);
+                String linea;
+                String[] lineaArray;
+                
+                while((linea=reader.nextLine())!=null){
+                    lineaArray = linea.split("\\|");
+                    if(!(lineaArray[0].equals(stringId))){
+                        auxArray.add(linea);
+                    }
+                }
+                fr.close();
+            }catch (Exception e){
+            }
+        }catch (Exception e){
+        }
+        try{
+            try(PrintWriter pr = new PrintWriter(nombreArchivo)){
+                for(String str : auxArray){
+                    pr.println(str);
+                }
+                pr.close();
+            }catch(Exception e){
+            }
+        }catch (Exception e){  
+        }
         
     }
             
     public static ArrayList<Libro> leerArchivoLibros() throws FileNotFoundException, IOException{
-        File file = new File("ArchivoLibros.txt");
+        File file = new File(rutaLibros);
         if (!file.exists()) {
             file.createNewFile();
         }
@@ -316,7 +353,7 @@ public class Biblioteca {
     }
         
     public static ArrayList<Usuario> leerArchivoUsuarios() throws FileNotFoundException, IOException{
-        File file = new File("ArchivoUsuarios.txt");
+        File file = new File(rutaUsuarios);
         if (!file.exists()) {
             file.createNewFile();
         }
@@ -344,7 +381,7 @@ public class Biblioteca {
         return lista;
     }    
     public static ArrayList<Empleado> leerArchivoEmpleados() throws FileNotFoundException, IOException{
-        File file = new File("ArchivoEmpleados.txt");
+        File file = new File(rutaEmpleados);
         if (!file.exists()) {
             file.createNewFile();
         }
@@ -373,7 +410,7 @@ public class Biblioteca {
         return lista;
     }    
     public static ArrayList<Documentos> leerArchivoDocumentos() throws FileNotFoundException, IOException{
-        File file = new File("ArchivoDocumentos.txt");
+        File file = new File(rutaDocumentos);
         if (!file.exists()) {
             file.createNewFile();
         }
