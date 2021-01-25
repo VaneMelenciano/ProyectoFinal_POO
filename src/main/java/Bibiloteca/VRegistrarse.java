@@ -198,43 +198,48 @@ public class VRegistrarse extends javax.swing.JFrame {
     }//GEN-LAST:event_BoxTipoActionPerformed
 
     private void BGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BGuardarActionPerformed
-        //GUARDA DATOS RECIBIDOR:
-        String Nombre = TNombre.getText();
-        String FechaNac = TFechaNac.getText();
-        String Edad = TEdad.getText();
-        String Tel = TTel.getText();
-        String Dir = TDir.getText();
-        String Correo = TCor.getText();
-        String Contrasenia = TCont.getText();
-        
         if(opcion == 1){ //usuario
             if(evt.getSource()==BGuardar){
                 try{
+                    String Nombre = TNombre.getText();
+                    String FechaNac = TFechaNac.getText();
+                    int Edad = Integer.parseInt(TEdad.getText());
+                    String Tel = TTel.getText();
+                    String Dir = TDir.getText();
+                    String Correo = TCor.getText();
+                    String Contrasenia = TCont.getText();
                     String FechaAct = TOpc1.getText();
                     //guardar datos en usuario
+                        Registro.setVisible(true);
+                        String datos = "Se ha registarado correctamnete. Empleado\n"; //+ la descripcion de los datos y su ID
+                        Registro.setText(datos);
+                        BAceptar.setVisible(true);
                    }catch (NumberFormatException ex){
                        JOptionPane.showMessageDialog(null, "Ingrese datos correctamente");
                    }
-        
-                Registro.setVisible(true);
-                String datos = "Se ha registarado correctamnete.\n"; //+ la descripcion de los datos y su ID
-                Registro.setText(datos);
-                BAceptar.setVisible(true);
             }
         }else if(opcion == 2){ //empleado
             if(evt.getSource()==BGuardar){
                 try{ 
+                    String Nombre = TNombre.getText();
+                    String FechaNac = TFechaNac.getText();
+                    int Edad = Integer.parseInt(TEdad.getText());
+                    String Tel = TTel.getText();
+                    String Dir = TDir.getText();
+                    String Correo = TCor.getText();
+                    String Contrasenia = TCont.getText();
                     String Puesto = TOpc1.getText();
-                    String Sueldo = TOpc2.getText();
+                    float Sueldo = Float.parseFloat(TOpc2.getText());
                     //guardar datos en empleados
+                        Registro.setVisible(true);
+                        String datos = "Se ha registarado correctamnete. Empleado\n"; //+ la descripcion de los datos y su ID
+                        Registro.setText(datos);
+                        BAceptar.setVisible(true);
                    }catch (NumberFormatException ex){
                        JOptionPane.showMessageDialog(null, "Ingrese datos correctamente");
                    }
             
-                Registro.setVisible(true);
-                String datos = "Se ha registarado correctamnete. Empleado\n"; //+ la descripcion de los datos y su ID
-                Registro.setText(datos);
-                BAceptar.setVisible(true);
+                
             }
         }
     }//GEN-LAST:event_BGuardarActionPerformed
