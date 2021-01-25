@@ -8,7 +8,7 @@ import java.io.IOException;
  */
 public class MainBiblioteca {
     public static void main(String args[]) throws IOException{
-        Biblioteca biblioteca = new Biblioteca();
-        
+        //así es cómo se hace referencia al objeto, lo puedes usar desde cualquier clase.
+        Biblioteca biblioteca = Biblioteca.getInstance();
     }
 }

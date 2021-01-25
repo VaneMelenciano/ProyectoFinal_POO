@@ -16,6 +16,15 @@ public class Biblioteca {
     private ArrayList<Usuario> usuarios;
     private ArrayList<Empleado> empleados;
     private ArrayList<Documentos> documentos;
+   
+    private static Biblioteca instance; //variable del singleton
+    
+    public static Biblioteca getInstance() throws IOException{
+        if(instance == null){
+            instance = new Biblioteca();
+        }
+        return instance;
+    }
     
     public Biblioteca() throws FileNotFoundException, IOException{
         libros = leerArchivoLibros();
