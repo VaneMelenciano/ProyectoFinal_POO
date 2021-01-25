@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Bibiloteca;
 import java.util.ArrayList;
 
@@ -12,45 +7,49 @@ import java.util.ArrayList;
  * @author Aaron
  */
 public abstract class Documentos extends Descripcion{
-    protected Usuario usuario;
-    protected ArrayList<Libro> librosPrestados;
-    protected String fechaAct; //fecha Actual
-    public Documentos (){ 
-        librosPrestados = new ArrayList();
-    }
-    public Documentos (ArrayList<Libro> lib, Usuario u, String fa, int id){ 
+    private int usuarioId;
+    private String librosPrestados;
+    private String fechaActual;
+    
+    public Documentos (int usuarioId, String librosPrestados, String fechaActual){ 
+        this.usuarioId = usuarioId;
+        this.librosPrestados = librosPrestados;
+        this.fechaActual = fechaActual;
+    }    
+    public Documentos (int id, int usuarioId, String librosPrestados, String fechaActual){ 
         super(id);
-        librosPrestados = new ArrayList();
-        librosPrestados = lib;
-        usuario = u;
-        fechaAct = fa;
+        this.usuarioId = usuarioId;
+        this.librosPrestados = librosPrestados;
+        this.fechaActual = fechaActual;
     }
-    public void setLibrosP(ArrayList<Libro> lib){
+    
+    public void setLibrosPrestados(String lib){
         librosPrestados=lib;
     }
-    public ArrayList getLibrosP(){
+    public String getLibrosPrestados(){
         return librosPrestados;
     }
-    public void setFechaA(String fa){
-        fechaAct = fa;
+    public void setFechaActual(String fa){
+        fechaActual = fa;
     }
-    public String getFecha(){
-        return fechaAct;
+    public String getFechaActual(){
+        return fechaActual;
     }
-    public void setUsuario(Usuario u){
-        usuario = u;
+    public void setUsuarioId(int uId){
+        usuarioId = uId;
     }
-    public Usuario getUsuario(){
-        return usuario;
+    public int getUsuarioId(){
+        return usuarioId;
     }
     
      @Override
     public String getDescripcion(){
-        String descripcion = "ID: "+this.getId()+" Fecha Solicitud: "+fechaAct+" Usuario: "+ usuario.getNombre() + "Usuario id:"
-                + usuario.getId() +"\n Libros: \n"; 
-        for(Libro l : librosPrestados){
-            descripcion += l.getTitulo() + "id: " + l.getId() +"\n";
-        }
+        String descripcion = "ID: "+this.getId()+" Fecha Solicitud: "+fechaActual+" Usuario id:"
+                + usuarioId +"\n Id Libros Prestados: "+librosPrestados; 
         return descripcion;
+    }
+    @Override
+    public String objetoATexto(){
+        return getId()+"|"+usuarioId+"|"+librosPrestados+"|"+fechaActual;
     }
 }

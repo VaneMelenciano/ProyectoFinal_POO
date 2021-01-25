@@ -1,9 +1,11 @@
 package Bibiloteca;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Scanner;
 /**
  * @author Aaron
  * @author Vanessa
@@ -15,11 +17,11 @@ public class Biblioteca {
     private ArrayList<Empleado> empleados;
     private ArrayList<Documentos> documentos;
     
-    public Biblioteca(){
-        libros = new ArrayList();
-        usuarios = new ArrayList();
-        empleados = new ArrayList();
-        documentos = new ArrayList();
+    public Biblioteca() throws FileNotFoundException{
+        libros = leerArchivoLibros();
+        usuarios = leerArchivoUsuarios();
+        empleados = leerArchivoEmpleados();
+        documentos = leerArchivoDocumentos();
     }
     public Biblioteca(String nom, String dir, String tel, String cor){
         libros = new ArrayList();
@@ -62,9 +64,20 @@ public class Biblioteca {
     public String getTelefono(){return telefono;}
     public String getCorreco(){return correo;}
     
-    public void AgregarLibro(String titulo, String autor, String editorial, int anio, int numUni, String pais){
+    public void AgregarLibro(String titulo, String autor, String editorial, int anio, int numUni, String pais) throws IOException{
         Libro newLib = new Libro(titulo, autor, editorial, pais, anio, numUni);
+        int id;
+        while(true){
+            boolean sameId = false;
+            id = Descripcion.generarId();
+            for(Libro l : libros){
+                if(l.getId() == id) sameId = true; 
+            }
+            if(sameId == false) break;
+        }
+        newLib.setId(id);
         libros.add(newLib);
+        guardarEnArchivo("ArchivoLibros.txt", newLib.objetoATexto(), true);
     } //con atributos
     //se muestra TODOS los encontreados
     public Libro BuscarLibro(int id){
@@ -105,9 +118,20 @@ public class Biblioteca {
         }
     }
     
-    public void AgregarUsuario(String nombre, String fechaNac, int edad, String tel, String dir, String correo, String fechaAct, String contraseña){
-        Usuario newUsu = new Usuario(nombre, fechaNac, tel, dir, correo, edad, fechaAct, contraseña);
+    public void AgregarUsuario(String nombre, String fechaNacimiento, String telefono, String direccion, String correo, int edad, String con, String fechaRegistro) throws IOException{
+        Usuario newUsu = new Usuario(nombre, fechaNacimiento, telefono, direccion, correo, edad, con, fechaRegistro);
+        int id;
+        while(true){
+            boolean sameId = false;
+            id = Descripcion.generarId();
+            for(Usuario u : usuarios){
+                if(u.getId() == id) sameId = true; 
+            }
+            if(sameId == false) break;
+        }
+        newUsu.setId(id);
         usuarios.add(newUsu);
+        guardarEnArchivo("ArchivoUsuarios.txt", newUsu.objetoATexto(), true);
     }
     //se muestra TODOS los encontreados
     public Usuario BuscarUsuario(int id){
@@ -132,9 +156,20 @@ public class Biblioteca {
         }
     }
     
-    public void AgregarEmpleado(String nombre, String fechaNac, int edad, String tel, String dir, String correo, String puesto, float sueldo, String contraseña){
-        Empleado newEmp = new Empleado(nombre, fechaNac, tel, dir, correo, edad, puesto, sueldo, contraseña);
+    public void AgregarEmpleado(String nombre, String fechaNacimiento, String telefono, String direccion, String correo, int edad, String con, String puesto, float sueldo) throws IOException{
+        Empleado newEmp = new Empleado(nombre, fechaNacimiento, telefono, direccion, correo, edad, con, puesto, sueldo);
+        int id;
+        while(true){
+            boolean sameId = false;
+            id = Descripcion.generarId();
+            for(Empleado e : empleados){
+                if(e.getId() == id) sameId = true; 
+            }
+            if(sameId == false) break;
+        }
+        newEmp.setId(id);
         empleados.add(newEmp);
+        guardarEnArchivo("ArchivoEmpleados.txt", newEmp.objetoATexto(), true);
     }
     //se muestra TODOS los encontreados
     public Empleado BuscarEmpleado(int id){
@@ -159,9 +194,20 @@ public class Biblioteca {
         }
     }
     
-    public void AgregarMulta(Usuario usuario, ArrayList lib, String fechaAct, int diasRetraso){
-        Multa newMul = new Multa(diasRetraso, lib, usuario, fechaAct);
+    public void AgregarMulta(int usuarioId, String librosPrestados, String fechaActual, int diasRetraso, float costoMulta) throws IOException{
+        Multa newMul = new Multa(usuarioId, librosPrestados, fechaActual, diasRetraso, costoMulta);
+        int id;
+        while(true){
+            boolean sameId = false;
+            id = Descripcion.generarId();
+            for(Documentos d : documentos){
+                if(d.getId() == id) sameId = true; 
+            }
+            if(sameId == false) break;
+        }
+        newMul.setId(id);
         documentos.add(newMul);
+        guardarEnArchivo("ArchivoDocumentos.txt", newMul.objetoATexto(), true);
     }
     //se muestra TODOS los encontreados
     public Multa BuscarMulta(int id){
@@ -170,17 +216,17 @@ public class Biblioteca {
         }
         return null;
     }
-    public ArrayList<Multa> BuscarMultasUsuario(String nombreUsuario){
+    public ArrayList<Multa> BuscarMultasUsuario(int usuarioId){
         ArrayList<Multa> aux = new ArrayList();
         for(Documentos d : documentos){
-            if(nombreUsuario.equals(d.getUsuario().getNombre()) && d instanceof Multa) aux.add((Multa)d);
+            if(usuarioId == d.getUsuarioId() && d instanceof Multa) aux.add((Multa)d);
         }
         return aux;
     }
     public ArrayList<Multa> BuscarMultasFecha(String fecha){
         ArrayList<Multa> aux = new ArrayList();
         for(Documentos d : documentos){
-            if(fecha.equals(d.getFecha()) && d instanceof Multa) aux.add((Multa)d);
+            if(fecha.equals(d.getFechaActual()) && d instanceof Multa) aux.add((Multa)d);
         }
         return aux;
     }
@@ -193,9 +239,20 @@ public class Biblioteca {
         }
     }
     
-    public void AgregarPrestamo(Usuario usuario, ArrayList lib, String fechaAct, String plazoDev, String fechaDev){
-        Prestamo newPre = new Prestamo(plazoDev, fechaDev, lib, usuario, fechaAct);
+    public void AgregarPrestamo(int usuarioId, String librosPrestados, String fechaActual, String plazoDev, String fechaDev) throws IOException{
+        Prestamo newPre = new Prestamo(usuarioId, librosPrestados, fechaActual, plazoDev, fechaDev);
+        int id;
+        while(true){
+            boolean sameId = false;
+            id = Descripcion.generarId();
+            for(Documentos d : documentos){
+                if(d.getId() == id) sameId = true; 
+            }
+            if(sameId == false) break;
+        }
+        newPre.setId(id);
         documentos.add(newPre);
+        guardarEnArchivo("ArchivoDocumentos.txt", newPre.objetoATexto(), true);
     }
     //se muestra TODOS los encontreados
     public Prestamo BuscarPrestamo(int id){
@@ -204,17 +261,17 @@ public class Biblioteca {
         }
         return null;
     }
-    public ArrayList<Prestamo> BuscarPrestamosUsuario(String nombreUsuario){
+    public ArrayList<Prestamo> BuscarPrestamosUsuario(int usuarioId){
         ArrayList<Prestamo> aux = new ArrayList();
         for(Documentos d : documentos){
-            if(nombreUsuario.equals(d.getUsuario().getNombre()) && d instanceof Prestamo) aux.add((Prestamo)d);
+            if(usuarioId == d.getUsuarioId() && d instanceof Prestamo) aux.add((Prestamo)d);
         }
         return aux;
     }
     public ArrayList<Prestamo> BuscarPrestamosFecha(String fecha){
         ArrayList<Prestamo> aux = new ArrayList();
         for(Documentos d : documentos){
-            if(fecha.equals(d.getFecha()) && d instanceof Prestamo) aux.add((Prestamo)d);
+            if(fecha.equals(d.getFechaActual()) && d instanceof Prestamo) aux.add((Prestamo)d);
         }
         return aux;
     }
@@ -227,18 +284,127 @@ public class Biblioteca {
         }
     }
     
-    public static void saveToFile(String fileName, String text, boolean append) throws IOException{
-        File file1 = new File(fileName);
-        FileWriter fw = new FileWriter(file1, append);
+    public static void guardarEnArchivo(String nombreArchivo, String texto, boolean append) throws IOException{
+        File file = new File(nombreArchivo);
+        FileWriter fw = new FileWriter(file, append);
         PrintWriter pw = new PrintWriter(fw);
-        pw.println(text);
+        pw.println(texto);
         pw.close();
     }
-    
-    public static void main(String args[]) throws IOException{
-        Libro libro1 = new Libro("La Odisea", "Homero", "Porrua", "Mexico", 2017, 10);
-        String outputText = libro1.getTitulo()+"|"+libro1.getAutor()+"|"+libro1.getEditorial()+"|"+
-                            libro1.getPais()+"|"+libro1.getAnioEdicion()+"|"+libro1.getNumUnidades();
-        saveToFile("ArchivoLibros.txt", outputText, true);
+    public static void eliminarEnArchivo(String nombreArchivo, String texto, boolean append){
+        
+    }
+            
+    public static ArrayList<Libro> leerArchivoLibros() throws FileNotFoundException{
+        File file = new File("ArchivoLibros.txt");
+        Scanner s = new Scanner(file);
+        
+        ArrayList<Libro> lista = new ArrayList();
+        
+        while(s.hasNextLine()){
+            String linea = s.nextLine();
+            String[] atributos = linea.split("\\|");
+            
+            int id = Integer.parseInt(atributos[0]);
+            String titulo = atributos[1];
+            String autor = atributos[2];
+            String editorial = atributos[3];
+            String pais = atributos[4];
+            int edicion = Integer.parseInt(atributos[5]);
+            int numUnidades = Integer.parseInt(atributos[6]);
+            int numPrestados = Integer.parseInt(atributos[7]);
+            
+            Libro nuevoLibro = new Libro(id,titulo, autor, editorial, pais, edicion, numUnidades, numPrestados);
+            lista.add(nuevoLibro);
+        }
+        return lista;
+    }
+        
+    public static ArrayList<Usuario> leerArchivoUsuarios() throws FileNotFoundException{
+        File file = new File("ArchivoUsuarios.txt");
+        Scanner s = new Scanner(file);
+        
+        ArrayList<Usuario> lista = new ArrayList();
+        
+        while(s.hasNextLine()){
+            String linea = s.nextLine();
+            String[] atributos = linea.split("\\|");
+            
+            int id = Integer.parseInt(atributos[0]);
+            String nombre = atributos[1];
+            String fechaNac = atributos[2];
+            String telefono = atributos[3];
+            String direccion = atributos[4];
+            String correo = atributos[5];
+            int edad = Integer.parseInt(atributos[6]);
+            String contrasenia = atributos[7];
+            String fechaRegistro = atributos[8];
+            
+            Usuario nuevoUsuario = new Usuario(id, nombre, fechaNac, telefono, direccion, correo, edad, contrasenia, fechaRegistro);
+            lista.add(nuevoUsuario);
+        }
+        return lista;
+    }    
+    public static ArrayList<Empleado> leerArchivoEmpleados() throws FileNotFoundException{
+        File file = new File("ArchivoEmpleados.txt");
+        Scanner s = new Scanner(file);
+        
+        ArrayList<Empleado> lista = new ArrayList();
+        
+        while(s.hasNextLine()){
+            String linea = s.nextLine();
+            String[] atributos = linea.split("\\|");
+            
+            int id = Integer.parseInt(atributos[0]);
+            String nombre = atributos[1];
+            String fechaNac = atributos[2];
+            String telefono = atributos[3];
+            String direccion = atributos[4];
+            String correo = atributos[5];
+            int edad = Integer.parseInt(atributos[6]);
+            String contrasenia = atributos[7];
+            String puesto = atributos[8];
+            float sueldo = Float.parseFloat(atributos[9]);
+            
+            Empleado nuevoEmpleado = new Empleado(id, nombre, fechaNac, telefono, direccion, correo, edad, contrasenia, puesto, sueldo);
+            lista.add(nuevoEmpleado);
+        }
+        return lista;
+    }    
+    public static ArrayList<Documentos> leerArchivoDocumentos() throws FileNotFoundException{
+        File file = new File("ArchivoDocumentos.txt");
+        Scanner s = new Scanner(file);
+        
+        ArrayList<Documentos> lista = new ArrayList();
+        
+        while(s.hasNextLine()){
+            String linea = s.nextLine();
+            String[] atributos = linea.split("\\|");
+            
+            int id = Integer.parseInt(atributos[0]);
+            int usuarioId = Integer.parseInt(atributos[1]);
+            String librosPrestados = atributos[2];
+            String fechaActual = atributos[3];
+            
+            if("M".equals(atributos[6])){
+                int diasRetraso = Integer.parseInt(atributos[4]);
+                float costoMulta = Float.parseFloat(atributos[5]);
+                Multa nuevaMulta = new Multa(id, usuarioId, librosPrestados, fechaActual, diasRetraso, costoMulta);
+                lista.add(nuevaMulta);
+            }
+            else if("P".equals(atributos[6])){
+                String plazoDev = atributos[4];
+                String fechaDev = atributos[5];
+                Prestamo nuevoPrestamo = new Prestamo(id, usuarioId, librosPrestados, fechaActual, plazoDev, fechaDev);
+                lista.add(nuevoPrestamo);
+            }
+        }
+        return lista;
+    }
+    public static void main(String args[]) throws FileNotFoundException{
+        Biblioteca biblio = new Biblioteca();
+        for(Documentos d : biblio.documentos){
+            if(d instanceof Prestamo) System.out.println(d.getDescripcion()+"\n\n");
+        }
     }
 }

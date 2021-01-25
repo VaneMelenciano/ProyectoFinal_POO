@@ -1,4 +1,7 @@
 package Bibiloteca;
+
+import java.util.Random;
+
 /**
  * @author Aaron
  * @author Vanessa
@@ -6,7 +9,8 @@ package Bibiloteca;
 public abstract class Descripcion {
     private int id;
     
-    public Descripcion(){}
+    public Descripcion(){
+    }
     public Descripcion(int id){
         this.id = id;
     }
@@ -14,8 +18,17 @@ public abstract class Descripcion {
     public void setId(int id){this.id = id;}
     public int getId(){return id;}
     
-    public abstract String getDescripcion();
+    public static int generarId(){
+        final String alphabet = "0123456789";
+        final int N = alphabet.length();
+        Random r = new Random();
+        String aux = "";
+        for (int i = 0; i < 5; i++) {
+            aux +=(alphabet.charAt(r.nextInt(N)));
+        }
+        return Integer.parseInt(aux);
+    }
     
-    //MI DESCRIPCIÓN
-    //OTRO COMENTARIO
+    public abstract String getDescripcion();
+    public abstract String objetoATexto();
 }

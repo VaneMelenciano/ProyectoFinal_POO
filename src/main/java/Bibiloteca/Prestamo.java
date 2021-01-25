@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Bibiloteca;
 import java.util.ArrayList;
 /**
@@ -12,19 +7,18 @@ import java.util.ArrayList;
  */
 public class Prestamo extends Documentos{
     private String plazoDev, fechaDev;
-    public Prestamo(){
-        super();
-        plazoDev = "";
-        fechaDev = "";
+    
+    public Prestamo(int usuarioId, String librosPrestados, String fechaActual, String plazoDev, String fechaDev){
+        super(usuarioId, librosPrestados, fechaActual);
+        this.plazoDev = plazoDev;
+        this.fechaDev = fechaDev;
+    }  
+    public Prestamo(int id, int usuarioId, String librosPrestados, String fechaActual, String plazoDev, String fechaDev){
+        super(id, usuarioId, librosPrestados, fechaActual);
+        this.plazoDev = plazoDev;
+        this.fechaDev = fechaDev;
     }
-    public Prestamo(String pd, String de, ArrayList<Libro> lib, Usuario u, String fa){
-        super();
-        this.plazoDev = pd;
-        this.fechaDev = de;
-        this.librosPrestados = lib;
-        this.usuario = u;
-        this.fechaAct = fa;
-    }
+    
     public void setFechaDev(String fd){
         fechaDev = fd;
     }
@@ -41,5 +35,9 @@ public class Prestamo extends Documentos{
     public String getDescripcion() {
         return super.getDescripcion()
                 +"Plazo de devolución: " + plazoDev + "   Fecha de devolucion: " + fechaDev;
+    }
+    @Override
+    public String objetoATexto(){
+        return super.objetoATexto()+"|"+plazoDev+"|"+fechaDev+"|P";
     }
 }

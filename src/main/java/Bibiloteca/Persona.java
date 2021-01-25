@@ -4,12 +4,20 @@ package Bibiloteca;
  * @author Vanessa
  */
 public abstract class  Persona extends Descripcion{
-    protected String nombre, fechaNacimiento, telefono, direccion, correo, contrasenia;
+    private String nombre, fechaNacimiento, telefono, direccion, correo, contrasenia;
     protected int edad;
     
-    public Persona(){}
     public Persona(String nombre, String fechaNacimiento, String telefono, String direccion, String correo, int edad, String con){
-        //this.id = id;
+        this.nombre = nombre;
+        this.fechaNacimiento = fechaNacimiento;
+        this.telefono = telefono;
+        this.direccion = direccion;
+        this.correo = correo;
+        this.edad = edad;
+        this.contrasenia=con;
+    }    
+    public Persona(int id, String nombre, String fechaNacimiento, String telefono, String direccion, String correo, int edad, String con){
+        super(id);
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
         this.telefono = telefono;
@@ -40,5 +48,9 @@ public abstract class  Persona extends Descripcion{
         return "ID: "+this.getId()+" Nombre: "+nombre+" Fecha de Nacimiento: "+fechaNacimiento
                 +"\nTelefono: "+telefono+" Direccion: "+direccion
                 +"\nCorreo: "+correo+" Edad: "+edad;
+    }
+    @Override
+    public String objetoATexto(){
+        return getId()+"|"+nombre+"|"+fechaNacimiento+"|"+telefono+"|"+direccion+"|"+correo+"|"+edad+"|"+contrasenia;
     }
 }

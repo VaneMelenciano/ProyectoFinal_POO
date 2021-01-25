@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Bibiloteca;
 
 import java.util.ArrayList;
@@ -14,17 +9,16 @@ import java.util.ArrayList;
 public class Multa extends Documentos{
     private int diasRetraso;
     private float costoMulta;
-    public Multa(){
-        super();
-        diasRetraso = 0;
-        costoMulta = 0;
+    
+    public Multa(int usuarioId, String librosPrestados, String fechaActual, int diasRetraso, float costoMulta){
+        super(usuarioId, librosPrestados, fechaActual);
+        this.diasRetraso = diasRetraso;
+        this.costoMulta = costoMulta;
     }
-    public Multa(int dR, ArrayList<Libro> lib, Usuario u, String fa){
-        super();
-        this.diasRetraso = dR;
-        this.librosPrestados = lib;
-        this.usuario = u;
-        this.fechaAct = fa;
+    public Multa(int id, int usuarioId, String librosPrestados, String fechaActual, int diasRetraso, float costoMulta){
+        super(id, usuarioId, librosPrestados, fechaActual);
+        this.diasRetraso = diasRetraso;
+        this.costoMulta = costoMulta;
     }
     public void setDias(int d){
         diasRetraso = d;
@@ -46,5 +40,9 @@ public class Multa extends Documentos{
     public String getDescripcion(){
         return super.getDescripcion()
                 +"Dias de retraso: " + diasRetraso + "   Costo de la multa: " + Calcular();
+    }
+    @Override
+    public String objetoATexto(){
+        return super.objetoATexto()+"|"+diasRetraso+"|"+costoMulta+"|M";
     }
 }
