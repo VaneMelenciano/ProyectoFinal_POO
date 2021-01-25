@@ -43,10 +43,10 @@ public class VIniciar extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         ComboBox = new javax.swing.JComboBox<>();
         Button = new javax.swing.JButton();
-        TextFCon = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         incorrecto = new javax.swing.JLabel();
+        TextFCon = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -85,9 +85,6 @@ public class VIniciar extends javax.swing.JFrame {
         });
         getContentPane().add(Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(148, 204, -1, -1));
 
-        TextFCon.setBackground(new java.awt.Color(255, 240, 201));
-        getContentPane().add(TextFCon, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 106, 150, -1));
-
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel2.setText("Iniciar sesión");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(126, 11, -1, -1));
@@ -98,6 +95,8 @@ public class VIniciar extends javax.swing.JFrame {
         incorrecto.setForeground(new java.awt.Color(255, 0, 0));
         incorrecto.setText("Incorrecto");
 
+        TextFCon.setBackground(new java.awt.Color(255, 240, 201));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -106,11 +105,17 @@ public class VIniciar extends javax.swing.JFrame {
                 .addContainerGap(261, Short.MAX_VALUE)
                 .addComponent(incorrecto)
                 .addGap(65, 65, 65))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(135, 135, 135)
+                .addComponent(TextFCon, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(195, Short.MAX_VALUE)
+                .addContainerGap(108, Short.MAX_VALUE)
+                .addComponent(TextFCon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(67, 67, 67)
                 .addComponent(incorrecto)
                 .addGap(44, 44, 44))
         );
@@ -224,7 +229,7 @@ public class VIniciar extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Button;
     private javax.swing.JComboBox<String> ComboBox;
-    private javax.swing.JTextField TextFCon;
+    private javax.swing.JPasswordField TextFCon;
     private javax.swing.JTextField TextFID;
     private javax.swing.JLabel incorrecto;
     private javax.swing.JLabel jLabel1;

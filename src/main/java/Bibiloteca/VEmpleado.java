@@ -25,6 +25,7 @@ public class VEmpleado extends javax.swing.JFrame {
      */
     private int idEmpleado;
     private String nombreEmpleado;
+    public boolean bandera;
     public VEmpleado(int id) throws IOException {
         super("Biblioteca/Empleado");
         this.MiBiblioteca = Biblioteca.getInstance();
@@ -669,9 +670,7 @@ public class VEmpleado extends javax.swing.JFrame {
                     int id = Integer.parseInt(BorrarL.getText());
                     VBorrar Borrar = new VBorrar();
                     Borrar.setVisible(true);
-                    if(Borrar.setBandera()==true){
                         MiBiblioteca.BorrarLibro(id);
-                    }
 
         }else{ //si no elige nada
             Error2.setVisible(true); 
@@ -751,9 +750,7 @@ public class VEmpleado extends javax.swing.JFrame {
                     int id = Integer.parseInt(BuscarL3.getText());
                     VBorrar Borrar = new VBorrar();
                     Borrar.setVisible(true);
-                    //if(Borrar.setBandera()==true){
-                        MiBiblioteca.eliminarEnArchivo("ArchivoUsuarios", id);
-                    //}
+                        MiBiblioteca.BorrarUsuario(id);
             }else{ //si no elige nada
                 Error4.setVisible(true); 
             } 
@@ -764,9 +761,7 @@ public class VEmpleado extends javax.swing.JFrame {
                     int id = Integer.parseInt(BuscarL3.getText());
                     VBorrar Borrar = new VBorrar();
                     Borrar.setVisible(true);
-                    if(Borrar.setBandera()==true){
                         MiBiblioteca.BorrarEmpleado(id);
-                    }
             
             }else{ //si no elige nada
                 Error4.setVisible(true); 
@@ -873,9 +868,7 @@ public class VEmpleado extends javax.swing.JFrame {
                     int id = Integer.parseInt(BorrarPM.getText());
                     VBorrar Borrar = new VBorrar();
                     Borrar.setVisible(true);
-                    if(Borrar.setBandera()==true){
                         MiBiblioteca.BorrarMulta(id);
-                    }
 
             }else{ //si no elige nada
                 Error6.setVisible(true); 
@@ -887,9 +880,7 @@ public class VEmpleado extends javax.swing.JFrame {
                     int id = Integer.parseInt(BorrarPM.getText());
                     VBorrar Borrar = new VBorrar();
                     Borrar.setVisible(true);
-                    if(Borrar.setBandera()==true){
                         MiBiblioteca.BorrarPrestamo(id);
-                    }
 
             }else{ //si no elige nada
                 Error6.setVisible(true); 

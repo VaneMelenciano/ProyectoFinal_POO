@@ -15,13 +15,9 @@ public class VBorrar extends javax.swing.JFrame {
      * Creates new form VBorrar
      */
     //private final Biblioteca MiBiblioteca;
-    private boolean bandera;
     public VBorrar() {
         super("Eliminar");
         initComponents();
-        Borrar.setVisible(false);
-        BAceptar.setVisible(false);
-        bandera = false;
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -33,9 +29,6 @@ public class VBorrar extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        BSi = new javax.swing.JButton();
-        BCancelar = new javax.swing.JButton();
         Borrar = new javax.swing.JLabel();
         BAceptar = new javax.swing.JButton();
 
@@ -44,33 +37,11 @@ public class VBorrar extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel1.setText("Eliminación");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI Symbol", 0, 14)); // NOI18N
-        jLabel2.setText("¿Está seguro de borrar?");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, -1, -1));
-
-        BSi.setBackground(new java.awt.Color(229, 244, 237));
-        BSi.setText("Sí");
-        BSi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BSiActionPerformed(evt);
-            }
-        });
-        getContentPane().add(BSi, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 85, -1));
-
-        BCancelar.setBackground(new java.awt.Color(229, 244, 237));
-        BCancelar.setText("Cancelar");
-        BCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BCancelarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(BCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, 85, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, -1, -1));
 
         Borrar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         Borrar.setText("Se ha borrado correctamente");
-        getContentPane().add(Borrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 190, -1));
+        getContentPane().add(Borrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 190, -1));
 
         BAceptar.setText("Aceptar");
         BAceptar.addActionListener(new java.awt.event.ActionListener() {
@@ -78,30 +49,16 @@ public class VBorrar extends javax.swing.JFrame {
                 BAceptarActionPerformed(evt);
             }
         });
-        getContentPane().add(BAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, -1, -1));
+        getContentPane().add(BAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BSiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BSiActionPerformed
-        bandera = true;
-        //BORRAR LOS DATOS
-        Borrar.setVisible(true);
-        BAceptar.setVisible(true);
-    }//GEN-LAST:event_BSiActionPerformed
-
-    private void BCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BCancelarActionPerformed
-        bandera = false;
-        dispose();
-    }//GEN-LAST:event_BCancelarActionPerformed
-
     private void BAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BAceptarActionPerformed
-        bandera = true;
+
         dispose();
     }//GEN-LAST:event_BAceptarActionPerformed
-    public boolean setBandera(){
-        return bandera;
-    }
+
     /**
      * @param args the command line arguments
      */
@@ -139,10 +96,7 @@ public class VBorrar extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BAceptar;
-    private javax.swing.JButton BCancelar;
-    private javax.swing.JButton BSi;
     private javax.swing.JLabel Borrar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

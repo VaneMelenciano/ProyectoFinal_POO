@@ -731,6 +731,7 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace pref="347" max="32767" attributes="0"/>
                   <Component id="jLabel10" min="-2" pref="30" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                   <Component id="BorrarPM" min="-2" pref="30" max="-2" attributes="0"/>
                   <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
