@@ -214,9 +214,9 @@ public class VRegistrarse extends javax.swing.JFrame {
                     String Tel = TTel.getText();
                     String Dir = TDir.getText();
                     String Correo = TCor.getText();
-                    String Contrasenia = TCont.getText();
+                    String Con = TCont.getText();
                     String FechaAct = TOpc1.getText();
-                    id = MiBiblioteca.AgregarUsuario(Nombre, FechaAct, Tel, Dir, Correo, Edad, Dir, FechaAct);
+                    id = MiBiblioteca.AgregarUsuario(Nombre, FechaAct, Tel, Dir, Correo, Edad, Con, FechaAct);
                         idPersona=id;
                         Registro.setVisible(true);
                         String datos = "Se ha registarado correctamnete.\n Su ID es: " + id; //+ la descripcion de los datos y su ID
@@ -236,11 +236,11 @@ public class VRegistrarse extends javax.swing.JFrame {
                     String Tel = TTel.getText();
                     String Dir = TDir.getText();
                     String Correo = TCor.getText();
-                    String Contrasenia = TCont.getText();
+                    String Con = TCont.getText();
                     String Puesto = TOpc1.getText();
                     float Sueldo = Float.parseFloat(TOpc2.getText());
-                    id = MiBiblioteca.AgregarEmpleado(Nombre, FechaNac, Tel, Dir, Correo, Edad, Dir, Puesto, Sueldo);
-                        idPersona=id;
+                    id = MiBiblioteca.AgregarEmpleado(Nombre, FechaNac, Tel, Dir, Correo, Edad, Con, Puesto, Sueldo);
+                        idPersona=id; 
                         Registro.setVisible(true);
                         String datos = "Se ha registarado correctamnete.\n Su ID es: " + id; //+ la descripcion de los datos y su ID
                         Registro.setText(datos);

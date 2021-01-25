@@ -128,6 +128,8 @@ public class VIniciar extends javax.swing.JFrame {
             String con = TextFCon.getText();
             Usuario usuario = MiBiblioteca.BuscarUsuario(id);
             if(usuario!=null){
+                incorrecto.setText(usuario.getContrasenia());
+                    incorrecto.setVisible(true);
                 if(usuario.getContrasenia().equals(con)){
                     bandera =true;
                 }
