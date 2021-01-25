@@ -17,6 +17,8 @@ public class VBorrar extends javax.swing.JFrame {
     public VBorrar() {
         super("Eliminar");
         initComponents();
+        Borrar.setVisible(false);
+        BAceptar.setVisible(false);
     }
 
     /**
@@ -34,16 +36,18 @@ public class VBorrar extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         BSi = new javax.swing.JButton();
         BCancelar = new javax.swing.JButton();
+        Borrar = new javax.swing.JLabel();
+        BAceptar = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Datos.setColumns(20);
         Datos.setRows(5);
         jScrollPane1.setViewportView(Datos);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 45, 380, 183));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 380, 183));
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel1.setText("Datos a borrar");
@@ -69,9 +73,16 @@ public class VBorrar extends javax.swing.JFrame {
                 BCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(BCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(223, 294, 85, -1));
+        getContentPane().add(BCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, 85, -1));
 
-        jPanel1.setBackground(new java.awt.Color(169, 224, 197));
+        Borrar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        Borrar.setText("Se ha borrado correctamente");
+        getContentPane().add(Borrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 190, -1));
+
+        BAceptar.setText("Aceptar");
+        getContentPane().add(BAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 390, -1, -1));
+
+        jPanel1.setBackground(new java.awt.Color(204, 233, 161));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -81,20 +92,22 @@ public class VBorrar extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 360, Short.MAX_VALUE)
+            .addGap(0, 460, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 360));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void BSiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BSiActionPerformed
-        //BORAR LOS DATOS
+        //BORRAR LOS DATOS
+        Borrar.setVisible(false);
+        BAceptar.setVisible(false);
     }//GEN-LAST:event_BSiActionPerformed
 
     private void BCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BCancelarActionPerformed
-        // REGRESAR
+        dispose();
     }//GEN-LAST:event_BCancelarActionPerformed
 
     /**
@@ -133,8 +146,10 @@ public class VBorrar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BAceptar;
     private javax.swing.JButton BCancelar;
     private javax.swing.JButton BSi;
+    private javax.swing.JLabel Borrar;
     private javax.swing.JTextArea Datos;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

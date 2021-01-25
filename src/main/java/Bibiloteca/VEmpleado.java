@@ -119,7 +119,7 @@ public class VEmpleado extends javax.swing.JFrame {
 
         jMenu1.setText("jMenu1");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Inicio.setFont(new java.awt.Font("Yu Gothic Medium", 1, 36)); // NOI18N
@@ -420,6 +420,11 @@ public class VEmpleado extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
         jButton2.setText("Mis datos");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 570, 130, 23));
 
         jPanel1.setBackground(new java.awt.Color(187, 143, 206));
@@ -435,7 +440,7 @@ public class VEmpleado extends javax.swing.JFrame {
             .addGap(0, 620, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -507,30 +512,44 @@ public class VEmpleado extends javax.swing.JFrame {
     private void BBuscarL1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BBuscarL1ActionPerformed
         if(OpcID1.isSelected()){ //buscar libro por ID
             Error1.setVisible(false); 
-
+            VBuscar MiBusqueda = new VBuscar();
+            MiBusqueda.setVisible(true);
+            
         }else if(OpcTitulo1.isSelected()){ //buscar libro por titulo
             Error1.setVisible(false); 
+            VBuscar MiBusqueda = new VBuscar();
+            MiBusqueda.setVisible(true);
 
         }else if(OpcAutor1.isSelected()){ //buscar libro por autor
             Error1.setVisible(false); 
-
+            VBuscar MiBusqueda = new VBuscar();
+            MiBusqueda.setVisible(true);
+            
         }else if(OpcEditorial1.isSelected()){ //buscar libro por editorial
             Error1.setVisible(false); 
+            VBuscar MiBusqueda = new VBuscar();
+            MiBusqueda.setVisible(true);
 
         }else{ //si no elige nada
-            Error1.setVisible(true); 
+            Error1.setVisible(true);
         }
     }//GEN-LAST:event_BBuscarL1ActionPerformed
 
     private void BBorrarLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BBorrarLActionPerformed
         if(OpcID2.isSelected()){ //borra libro por ID
             Error2.setVisible(false); 
+                    VBorrar Borrar = new VBorrar();
+                    Borrar.setVisible(true);
 
         }else if(OpcTitulo2.isSelected()){ //borra libro por titulo
-            Error2.setVisible(false); 
+            Error2.setVisible(false);
+            VBorrar Borrar = new VBorrar();
+                    Borrar.setVisible(true);
 
         }else{ //si no elige nada
             Error2.setVisible(true); 
+            VBorrar Borrar = new VBorrar();
+                    Borrar.setVisible(true);
         }
     }//GEN-LAST:event_BBorrarLActionPerformed
 
@@ -539,9 +558,13 @@ public class VEmpleado extends javax.swing.JFrame {
         if(opcion==0){ //usuario
             if(OpcID3.isSelected()){ //buscar por id
                 Error3.setVisible(false); 
+                    VBuscar MiBusqueda = new VBuscar();
+                    MiBusqueda.setVisible(true);
 
             }else if(OpcNombre3.isSelected()){ //buscar por nombre
                 Error3.setVisible(false); 
+                    VBuscar MiBusqueda = new VBuscar();
+                    MiBusqueda.setVisible(true);
 
             }else{ //si no elige nada
                 Error3.setVisible(true); 
@@ -550,10 +573,16 @@ public class VEmpleado extends javax.swing.JFrame {
         else if(opcion==1){ //empleado
             if(OpcID3.isSelected()){ //buscar por id
                 Error3.setVisible(false); 
+                    VBuscar MiBusqueda = new VBuscar();
+                       MiBusqueda.setVisible(true);
 
             }else if(OpcNombre3.isSelected()){ //buscar por nombre
                 Error3.setVisible(false);  
-            }
+                    VBuscar MiBusqueda = new VBuscar();
+                    MiBusqueda.setVisible(true);
+            }else{ //si no elige nada
+                Error3.setVisible(true); 
+            } 
         }
     }//GEN-LAST:event_BBuscarUE1ActionPerformed
 
@@ -562,9 +591,13 @@ public class VEmpleado extends javax.swing.JFrame {
         if(opcion==0){ //usuario
             if(OpcID4.isSelected()){ //borrar por id
                 Error4.setVisible(false); 
+                    VBorrar Borrar = new VBorrar();
+                    Borrar.setVisible(true);
 
             }else if(OpcNombre4.isSelected()){ //borrar por nombre
                 Error4.setVisible(false); 
+                    VBorrar Borrar = new VBorrar();
+                    Borrar.setVisible(true);
 
             }else{ //si no elige nada
                 Error4.setVisible(true); 
@@ -573,9 +606,15 @@ public class VEmpleado extends javax.swing.JFrame {
         else if(opcion==1){ //empleado
             if(OpcID4.isSelected()){ //borrar por id
                 Error4.setVisible(false); 
+                    VBorrar Borrar = new VBorrar();
+                    Borrar.setVisible(true);
 
             }else if(OpcNombre4.isSelected()){ //borrar por nombre
                 Error4.setVisible(false);  
+                    VBorrar Borrar = new VBorrar();
+                    Borrar.setVisible(true);
+            }else{ //si no elige nada
+                Error4.setVisible(true); 
             }
         }
     }//GEN-LAST:event_BBorrarUEActionPerformed
@@ -585,12 +624,18 @@ public class VEmpleado extends javax.swing.JFrame {
         if(opcion==0){ //multa
             if(OpcID5.isSelected()){ //buscar por id
                 Error5.setVisible(false); 
+                VBuscar MiBusqueda = new VBuscar();
+                MiBusqueda.setVisible(true);
 
             }else if(OpcNombre5.isSelected()){ //buscar por nombre
                 Error5.setVisible(false); 
+                VBuscar MiBusqueda = new VBuscar();
+                MiBusqueda.setVisible(true);
 
             }else if(OpcFecha5.isSelected()){ //buscar por fecha
                 Error5.setVisible(false); 
+                VBuscar MiBusqueda = new VBuscar();
+                MiBusqueda.setVisible(true);
 
             }else{ //si no elige nada
                 Error5.setVisible(true); 
@@ -599,12 +644,18 @@ public class VEmpleado extends javax.swing.JFrame {
         else if(opcion==1){ //prestamo
             if(OpcID5.isSelected()){ //buscar por id
                 Error5.setVisible(false); 
+                VBuscar MiBusqueda = new VBuscar();
+                MiBusqueda.setVisible(true);
 
             }else if(OpcNombre5.isSelected()){ //buscar por nombre
                 Error5.setVisible(false); 
+                VBuscar MiBusqueda = new VBuscar();
+                MiBusqueda.setVisible(true);
 
             }else if(OpcFecha5.isSelected()){ //buscar por fecha
                 Error5.setVisible(false); 
+                VBuscar MiBusqueda = new VBuscar();
+                MiBusqueda.setVisible(true);
 
             }else{ //si no elige nada
                 Error5.setVisible(true); 
@@ -617,12 +668,18 @@ public class VEmpleado extends javax.swing.JFrame {
         if(opcion==0){ //multa
             if(OpcID6.isSelected()){ //borrar por id
                 Error6.setVisible(false); 
+                    VBorrar Borrar = new VBorrar();
+                    Borrar.setVisible(true);
 
             }else if(OpcNombre6.isSelected()){ //borrar por nombre
                 Error6.setVisible(false); 
+                    VBorrar Borrar = new VBorrar();
+                    Borrar.setVisible(true);
 
             }else if(OpcFecha6.isSelected()){ //borrar por fecha
                 Error6.setVisible(false); 
+                    VBorrar Borrar = new VBorrar();
+                    Borrar.setVisible(true);
 
             }else{ //si no elige nada
                 Error6.setVisible(true); 
@@ -631,12 +688,18 @@ public class VEmpleado extends javax.swing.JFrame {
         else if(opcion==1){ //prestamo
             if(OpcID6.isSelected()){ //borrar por id
                 Error6.setVisible(false); 
+                    VBorrar Borrar = new VBorrar();
+                    Borrar.setVisible(true);
 
             }else if(OpcNombre6.isSelected()){ //borrar por nombre
                 Error6.setVisible(false); 
+                    VBorrar Borrar = new VBorrar();
+                    Borrar.setVisible(true);
 
             }else if(OpcFecha6.isSelected()){ //borrar por fecha
                 Error6.setVisible(false); 
+                    VBorrar Borrar = new VBorrar();
+                    Borrar.setVisible(true);
 
             }else{ //si no elige nada
                 Error6.setVisible(true); 
@@ -645,14 +708,19 @@ public class VEmpleado extends javax.swing.JFrame {
     }//GEN-LAST:event_BBuscarMP1ActionPerformed
 
     private void BSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BSalirActionPerformed
-        /*
+
         if(evt.getSource()==BSalir){           
-            VentanaPricipal regresar = new VentanaPricipal();
+            VentanaPrincipal regresar = new VentanaPrincipal();
             regresar.setVisible(true);
             dispose();
         }
-        */
+
     }//GEN-LAST:event_BSalirActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+            VBuscar MiBusqueda = new VBuscar();
+            MiBusqueda.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

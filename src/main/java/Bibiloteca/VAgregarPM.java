@@ -58,7 +58,7 @@ public class VAgregarPM extends javax.swing.JFrame {
         BAceptar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Sitka Small", 1, 18)); // NOI18N

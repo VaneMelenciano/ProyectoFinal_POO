@@ -55,7 +55,7 @@ public class VUsuario extends javax.swing.JFrame {
         ButtonPedir = new javax.swing.JButton();
         ButtonSalir = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
@@ -239,7 +239,8 @@ public class VUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ButtonPedirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonPedirActionPerformed
-        // TODO add your handling code here:
+        VBuscar MiBusqueda = new VBuscar();
+            MiBusqueda.setVisible(true);
     }//GEN-LAST:event_ButtonPedirActionPerformed
 
     private void opcTituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcTituloActionPerformed
@@ -261,15 +262,22 @@ public class VUsuario extends javax.swing.JFrame {
     private void BuscarLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarLibroActionPerformed
         if(opcID.isSelected()){
             jLabel1.setVisible(false);
-              //buscar por id
+              VBuscar MiBusqueda = new VBuscar();
+              MiBusqueda.setVisible(true);
         }else if(opcTitulo.isSelected()){
             jLabel1.setVisible(false);
+              VBuscar MiBusqueda = new VBuscar();
+              MiBusqueda.setVisible(true);
 
         }else if(opcAutor.isSelected()){
             jLabel1.setVisible(false);
+            VBuscar MiBusqueda = new VBuscar();
+              MiBusqueda.setVisible(true);
 
         }else if(opcEditorial.isSelected()){
             jLabel1.setVisible(false);
+            VBuscar MiBusqueda = new VBuscar();
+              MiBusqueda.setVisible(true);
 
         }else{
             jLabel1.setVisible(true);
@@ -277,24 +285,28 @@ public class VUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_BuscarLibroActionPerformed
 
     private void ButtonLibrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLibrosActionPerformed
-        // TODO add your handling code here:
+        VBuscar MiBusqueda = new VBuscar();
+            MiBusqueda.setVisible(true);
     }//GEN-LAST:event_ButtonLibrosActionPerformed
 
     private void ButtonDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonDatosActionPerformed
-        // TODO add your handling code here:
+        VBuscar MiBusqueda = new VBuscar();
+            MiBusqueda.setVisible(true);
     }//GEN-LAST:event_ButtonDatosActionPerformed
 
     private void ButtonPrestamosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonPrestamosActionPerformed
-        // TODO add your handling code here:
+        VBuscar MiBusqueda = new VBuscar();
+            MiBusqueda.setVisible(true);
     }//GEN-LAST:event_ButtonPrestamosActionPerformed
 
     private void ButtonMultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonMultasActionPerformed
-        // TODO add your handling code here:
+        VBuscar MiBusqueda = new VBuscar();
+            MiBusqueda.setVisible(true);
     }//GEN-LAST:event_ButtonMultasActionPerformed
 
     private void ButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSalirActionPerformed
         if(evt.getSource()==ButtonSalir){           
-            VentanaPricipal regresar = new VentanaPricipal();
+            VentanaPrincipal regresar = new VentanaPrincipal();
             regresar.setVisible(true);
             dispose();
         }
