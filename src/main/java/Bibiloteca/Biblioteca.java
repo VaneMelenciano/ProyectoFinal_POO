@@ -1,4 +1,8 @@
 package Bibiloteca;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 /**
  * @author Aaron
@@ -221,5 +225,20 @@ public class Biblioteca {
                 return;
             }
         }
+    }
+    
+    public static void saveToFile(String fileName, String text, boolean append) throws IOException{
+        File file1 = new File(fileName);
+        FileWriter fw = new FileWriter(file1, append);
+        PrintWriter pw = new PrintWriter(fw);
+        pw.println(text);
+        pw.close();
+    }
+    
+    public static void main(String args[]) throws IOException{
+        Libro libro1 = new Libro("La Odisea", "Homero", "Porrua", "Mexico", 2017, 10);
+        String outputText = libro1.getTitulo()+"|"+libro1.getAutor()+"|"+libro1.getEditorial()+"|"+
+                            libro1.getPais()+"|"+libro1.getAnioEdicion()+"|"+libro1.getNumUnidades();
+        saveToFile("ArchivoLibros.txt", outputText, true);
     }
 }
