@@ -17,4 +17,5 @@ public abstract class Descripcion {
     public abstract String getDescripcion();
     
     //MI DESCRIPCIÓN
+    //OTRO COMENTARIO
 }
