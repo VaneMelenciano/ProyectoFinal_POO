@@ -40,17 +40,13 @@ public class VEmpleado extends javax.swing.JFrame {
         grupoOpciones.add(OpcAutor1);
         grupoOpciones.add(OpcEditorial1);
         grupoOpciones2.add(OpcID2);
-        grupoOpciones2.add(OpcTitulo2);
         grupoOpciones3.add(OpcID3);
         grupoOpciones3.add(OpcNombre3);
         grupoOpciones4.add(OpcID4);
-        grupoOpciones4.add(OpcNombre4);
         grupoOpciones5.add(OpcID5);
         grupoOpciones5.add(OpcNombre5);
         grupoOpciones5.add(OpcFecha5);
         grupoOpciones6.add(OpcID6);
-        grupoOpciones6.add(OpcNombre6);
-        grupoOpciones6.add(OpcFecha6);
         //si no eligue ninguna opcion para buscar o borrar
         Error1.setVisible(false); 
         Error2.setVisible(false); 
@@ -99,36 +95,21 @@ public class VEmpleado extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         BorrarL = new javax.swing.JTextField();
         OpcID2 = new javax.swing.JRadioButton();
-        OpcTitulo2 = new javax.swing.JRadioButton();
-        BBorrarL = new javax.swing.JButton();
         OpcID5 = new javax.swing.JRadioButton();
         OpcNombre5 = new javax.swing.JRadioButton();
         BBuscarL1 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         BuscarL3 = new javax.swing.JTextField();
-        BBorrarUE = new javax.swing.JButton();
         OpcID4 = new javax.swing.JRadioButton();
-        OpcNombre4 = new javax.swing.JRadioButton();
         OpcID3 = new javax.swing.JRadioButton();
         OpcNombre3 = new javax.swing.JRadioButton();
         OpcFecha5 = new javax.swing.JRadioButton();
         BBuscarUE1 = new javax.swing.JButton();
-        jLabel10 = new javax.swing.JLabel();
-        BorrarPM = new javax.swing.JTextField();
-        BBuscarMP1 = new javax.swing.JButton();
-        OpcID6 = new javax.swing.JRadioButton();
-        OpcNombre6 = new javax.swing.JRadioButton();
-        OpcFecha6 = new javax.swing.JRadioButton();
         BoxUE1 = new javax.swing.JComboBox<>();
-        BoxUE2 = new javax.swing.JComboBox<>();
         BoxMP1 = new javax.swing.JComboBox<>();
-        BoxMP2 = new javax.swing.JComboBox<>();
         Error1 = new javax.swing.JLabel();
-        Error2 = new javax.swing.JLabel();
         Error3 = new javax.swing.JLabel();
-        Error4 = new javax.swing.JLabel();
         Error5 = new javax.swing.JLabel();
-        Error6 = new javax.swing.JLabel();
         BSalir = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         BALibro = new javax.swing.JButton();
@@ -140,6 +121,17 @@ public class VEmpleado extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
+        BoxMP2 = new javax.swing.JComboBox<>();
+        OpcID6 = new javax.swing.JRadioButton();
+        BorrarPM = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        BBuscarMP1 = new javax.swing.JButton();
+        Error6 = new javax.swing.JLabel();
+        BoxUE2 = new javax.swing.JComboBox<>();
+        BBorrarUE = new javax.swing.JButton();
+        Error4 = new javax.swing.JLabel();
+        BBorrarL = new javax.swing.JButton();
+        Error2 = new javax.swing.JLabel();
 
         jMenu1.setText("jMenu1");
 
@@ -174,6 +166,12 @@ public class VEmpleado extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Sylfaen", 0, 16)); // NOI18N
         jLabel7.setText("Buscar");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 70, 30));
+
+        BuscarL.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BuscarLActionPerformed(evt);
+            }
+        });
         getContentPane().add(BuscarL, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, 210, 30));
         getContentPane().add(Buscarpm, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 160, 160, 30));
         getContentPane().add(BuscarL2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 160, 30));
@@ -227,6 +225,12 @@ public class VEmpleado extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Sylfaen", 0, 16)); // NOI18N
         jLabel8.setText("Borrar");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 70, 30));
+
+        BorrarL.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BorrarLActionPerformed(evt);
+            }
+        });
         getContentPane().add(BorrarL, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 160, 30));
 
         OpcID2.setBackground(new java.awt.Color(187, 143, 206));
@@ -237,25 +241,6 @@ public class VEmpleado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(OpcID2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 93, -1));
-
-        OpcTitulo2.setBackground(new java.awt.Color(187, 143, 206));
-        OpcTitulo2.setText("Titulo");
-        OpcTitulo2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OpcTitulo2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(OpcTitulo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, 93, -1));
-
-        BBorrarL.setBackground(new java.awt.Color(74, 35, 90));
-        BBorrarL.setForeground(new java.awt.Color(255, 255, 255));
-        BBorrarL.setText("Borrar");
-        BBorrarL.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BBorrarLActionPerformed(evt);
-            }
-        });
-        getContentPane().add(BBorrarL, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 480, 73, -1));
 
         OpcID5.setBackground(new java.awt.Color(187, 143, 206));
         OpcID5.setText("ID de usurio");
@@ -288,17 +273,13 @@ public class VEmpleado extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Sylfaen", 0, 16)); // NOI18N
         jLabel9.setText("Borrar");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 350, 70, 30));
-        getContentPane().add(BuscarL3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 380, 210, 30));
 
-        BBorrarUE.setBackground(new java.awt.Color(74, 35, 90));
-        BBorrarUE.setForeground(new java.awt.Color(255, 255, 255));
-        BBorrarUE.setText("Borra");
-        BBorrarUE.addActionListener(new java.awt.event.ActionListener() {
+        BuscarL3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BBorrarUEActionPerformed(evt);
+                BuscarL3ActionPerformed(evt);
             }
         });
-        getContentPane().add(BBorrarUE, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 490, 73, -1));
+        getContentPane().add(BuscarL3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 380, 210, 30));
 
         OpcID4.setBackground(new java.awt.Color(187, 143, 206));
         OpcID4.setText("ID");
@@ -308,15 +289,6 @@ public class VEmpleado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(OpcID4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 420, 93, -1));
-
-        OpcNombre4.setBackground(new java.awt.Color(187, 143, 206));
-        OpcNombre4.setText("Nombre");
-        OpcNombre4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OpcNombre4ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(OpcNombre4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 450, 93, -1));
 
         OpcID3.setBackground(new java.awt.Color(187, 143, 206));
         OpcID3.setText("ID");
@@ -355,83 +327,23 @@ public class VEmpleado extends javax.swing.JFrame {
         });
         getContentPane().add(BBuscarUE1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, 73, -1));
 
-        jLabel10.setFont(new java.awt.Font("Sylfaen", 0, 16)); // NOI18N
-        jLabel10.setText("Borrar");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 340, 70, 30));
-        getContentPane().add(BorrarPM, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 370, 160, 30));
-
-        BBuscarMP1.setBackground(new java.awt.Color(74, 35, 90));
-        BBuscarMP1.setForeground(new java.awt.Color(255, 255, 255));
-        BBuscarMP1.setText("Buscar");
-        BBuscarMP1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BBuscarMP1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(BBuscarMP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 510, 73, -1));
-
-        OpcID6.setBackground(new java.awt.Color(187, 143, 206));
-        OpcID6.setText("ID");
-        OpcID6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OpcID6ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(OpcID6, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 410, 93, -1));
-
-        OpcNombre6.setBackground(new java.awt.Color(187, 143, 206));
-        OpcNombre6.setText("Nombre de usuario");
-        OpcNombre6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OpcNombre6ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(OpcNombre6, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 440, 140, -1));
-
-        OpcFecha6.setBackground(new java.awt.Color(187, 143, 206));
-        OpcFecha6.setText("Fecha");
-        OpcFecha6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OpcFecha6ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(OpcFecha6, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 470, 140, -1));
-
         BoxUE1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario", "Empleado" }));
         getContentPane().add(BoxUE1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 210, 90, -1));
 
-        BoxUE2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario", "Empleado" }));
-        getContentPane().add(BoxUE2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 430, 90, -1));
-
         BoxMP1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Multa", "Prestamo" }));
         getContentPane().add(BoxMP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 200, 90, -1));
-
-        BoxMP2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Multa", "Prestamo" }));
-        getContentPane().add(BoxMP2, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 410, 90, -1));
 
         Error1.setForeground(new java.awt.Color(255, 0, 0));
         Error1.setText("Elija una opción");
         getContentPane().add(Error1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 90, -1));
 
-        Error2.setForeground(new java.awt.Color(255, 0, 0));
-        Error2.setText("Elija una opción");
-        getContentPane().add(Error2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 490, 90, -1));
-
         Error3.setForeground(new java.awt.Color(255, 0, 0));
         Error3.setText("Elija una opción");
         getContentPane().add(Error3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 280, 90, -1));
 
-        Error4.setForeground(new java.awt.Color(255, 0, 0));
-        Error4.setText("Elija una opción");
-        getContentPane().add(Error4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 500, 90, -1));
-
         Error5.setForeground(new java.awt.Color(255, 0, 0));
         Error5.setText("Elija una opción");
         getContentPane().add(Error5, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 300, 90, -1));
-
-        Error6.setForeground(new java.awt.Color(255, 0, 0));
-        Error6.setText("Elija una opción");
-        getContentPane().add(Error6, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 510, 90, -1));
 
         BSalir.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
         BSalir.setText("Cerrar sesión");
@@ -517,15 +429,127 @@ public class VEmpleado extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(187, 143, 206));
 
+        BoxMP2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Multa", "Prestamo" }));
+
+        OpcID6.setBackground(new java.awt.Color(187, 143, 206));
+        OpcID6.setText("ID");
+        OpcID6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OpcID6ActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setFont(new java.awt.Font("Sylfaen", 0, 16)); // NOI18N
+        jLabel10.setText("Borrar");
+
+        BBuscarMP1.setBackground(new java.awt.Color(74, 35, 90));
+        BBuscarMP1.setForeground(new java.awt.Color(255, 255, 255));
+        BBuscarMP1.setText("Buscar");
+        BBuscarMP1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BBuscarMP1ActionPerformed(evt);
+            }
+        });
+
+        Error6.setForeground(new java.awt.Color(255, 0, 0));
+        Error6.setText("Elija una opción");
+
+        BoxUE2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario", "Empleado" }));
+
+        BBorrarUE.setBackground(new java.awt.Color(74, 35, 90));
+        BBorrarUE.setForeground(new java.awt.Color(255, 255, 255));
+        BBorrarUE.setText("Borra");
+        BBorrarUE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BBorrarUEActionPerformed(evt);
+            }
+        });
+
+        Error4.setForeground(new java.awt.Color(255, 0, 0));
+        Error4.setText("Elija una opción");
+
+        BBorrarL.setBackground(new java.awt.Color(74, 35, 90));
+        BBorrarL.setForeground(new java.awt.Color(255, 255, 255));
+        BBorrarL.setText("Borrar");
+        BBorrarL.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BBorrarLActionPerformed(evt);
+            }
+        });
+
+        Error2.setForeground(new java.awt.Color(255, 0, 0));
+        Error2.setText("Elija una opción");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 840, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addComponent(BBorrarL, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(Error2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(185, 368, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(BoxUE2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(85, 85, 85))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(BBorrarUE, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(101, 101, 101)))))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(BorrarPM, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(BBuscarMP1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(OpcID6, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(BoxMP2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(30, 30, 30)
+                                .addComponent(Error6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Error4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(344, 344, 344))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 710, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(347, Short.MAX_VALUE)
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BorrarPM, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(OpcID6)
+                    .addComponent(BoxMP2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BoxUE2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(BBuscarMP1)
+                            .addComponent(Error6)
+                            .addComponent(BBorrarUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(Error4)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(BBorrarL)
+                            .addComponent(Error2))
+                        .addGap(228, 228, 228))))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, -1));
@@ -553,10 +577,6 @@ public class VEmpleado extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_OpcID2ActionPerformed
 
-    private void OpcTitulo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcTitulo2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_OpcTitulo2ActionPerformed
-
     private void OpcID5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcID5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_OpcID5ActionPerformed
@@ -568,10 +588,6 @@ public class VEmpleado extends javax.swing.JFrame {
     private void OpcID4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcID4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_OpcID4ActionPerformed
-
-    private void OpcNombre4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcNombre4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_OpcNombre4ActionPerformed
 
     private void OpcID3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcID3ActionPerformed
         // TODO add your handling code here:
@@ -588,14 +604,6 @@ public class VEmpleado extends javax.swing.JFrame {
     private void OpcID6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcID6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_OpcID6ActionPerformed
-
-    private void OpcNombre6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcNombre6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_OpcNombre6ActionPerformed
-
-    private void OpcFecha6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcFecha6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_OpcFecha6ActionPerformed
 
     private void BBuscarL1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BBuscarL1ActionPerformed
 
@@ -658,18 +666,15 @@ public class VEmpleado extends javax.swing.JFrame {
     private void BBorrarLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BBorrarLActionPerformed
         if(OpcID2.isSelected()){ //borra libro por ID
             Error2.setVisible(false); 
+                    int id = Integer.parseInt(BorrarL.getText());
                     VBorrar Borrar = new VBorrar();
                     Borrar.setVisible(true);
-
-        }else if(OpcTitulo2.isSelected()){ //borra libro por titulo
-            Error2.setVisible(false);
-            VBorrar Borrar = new VBorrar();
-                    Borrar.setVisible(true);
+                    if(Borrar.setBandera()==true){
+                        MiBiblioteca.BorraLibro(id);
+                    }
 
         }else{ //si no elige nada
             Error2.setVisible(true); 
-            VBorrar Borrar = new VBorrar();
-                    Borrar.setVisible(true);
         }
     }//GEN-LAST:event_BBorrarLActionPerformed
 
@@ -743,14 +748,12 @@ public class VEmpleado extends javax.swing.JFrame {
         if(opcion==0){ //usuario
             if(OpcID4.isSelected()){ //borrar por id
                 Error4.setVisible(false); 
+                    int id = Integer.parseInt(BuscarL3.getText());
                     VBorrar Borrar = new VBorrar();
                     Borrar.setVisible(true);
-
-            }else if(OpcNombre4.isSelected()){ //borrar por nombre
-                Error4.setVisible(false); 
-                    VBorrar Borrar = new VBorrar();
-                    Borrar.setVisible(true);
-
+                    //if(Borrar.setBandera()==true){
+                        MiBiblioteca.eliminarEnArchivo("ArchivoUsuarios", id);
+                    //}
             }else{ //si no elige nada
                 Error4.setVisible(true); 
             } 
@@ -758,13 +761,13 @@ public class VEmpleado extends javax.swing.JFrame {
         else if(opcion==1){ //empleado
             if(OpcID4.isSelected()){ //borrar por id
                 Error4.setVisible(false); 
+                    int id = Integer.parseInt(BuscarL3.getText());
                     VBorrar Borrar = new VBorrar();
                     Borrar.setVisible(true);
-
-            }else if(OpcNombre4.isSelected()){ //borrar por nombre
-                Error4.setVisible(false);  
-                    VBorrar Borrar = new VBorrar();
-                    Borrar.setVisible(true);
+                    if(Borrar.setBandera()==true){
+                        MiBiblioteca.BorraEmpleado(id);
+                    }
+            
             }else{ //si no elige nada
                 Error4.setVisible(true); 
             }
@@ -867,18 +870,12 @@ public class VEmpleado extends javax.swing.JFrame {
         if(opcion==0){ //multa
             if(OpcID6.isSelected()){ //borrar por id
                 Error6.setVisible(false); 
+                    int id = Integer.parseInt(BorrarPM.getText());
                     VBorrar Borrar = new VBorrar();
                     Borrar.setVisible(true);
-
-            }else if(OpcNombre6.isSelected()){ //borrar por nombre
-                Error6.setVisible(false); 
-                    VBorrar Borrar = new VBorrar();
-                    Borrar.setVisible(true);
-
-            }else if(OpcFecha6.isSelected()){ //borrar por fecha
-                Error6.setVisible(false); 
-                    VBorrar Borrar = new VBorrar();
-                    Borrar.setVisible(true);
+                    if(Borrar.setBandera()==true){
+                        MiBiblioteca.BorraMulta(id);
+                    }
 
             }else{ //si no elige nada
                 Error6.setVisible(true); 
@@ -887,18 +884,12 @@ public class VEmpleado extends javax.swing.JFrame {
         else if(opcion==1){ //prestamo
             if(OpcID6.isSelected()){ //borrar por id
                 Error6.setVisible(false); 
+                    int id = Integer.parseInt(BorrarPM.getText());
                     VBorrar Borrar = new VBorrar();
                     Borrar.setVisible(true);
-
-            }else if(OpcNombre6.isSelected()){ //borrar por nombre
-                Error6.setVisible(false); 
-                    VBorrar Borrar = new VBorrar();
-                    Borrar.setVisible(true);
-
-            }else if(OpcFecha6.isSelected()){ //borrar por fecha
-                Error6.setVisible(false); 
-                    VBorrar Borrar = new VBorrar();
-                    Borrar.setVisible(true);
+                    if(Borrar.setBandera()==true){
+                        MiBiblioteca.BorraPrestamo(id);
+                    }
 
             }else{ //si no elige nada
                 Error6.setVisible(true); 
@@ -1021,6 +1012,18 @@ public class VEmpleado extends javax.swing.JFrame {
             MiBusqueda.setVisible(true);
     }//GEN-LAST:event_jButton9ActionPerformed
 
+    private void BuscarL3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarL3ActionPerformed
+ 
+    }//GEN-LAST:event_BuscarL3ActionPerformed
+
+    private void BuscarLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarLActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BuscarLActionPerformed
+
+    private void BorrarLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BorrarLActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BorrarLActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1093,7 +1096,6 @@ public class VEmpleado extends javax.swing.JFrame {
     private javax.swing.JRadioButton OpcAutor1;
     private javax.swing.JRadioButton OpcEditorial1;
     private javax.swing.JRadioButton OpcFecha5;
-    private javax.swing.JRadioButton OpcFecha6;
     private javax.swing.JRadioButton OpcID1;
     private javax.swing.JRadioButton OpcID2;
     private javax.swing.JRadioButton OpcID3;
@@ -1101,11 +1103,8 @@ public class VEmpleado extends javax.swing.JFrame {
     private javax.swing.JRadioButton OpcID5;
     private javax.swing.JRadioButton OpcID6;
     private javax.swing.JRadioButton OpcNombre3;
-    private javax.swing.JRadioButton OpcNombre4;
     private javax.swing.JRadioButton OpcNombre5;
-    private javax.swing.JRadioButton OpcNombre6;
     private javax.swing.JRadioButton OpcTitulo1;
-    private javax.swing.JRadioButton OpcTitulo2;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup grupoOpciones;
     private javax.swing.ButtonGroup grupoOpciones2;

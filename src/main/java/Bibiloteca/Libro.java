@@ -17,6 +17,9 @@ public class Libro extends Descripcion{
         this.numUnidades = numUnidades;
         this.numPrestados = 0;
     }
+    public Libro(){
+        
+    }
     public Libro(int id, String titulo, String autor, String editorial, String pais, int anioEdicion, int numUnidades, int numPrestados){
         super(id);
         this.titulo = titulo;

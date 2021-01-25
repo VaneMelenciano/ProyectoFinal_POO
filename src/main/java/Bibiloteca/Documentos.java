@@ -22,7 +22,9 @@ public abstract class Documentos extends Descripcion{
         this.librosPrestados = librosPrestados;
         this.fechaActual = fechaActual;
     }
-    
+    public Documentos(){
+        
+    }
     public void setLibrosPrestados(String lib){
         librosPrestados=lib;
     }

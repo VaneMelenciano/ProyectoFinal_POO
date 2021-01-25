@@ -18,6 +18,9 @@ public class Prestamo extends Documentos{
         this.plazoDev = plazoDev;
         this.fechaDev = fechaDev;
     }
+    public Prestamo(){
+        
+    }
     
     public void setFechaDev(String fd){
         fechaDev = fd;

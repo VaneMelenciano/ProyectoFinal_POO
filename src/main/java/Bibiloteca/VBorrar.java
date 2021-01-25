@@ -14,13 +14,15 @@ public class VBorrar extends javax.swing.JFrame {
     /**
      * Creates new form VBorrar
      */
+    //private final Biblioteca MiBiblioteca;
+    private boolean bandera;
     public VBorrar() {
         super("Eliminar");
         initComponents();
         Borrar.setVisible(false);
         BAceptar.setVisible(false);
+        bandera = false;
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,32 +32,23 @@ public class VBorrar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        Datos = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         BSi = new javax.swing.JButton();
         BCancelar = new javax.swing.JButton();
         Borrar = new javax.swing.JLabel();
         BAceptar = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Datos.setColumns(20);
-        Datos.setRows(5);
-        jScrollPane1.setViewportView(Datos);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 380, 183));
-
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jLabel1.setText("Datos a borrar");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 11, -1, -1));
+        jLabel1.setText("Eliminación");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Symbol", 0, 14)); // NOI18N
         jLabel2.setText("¿Está seguro de borrar?");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(117, 256, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, -1, -1));
 
         BSi.setBackground(new java.awt.Color(229, 244, 237));
         BSi.setText("Sí");
@@ -64,7 +57,7 @@ public class VBorrar extends javax.swing.JFrame {
                 BSiActionPerformed(evt);
             }
         });
-        getContentPane().add(BSi, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 294, 85, -1));
+        getContentPane().add(BSi, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 85, -1));
 
         BCancelar.setBackground(new java.awt.Color(229, 244, 237));
         BCancelar.setText("Cancelar");
@@ -73,43 +66,42 @@ public class VBorrar extends javax.swing.JFrame {
                 BCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(BCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, 85, -1));
+        getContentPane().add(BCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, 85, -1));
 
         Borrar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         Borrar.setText("Se ha borrado correctamente");
-        getContentPane().add(Borrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 190, -1));
+        getContentPane().add(Borrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 190, -1));
 
         BAceptar.setText("Aceptar");
-        getContentPane().add(BAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 390, -1, -1));
-
-        jPanel1.setBackground(new java.awt.Color(204, 233, 161));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 460, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        BAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BAceptarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void BSiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BSiActionPerformed
+        bandera = true;
         //BORRAR LOS DATOS
-        Borrar.setVisible(false);
-        BAceptar.setVisible(false);
+        Borrar.setVisible(true);
+        BAceptar.setVisible(true);
     }//GEN-LAST:event_BSiActionPerformed
 
     private void BCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BCancelarActionPerformed
+        bandera = false;
         dispose();
     }//GEN-LAST:event_BCancelarActionPerformed
 
+    private void BAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BAceptarActionPerformed
+        bandera = true;
+        dispose();
+    }//GEN-LAST:event_BAceptarActionPerformed
+    public boolean setBandera(){
+        return bandera;
+    }
     /**
      * @param args the command line arguments
      */
@@ -150,10 +142,7 @@ public class VBorrar extends javax.swing.JFrame {
     private javax.swing.JButton BCancelar;
     private javax.swing.JButton BSi;
     private javax.swing.JLabel Borrar;
-    private javax.swing.JTextArea Datos;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

@@ -19,6 +19,9 @@ public class Multa extends Documentos{
         this.diasRetraso = diasRetraso;
         this.costoMulta = costoMulta;
     }
+    public Multa(){
+        
+    }
     public void setDias(int d){
         diasRetraso = d;
     }
