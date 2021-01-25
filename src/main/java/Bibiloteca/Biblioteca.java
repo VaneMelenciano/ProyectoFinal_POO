@@ -17,11 +17,14 @@ public class Biblioteca {
     private ArrayList<Empleado> empleados;
     private ArrayList<Documentos> documentos;
     
-    public Biblioteca() throws FileNotFoundException{
+    /*public Biblioteca() throws FileNotFoundException{
         libros = leerArchivoLibros();
         usuarios = leerArchivoUsuarios();
         empleados = leerArchivoEmpleados();
-        documentos = leerArchivoDocumentos();
+        documentos = leerArchivoDocumentos(); PARA QUÉ ES ESTA????
+    }*/
+    public Biblioteca(){
+        
     }
     public Biblioteca(String nom, String dir, String tel, String cor){
         libros = new ArrayList();
@@ -64,9 +67,9 @@ public class Biblioteca {
     public String getTelefono(){return telefono;}
     public String getCorreco(){return correo;}
     
-    public void AgregarLibro(String titulo, String autor, String editorial, int anio, int numUni, String pais) throws IOException{
+    public int AgregarLibro(String titulo, String autor, String editorial, int anio, int numUni, String pais) throws IOException{
         Libro newLib = new Libro(titulo, autor, editorial, pais, anio, numUni);
-        int id;
+        int id = 0;
         while(true){
             boolean sameId = false;
             id = Descripcion.generarId();
@@ -78,6 +81,7 @@ public class Biblioteca {
         newLib.setId(id);
         libros.add(newLib);
         guardarEnArchivo("ArchivoLibros.txt", newLib.objetoATexto(), true);
+        return id;
     } //con atributos
     //se muestra TODOS los encontreados
     public Libro BuscarLibro(int id){
@@ -118,9 +122,9 @@ public class Biblioteca {
         }
     }
     
-    public void AgregarUsuario(String nombre, String fechaNacimiento, String telefono, String direccion, String correo, int edad, String con, String fechaRegistro) throws IOException{
+    public int AgregarUsuario(String nombre, String fechaNacimiento, String telefono, String direccion, String correo, int edad, String con, String fechaRegistro) throws IOException{
         Usuario newUsu = new Usuario(nombre, fechaNacimiento, telefono, direccion, correo, edad, con, fechaRegistro);
-        int id;
+        int id = 0;
         while(true){
             boolean sameId = false;
             id = Descripcion.generarId();
@@ -132,6 +136,7 @@ public class Biblioteca {
         newUsu.setId(id);
         usuarios.add(newUsu);
         guardarEnArchivo("ArchivoUsuarios.txt", newUsu.objetoATexto(), true);
+        return id;
     }
     //se muestra TODOS los encontreados
     public Usuario BuscarUsuario(int id){
@@ -156,9 +161,9 @@ public class Biblioteca {
         }
     }
     
-    public void AgregarEmpleado(String nombre, String fechaNacimiento, String telefono, String direccion, String correo, int edad, String con, String puesto, float sueldo) throws IOException{
+    public int AgregarEmpleado(String nombre, String fechaNacimiento, String telefono, String direccion, String correo, int edad, String con, String puesto, float sueldo) throws IOException{
         Empleado newEmp = new Empleado(nombre, fechaNacimiento, telefono, direccion, correo, edad, con, puesto, sueldo);
-        int id;
+        int id = 0;
         while(true){
             boolean sameId = false;
             id = Descripcion.generarId();
@@ -170,6 +175,7 @@ public class Biblioteca {
         newEmp.setId(id);
         empleados.add(newEmp);
         guardarEnArchivo("ArchivoEmpleados.txt", newEmp.objetoATexto(), true);
+        return id;
     }
     //se muestra TODOS los encontreados
     public Empleado BuscarEmpleado(int id){
@@ -194,9 +200,9 @@ public class Biblioteca {
         }
     }
     
-    public void AgregarMulta(int usuarioId, String librosPrestados, String fechaActual, int diasRetraso, float costoMulta) throws IOException{
-        Multa newMul = new Multa(usuarioId, librosPrestados, fechaActual, diasRetraso, costoMulta);
-        int id;
+    public int AgregarMulta(int usuarioId, String librosPrestados, String fechaActual, int diasRetraso) throws IOException{
+        Multa newMul = new Multa(usuarioId, librosPrestados, fechaActual, diasRetraso);
+        int id = 0;
         while(true){
             boolean sameId = false;
             id = Descripcion.generarId();
@@ -208,6 +214,7 @@ public class Biblioteca {
         newMul.setId(id);
         documentos.add(newMul);
         guardarEnArchivo("ArchivoDocumentos.txt", newMul.objetoATexto(), true);
+        return id;
     }
     //se muestra TODOS los encontreados
     public Multa BuscarMulta(int id){
@@ -389,7 +396,7 @@ public class Biblioteca {
             if("M".equals(atributos[6])){
                 int diasRetraso = Integer.parseInt(atributos[4]);
                 float costoMulta = Float.parseFloat(atributos[5]);
-                Multa nuevaMulta = new Multa(id, usuarioId, librosPrestados, fechaActual, diasRetraso, costoMulta);
+                Multa nuevaMulta = new Multa(id, usuarioId, librosPrestados, fechaActual, diasRetraso);
                 lista.add(nuevaMulta);
             }
             else if("P".equals(atributos[6])){

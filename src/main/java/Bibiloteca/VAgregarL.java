@@ -180,13 +180,15 @@ public class VAgregarL extends javax.swing.JFrame {
             int NumUni= Integer.parseInt(TNum.getText());
             String Pais = TPais.getText();
             //guardar datos en libros
+            Biblioteca MiBiblioteca = new Biblioteca();
+            int id = MiBiblioteca.AgregarLibro(Titulo, Autor, Editorial, Anio, NumUni, Pais);
                 Resultado.setVisible(true);
-                String datos = "Se ha guardado correctamnete.\n"; //+ la descripcion de los datos y su ID
+                String datos = "Se ha guardado correctamnete.\n Su ID es: " + id; //+ la descripcion de los datos y su ID
                 Resultado.setText(datos);
                 BAceptar.setVisible(true);
             
-            }catch (NumberFormatException ex){
-                JOptionPane.showMessageDialog(null, "Ingrese datos correctamente");
+            }catch(Exception e){
+               JOptionPane.showMessageDialog(null, "Ingrese datos correctamente");
             }
         
                 

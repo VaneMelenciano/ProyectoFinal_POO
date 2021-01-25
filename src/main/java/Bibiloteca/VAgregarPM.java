@@ -184,15 +184,17 @@ public class VAgregarPM extends javax.swing.JFrame {
                     int Lib2 = Integer.parseInt(TLib2.getText());
                     int Lib3 = Integer.parseInt(TLib3.getText());
                     int dias = Integer.parseInt(TOpc1.getText());
+                    String libros = Lib1 + ", " + Lib2 + ", " + Lib3;
                     //guardar datos en MULTA
-                    
+                    //Biblioteca MiBiblioteca = new Biblioteca();
+                    //int id = MiBiblioteca.AgregarMulta(Usuario, libros, Fecha, dias);
                         Resultado.setVisible(true);
                         String datos = "Se ha guardado correctamnete.\n"; //+ la descripcion de los datos y su ID
                         Resultado.setText(datos);
                         BAceptar.setVisible(true);
-                    }catch (NumberFormatException ex){
-                        JOptionPane.showMessageDialog(null, "Ingrese datos correctamente");
-                    }
+                    }catch(Exception e){
+                       JOptionPane.showMessageDialog(null, "Ingrese datos correctamente");
+                   }
 
                         
             }
@@ -206,16 +208,20 @@ public class VAgregarPM extends javax.swing.JFrame {
                     int Lib1 = Integer.parseInt(TLib1.getText());
                     int Lib2 = Integer.parseInt(TLib2.getText());
                     int Lib3 = Integer.parseInt(TLib3.getText());
+                    int dias = Integer.parseInt(TOpc1.getText());
+                    String libros = Lib1 + ", " + Lib2 + ", " + Lib3;
                     String plazoDev = TOpc1.getText();
                     String fechaDev = TOpc2.getText();
                     //guardar datos en PRESTAMO
+                    //Biblioteca MiBiblioteca = new Biblioteca();
+                    //int id = MiBiblioteca.
                         Resultado.setVisible(true);
                         String datos = "Se ha guardado correctamnete.\n"; //+ la descripcion de los datos y su ID
                         Resultado.setText(datos);
                         BAceptar.setVisible(true);
-                    }catch (NumberFormatException ex){
-                        JOptionPane.showMessageDialog(null, "Ingrese datos correctamente");
-                    }
+                    }catch(Exception e){
+                       JOptionPane.showMessageDialog(null, "Ingrese datos correctamente");
+                   }
 
                         
             }
@@ -242,11 +248,11 @@ public class VAgregarPM extends javax.swing.JFrame {
     }//GEN-LAST:event_BoxTipoActionPerformed
 
     private void BCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BCancelarActionPerformed
-        // CERRAR VENRTANA
+        dispose();
     }//GEN-LAST:event_BCancelarActionPerformed
 
     private void BAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BAceptarActionPerformed
-        //CERRAR VENTANA
+       dispose();
     }//GEN-LAST:event_BAceptarActionPerformed
 
     /**

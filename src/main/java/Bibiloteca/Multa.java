@@ -10,12 +10,11 @@ public class Multa extends Documentos{
     private int diasRetraso;
     private float costoMulta;
     
-    public Multa(int usuarioId, String librosPrestados, String fechaActual, int diasRetraso, float costoMulta){
+    public Multa(int usuarioId, String librosPrestados, String fechaActual, int diasRetraso){
         super(usuarioId, librosPrestados, fechaActual);
         this.diasRetraso = diasRetraso;
-        this.costoMulta = costoMulta;
     }
-    public Multa(int id, int usuarioId, String librosPrestados, String fechaActual, int diasRetraso, float costoMulta){
+    public Multa(int id, int usuarioId, String librosPrestados, String fechaActual, int diasRetraso){
         super(id, usuarioId, librosPrestados, fechaActual);
         this.diasRetraso = diasRetraso;
         this.costoMulta = costoMulta;

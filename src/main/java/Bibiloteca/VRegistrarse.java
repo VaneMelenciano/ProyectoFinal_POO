@@ -200,6 +200,7 @@ public class VRegistrarse extends javax.swing.JFrame {
     private void BGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BGuardarActionPerformed
         if(opcion == 1){ //usuario
             if(evt.getSource()==BGuardar){
+                int id = 0;
                 try{
                     String Nombre = TNombre.getText();
                     String FechaNac = TFechaNac.getText();
@@ -210,16 +211,19 @@ public class VRegistrarse extends javax.swing.JFrame {
                     String Contrasenia = TCont.getText();
                     String FechaAct = TOpc1.getText();
                     //guardar datos en usuario
+                    Biblioteca MiBiblioteca = new Biblioteca();
+                    id = MiBiblioteca.AgregarUsuario(Nombre, FechaNac, Tel, Dir, Correo, Edad, Dir, FechaAct);
                         Registro.setVisible(true);
-                        String datos = "Se ha registarado correctamnete. Empleado\n"; //+ la descripcion de los datos y su ID
+                        String datos = "Se ha registarado correctamnete.\n Su ID es: " + id; //+ la descripcion de los datos y su ID
                         Registro.setText(datos);
                         BAceptar.setVisible(true);
-                   }catch (NumberFormatException ex){
+                    }catch(Exception e){
                        JOptionPane.showMessageDialog(null, "Ingrese datos correctamente");
                    }
             }
         }else if(opcion == 2){ //empleado
             if(evt.getSource()==BGuardar){
+                int id = 0;
                 try{ 
                     String Nombre = TNombre.getText();
                     String FechaNac = TFechaNac.getText();
@@ -231,11 +235,13 @@ public class VRegistrarse extends javax.swing.JFrame {
                     String Puesto = TOpc1.getText();
                     float Sueldo = Float.parseFloat(TOpc2.getText());
                     //guardar datos en empleados
+                    Biblioteca MiBiblioteca = new Biblioteca();
+                    id = MiBiblioteca.AgregarEmpleado(Nombre, FechaNac, Tel, Dir, Correo, Edad, Dir, Puesto, Sueldo);
                         Registro.setVisible(true);
-                        String datos = "Se ha registarado correctamnete. Empleado\n"; //+ la descripcion de los datos y su ID
+                        String datos = "Se ha registarado correctamnete.\n Su ID es: " + id; //+ la descripcion de los datos y su ID
                         Registro.setText(datos);
                         BAceptar.setVisible(true);
-                   }catch (NumberFormatException ex){
+                   }catch(Exception e){
                        JOptionPane.showMessageDialog(null, "Ingrese datos correctamente");
                    }
             
