@@ -670,7 +670,7 @@ public class VEmpleado extends javax.swing.JFrame {
                     VBorrar Borrar = new VBorrar();
                     Borrar.setVisible(true);
                     if(Borrar.setBandera()==true){
-                        MiBiblioteca.BorraLibro(id);
+                        MiBiblioteca.BorrarLibro(id);
                     }
 
         }else{ //si no elige nada
@@ -765,7 +765,7 @@ public class VEmpleado extends javax.swing.JFrame {
                     VBorrar Borrar = new VBorrar();
                     Borrar.setVisible(true);
                     if(Borrar.setBandera()==true){
-                        MiBiblioteca.BorraEmpleado(id);
+                        MiBiblioteca.BorrarEmpleado(id);
                     }
             
             }else{ //si no elige nada
@@ -874,7 +874,7 @@ public class VEmpleado extends javax.swing.JFrame {
                     VBorrar Borrar = new VBorrar();
                     Borrar.setVisible(true);
                     if(Borrar.setBandera()==true){
-                        MiBiblioteca.BorraMulta(id);
+                        MiBiblioteca.BorrarMulta(id);
                     }
 
             }else{ //si no elige nada
@@ -888,7 +888,7 @@ public class VEmpleado extends javax.swing.JFrame {
                     VBorrar Borrar = new VBorrar();
                     Borrar.setVisible(true);
                     if(Borrar.setBandera()==true){
-                        MiBiblioteca.BorraPrestamo(id);
+                        MiBiblioteca.BorrarPrestamo(id);
                     }
 
             }else{ //si no elige nada

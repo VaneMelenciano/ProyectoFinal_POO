@@ -104,10 +104,11 @@ public class Biblioteca {
         }
         return aux;
     }
-    public void BorraLibro(int id){
+    public void BorrarLibro(int id){
         for(Libro l : libros){
             if(id == l.getId()){
                 libros.remove(l);
+                eliminarEnArchivo(rutaLibros, id);
                 return;
             }
         }
@@ -143,10 +144,11 @@ public class Biblioteca {
         }
         return aux;
     }
-    public void BorraUsuario(int id){
+    public void BorrarUsuario(int id){
         for(Usuario u : usuarios){
             if(id == u.getId()){
                 usuarios.remove(u);
+                eliminarEnArchivo(rutaUsuarios, id);
                 return;
             }
         }
@@ -182,10 +184,11 @@ public class Biblioteca {
         }
         return aux;
     }
-    public void BorraEmpleado(int id){
+    public void BorrarEmpleado(int id){
         for(Empleado e : empleados){
             if(id == e.getId()){
                 empleados.remove(e);
+                eliminarEnArchivo(rutaEmpleados, id);
                 return;
             }
         }
@@ -228,10 +231,11 @@ public class Biblioteca {
         }
         return aux;
     }
-    public void BorraMulta(int id){
+    public void BorrarMulta(int id){
         for(Documentos d : documentos){
             if(id == d.getId() && d instanceof Multa){
                 documentos.remove(d);
+                eliminarEnArchivo(rutaDocumentos, id);
                 return;
             }
         }
@@ -274,10 +278,11 @@ public class Biblioteca {
         }
         return aux;
     }
-    public void BorraPrestamo(int id){
+    public void BorrarPrestamo(int id){
         for(Documentos d : documentos){
             if(id == d.getId() && d instanceof Prestamo){
                 documentos.remove(d);
+                eliminarEnArchivo(rutaDocumentos, id);
                 return;
             }
         }
@@ -291,9 +296,8 @@ public class Biblioteca {
         pw.close();
     }
     public static void eliminarEnArchivo(String nombreArchivo, int id){
-        String stringId = Integer.toString(id);
         ArrayList<String> auxArray = new ArrayList();
-        
+
         try{
             try(FileReader fr = new FileReader(nombreArchivo)){
                 Scanner reader = new Scanner(fr);
@@ -302,7 +306,8 @@ public class Biblioteca {
                 
                 while((linea=reader.nextLine())!=null){
                     lineaArray = linea.split("\\|");
-                    if(!(lineaArray[0].equals(stringId))){
+                    int ID = Integer.parseInt(lineaArray[0]);
+                    if(id != ID){
                         auxArray.add(linea);
                     }
                 }
