@@ -53,10 +53,10 @@ public class VAgregarPM extends javax.swing.JFrame {
         BCancelar = new javax.swing.JButton();
         BGuardar = new javax.swing.JButton();
         Resultado = new javax.swing.JLabel();
-        BAceptar = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
         Opc1 = new javax.swing.JLabel();
         Opc2 = new javax.swing.JLabel();
+        BAceptar = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -138,6 +138,14 @@ public class VAgregarPM extends javax.swing.JFrame {
         Resultado.setText("jLabel8");
         getContentPane().add(Resultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 390, -1, -1));
 
+        Opc1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
+        Opc1.setText("Opc1");
+        getContentPane().add(Opc1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
+
+        Opc2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
+        Opc2.setText("Opc1");
+        getContentPane().add(Opc2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, -1, -1));
+
         BAceptar.setBackground(new java.awt.Color(238, 241, 204));
         BAceptar.setText("Aceptar");
         BAceptar.addActionListener(new java.awt.event.ActionListener() {
@@ -147,36 +155,20 @@ public class VAgregarPM extends javax.swing.JFrame {
         });
         getContentPane().add(BAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 508, -1, -1));
 
-        jPanel1.setBackground(new java.awt.Color(189, 196, 105));
+        jPanel2.setBackground(new java.awt.Color(189, 196, 105));
 
-        Opc1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
-        Opc1.setText("Opc1");
-
-        Opc2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
-        Opc2.setText("Opc1");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Opc2)
-                    .addComponent(Opc1))
-                .addContainerGap(330, Short.MAX_VALUE))
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 380, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(275, Short.MAX_VALUE)
-                .addComponent(Opc1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Opc2)
-                .addGap(223, 223, 223))
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 540, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 540));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -312,6 +304,6 @@ public class VAgregarPM extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }
