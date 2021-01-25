@@ -80,7 +80,7 @@ public class VUsuario extends javax.swing.JFrame {
 
         NomUsuario.setFont(new java.awt.Font("Sitka Small", 0, 18)); // NOI18N
         NomUsuario.setText("jLabel4");
-        getContentPane().add(NomUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(68, 29, -1, -1));
+        getContentPane().add(NomUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 29, 490, -1));
 
         jPanel1.setBackground(new java.awt.Color(178, 183, 187));
 
@@ -218,7 +218,7 @@ public class VUsuario extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(114, 114, 114)
                         .addComponent(ButtonSalir)))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(180, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -249,7 +249,7 @@ public class VUsuario extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 340, 480));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

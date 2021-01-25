@@ -961,18 +961,23 @@ public class VEmpleado extends javax.swing.JFrame {
     }//GEN-LAST:event_BALibroActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+
+        VAgregarPM pre;
         try {
-            VAgregarPM NewPrestamo = new VAgregarPM();
+            pre = new VAgregarPM();
+            pre.setVisible(true);
         } catch (IOException ex) {
-            Logger.getLogger(VEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(VUsuario.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        VAgregarPM pre;
         try {
-            VAgregarPM NewPrestamo = new VAgregarPM();
+            pre = new VAgregarPM();
+            pre.setVisible(true);
         } catch (IOException ex) {
-            Logger.getLogger(VEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(VUsuario.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton7ActionPerformed
 
