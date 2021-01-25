@@ -20,28 +20,31 @@ public class VEmpleado extends javax.swing.JFrame {
         //empleado = emp;
         initComponents();
         String nombre = "Bienvenido  " + "Vanessa"; //+ empleado.getNombre();
-        NomUsuario.setText(nombre);
+        Inicio.setText(nombre);
         
         //grupos de botones
-        grupoOpciones.add(opcID1);
-        grupoOpciones.add(opcTitulo1);
-        grupoOpciones.add(opcAutor);
-        grupoOpciones.add(opcEditorial);
-        grupoOpciones2.add(opcID2);
-        grupoOpciones2.add(opcTitulo2);
-        grupoOpciones3.add(opcID3);
-        grupoOpciones3.add(opcNombre3);
-        grupoOpciones4.add(opcID4);
-        grupoOpciones4.add(opcNombre4);
-        grupoOpciones5.add(opcID5);
-        grupoOpciones5.add(opcNombre5);
-        grupoOpciones5.add(opcFecha5);
-        grupoOpciones6.add(opcID6);
-        grupoOpciones6.add(opcNombre6);
-        grupoOpciones6.add(opcFecha6);
+        grupoOpciones.add(OpcID1);
+        grupoOpciones.add(OpcTitulo1);
+        grupoOpciones.add(OpcAutor1);
+        grupoOpciones.add(OpcEditorial1);
+        grupoOpciones2.add(OpcID2);
+        grupoOpciones2.add(OpcTitulo2);
+        grupoOpciones3.add(OpcID3);
+        grupoOpciones3.add(OpcNombre3);
+        grupoOpciones4.add(OpcID4);
+        grupoOpciones4.add(OpcNombre4);
+        grupoOpciones5.add(OpcID5);
+        grupoOpciones5.add(OpcNombre5);
+        grupoOpciones5.add(OpcFecha5);
+        grupoOpciones6.add(OpcID6);
+        grupoOpciones6.add(OpcNombre6);
+        grupoOpciones6.add(OpcFecha6);
         //si no eligue ninguna opcion para buscar o borrar
         Error1.setVisible(false); 
-        Error3.setVisible(false);  
+        Error2.setVisible(false); 
+        Error3.setVisible(false); 
+        Error4.setVisible(false); 
+        Error5.setVisible(false); 
         Error6.setVisible(false); 
     }
 
@@ -61,859 +64,595 @@ public class VEmpleado extends javax.swing.JFrame {
         grupoOpciones4 = new javax.swing.ButtonGroup();
         grupoOpciones5 = new javax.swing.ButtonGroup();
         grupoOpciones6 = new javax.swing.ButtonGroup();
-        BuscarLibro = new java.awt.Button();
-        TBuscarL = new javax.swing.JTextField();
-        opcTitulo1 = new javax.swing.JRadioButton();
-        opcID1 = new javax.swing.JRadioButton();
-        opcAutor = new javax.swing.JRadioButton();
-        opcEditorial = new javax.swing.JRadioButton();
-        NomUsuario = new javax.swing.JLabel();
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        Inicio = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        BuscarPM = new java.awt.Button();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        TBuscarPM = new javax.swing.JTextField();
-        opcID3 = new javax.swing.JRadioButton();
-        TBuscarUE = new javax.swing.JTextField();
-        BDatos = new javax.swing.JButton();
-        BSalir = new javax.swing.JButton();
-        Error6 = new javax.swing.JLabel();
-        Error3 = new javax.swing.JLabel();
-        Error1 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        TBorrarPM = new javax.swing.JTextField();
+        BuscarL = new javax.swing.JTextField();
+        Buscarpm = new javax.swing.JTextField();
+        BuscarL2 = new javax.swing.JTextField();
+        OpcEditorial1 = new javax.swing.JRadioButton();
+        OpcID1 = new javax.swing.JRadioButton();
+        OpcTitulo1 = new javax.swing.JRadioButton();
+        OpcAutor1 = new javax.swing.JRadioButton();
+        BBuscarMP = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
-        BVerPrestamos = new javax.swing.JButton();
-        opcID6 = new javax.swing.JRadioButton();
-        opcFecha6 = new javax.swing.JRadioButton();
-        BVerMultas = new javax.swing.JButton();
-        TBorrarUE = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        BVerUsuarios = new javax.swing.JButton();
-        BVerEmpleados = new javax.swing.JButton();
-        opcNombre5 = new javax.swing.JRadioButton();
-        opcID5 = new javax.swing.JRadioButton();
-        opcFecha5 = new javax.swing.JRadioButton();
-        BoxBuscarPM = new javax.swing.JComboBox<>();
-        opcNombre6 = new javax.swing.JRadioButton();
-        BoxBorrarPM = new javax.swing.JComboBox<>();
-        BAgregarPM = new javax.swing.JButton();
-        TBorrarL = new javax.swing.JTextField();
-        opcID2 = new javax.swing.JRadioButton();
-        opcTitulo2 = new javax.swing.JRadioButton();
-        BorraLibro = new java.awt.Button();
-        BVerLibros = new javax.swing.JButton();
-        BAgregarL = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        opcNombre3 = new javax.swing.JRadioButton();
-        BoxBuscarUE = new javax.swing.JComboBox<>();
-        BuscarUE = new java.awt.Button();
-        opcID4 = new javax.swing.JRadioButton();
-        opcNombre4 = new javax.swing.JRadioButton();
-        BoxBorrarUE = new javax.swing.JComboBox<>();
-        BorrarUE = new java.awt.Button();
-        BorrarPM = new java.awt.Button();
+        BorrarL = new javax.swing.JTextField();
+        OpcID2 = new javax.swing.JRadioButton();
+        OpcTitulo2 = new javax.swing.JRadioButton();
+        BBorrarL = new javax.swing.JButton();
+        OpcID5 = new javax.swing.JRadioButton();
+        OpcNombre5 = new javax.swing.JRadioButton();
+        BBuscarL1 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        BuscarL3 = new javax.swing.JTextField();
+        BBorrarUE = new javax.swing.JButton();
+        OpcID4 = new javax.swing.JRadioButton();
+        OpcNombre4 = new javax.swing.JRadioButton();
+        OpcID3 = new javax.swing.JRadioButton();
+        OpcNombre3 = new javax.swing.JRadioButton();
+        OpcFecha5 = new javax.swing.JRadioButton();
+        BBuscarUE1 = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        BorrarPM = new javax.swing.JTextField();
+        BBuscarMP1 = new javax.swing.JButton();
+        OpcID6 = new javax.swing.JRadioButton();
+        OpcNombre6 = new javax.swing.JRadioButton();
+        OpcFecha6 = new javax.swing.JRadioButton();
+        BoxUE1 = new javax.swing.JComboBox<>();
+        BoxUE2 = new javax.swing.JComboBox<>();
+        BoxMP1 = new javax.swing.JComboBox<>();
+        BoxMP2 = new javax.swing.JComboBox<>();
+        Error1 = new javax.swing.JLabel();
+        Error2 = new javax.swing.JLabel();
+        Error3 = new javax.swing.JLabel();
+        Error4 = new javax.swing.JLabel();
+        Error5 = new javax.swing.JLabel();
+        Error6 = new javax.swing.JLabel();
+        BSalir = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
 
         jMenu1.setText("jMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        BuscarLibro.setBackground(new java.awt.Color(71, 63, 75));
-        BuscarLibro.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        BuscarLibro.setForeground(new java.awt.Color(255, 255, 255));
-        BuscarLibro.setLabel("Buscar");
-        BuscarLibro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BuscarLibroActionPerformed(evt);
-            }
-        });
-        getContentPane().add(BuscarLibro);
-        BuscarLibro.setBounds(107, 203, 55, 24);
+        Inicio.setFont(new java.awt.Font("Yu Gothic Medium", 1, 36)); // NOI18N
+        Inicio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Inicio.setText("jLabel1");
+        getContentPane().add(Inicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 810, -1));
 
-        TBuscarL.setBorder(javax.swing.BorderFactory.createCompoundBorder());
-        getContentPane().add(TBuscarL);
-        TBuscarL.setBounds(21, 118, 245, 34);
+        jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        jLabel2.setText("Usuarios y empleado");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, 190, 40));
 
-        opcTitulo1.setBackground(new java.awt.Color(126, 114, 131));
-        opcTitulo1.setText("Titulo");
-        opcTitulo1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcTitulo1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(opcTitulo1);
-        opcTitulo1.setBounds(55, 170, 51, 23);
+        jLabel3.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        jLabel3.setText("Multas y préstamos");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 90, 170, 40));
 
-        opcID1.setBackground(new java.awt.Color(126, 114, 131));
-        opcID1.setText("ID");
-        opcID1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcID1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(opcID1);
-        opcID1.setBounds(0, 170, 37, 23);
-
-        opcAutor.setBackground(new java.awt.Color(126, 114, 131));
-        opcAutor.setText("Autor");
-        opcAutor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcAutorActionPerformed(evt);
-            }
-        });
-        getContentPane().add(opcAutor);
-        opcAutor.setBounds(132, 170, 53, 23);
-
-        opcEditorial.setBackground(new java.awt.Color(126, 114, 131));
-        opcEditorial.setText("Editorial");
-        opcEditorial.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcEditorialActionPerformed(evt);
-            }
-        });
-        getContentPane().add(opcEditorial);
-        opcEditorial.setBounds(203, 170, 63, 23);
-
-        NomUsuario.setFont(new java.awt.Font("Sitka Small", 0, 18)); // NOI18N
-        NomUsuario.setText("jLabel4");
-        getContentPane().add(NomUsuario);
-        NomUsuario.setBounds(306, 29, 67, 23);
-
-        jLabel3.setFont(new java.awt.Font("Yu Gothic UI", 2, 14)); // NOI18N
-        jLabel3.setText("Buscar");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(10, 92, 54, 20);
-
-        jLabel4.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
         jLabel4.setText("Libros");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(38, 70, 45, 22);
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 60, 20));
 
-        jLabel6.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
-        jLabel6.setText("Usuarios y empleados");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(38, 253, 159, 22);
+        jLabel5.setFont(new java.awt.Font("Sylfaen", 0, 16)); // NOI18N
+        jLabel5.setText("Buscar");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 130, 70, 30));
 
-        jLabel7.setFont(new java.awt.Font("Yu Gothic UI", 2, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Sylfaen", 0, 16)); // NOI18N
+        jLabel6.setText("Buscar");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 70, 30));
+
+        jLabel7.setFont(new java.awt.Font("Sylfaen", 0, 16)); // NOI18N
         jLabel7.setText("Buscar");
-        getContentPane().add(jLabel7);
-        jLabel7.setBounds(10, 275, 54, 20);
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 70, 30));
+        getContentPane().add(BuscarL, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, 210, 30));
+        getContentPane().add(Buscarpm, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 160, 160, 30));
+        getContentPane().add(BuscarL2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 160, 30));
 
-        BuscarPM.setBackground(new java.awt.Color(71, 63, 75));
-        BuscarPM.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        BuscarPM.setForeground(new java.awt.Color(255, 255, 255));
-        BuscarPM.setLabel("Buscar");
-        BuscarPM.addActionListener(new java.awt.event.ActionListener() {
+        OpcEditorial1.setBackground(new java.awt.Color(187, 143, 206));
+        OpcEditorial1.setText("Editorial");
+        OpcEditorial1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BuscarPMActionPerformed(evt);
+                OpcEditorial1ActionPerformed(evt);
             }
         });
-        getContentPane().add(BuscarPM);
-        BuscarPM.setBounds(112, 599, 55, 24);
+        getContentPane().add(OpcEditorial1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 93, -1));
 
-        jLabel9.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
-        jLabel9.setText("Préstamos y multas");
-        getContentPane().add(jLabel9);
-        jLabel9.setBounds(38, 451, 140, 22);
-
-        jLabel10.setFont(new java.awt.Font("Yu Gothic UI", 2, 14)); // NOI18N
-        jLabel10.setText("Buscar");
-        getContentPane().add(jLabel10);
-        jLabel10.setBounds(10, 473, 54, 20);
-
-        TBuscarPM.setBorder(javax.swing.BorderFactory.createCompoundBorder());
-        getContentPane().add(TBuscarPM);
-        TBuscarPM.setBounds(21, 499, 233, 34);
-
-        opcID3.setBackground(new java.awt.Color(126, 114, 131));
-        opcID3.setText("ID");
-        opcID3.addActionListener(new java.awt.event.ActionListener() {
+        OpcID1.setBackground(new java.awt.Color(187, 143, 206));
+        OpcID1.setText("ID");
+        OpcID1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcID3ActionPerformed(evt);
+                OpcID1ActionPerformed(evt);
             }
         });
-        getContentPane().add(opcID3);
-        opcID3.setBounds(20, 350, 37, 23);
+        getContentPane().add(OpcID1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 93, -1));
 
-        TBuscarUE.setBorder(javax.swing.BorderFactory.createCompoundBorder());
-        getContentPane().add(TBuscarUE);
-        TBuscarUE.setBounds(21, 301, 233, 34);
-
-        BDatos.setFont(new java.awt.Font("Lucida Bright", 1, 14)); // NOI18N
-        BDatos.setText("Mis datos");
-        BDatos.addActionListener(new java.awt.event.ActionListener() {
+        OpcTitulo1.setBackground(new java.awt.Color(187, 143, 206));
+        OpcTitulo1.setText("Titulo");
+        OpcTitulo1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BDatosActionPerformed(evt);
+                OpcTitulo1ActionPerformed(evt);
             }
         });
-        getContentPane().add(BDatos);
-        BDatos.setBounds(529, 633, 99, 25);
+        getContentPane().add(OpcTitulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 93, -1));
 
-        BSalir.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        BSalir.setText("Cerrar Sesión");
+        OpcAutor1.setBackground(new java.awt.Color(187, 143, 206));
+        OpcAutor1.setText("Autor");
+        OpcAutor1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OpcAutor1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(OpcAutor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 93, -1));
+
+        BBuscarMP.setBackground(new java.awt.Color(74, 35, 90));
+        BBuscarMP.setForeground(new java.awt.Color(255, 255, 255));
+        BBuscarMP.setText("Buscar");
+        BBuscarMP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BBuscarMPActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BBuscarMP, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 300, 73, -1));
+
+        jLabel8.setFont(new java.awt.Font("Sylfaen", 0, 16)); // NOI18N
+        jLabel8.setText("Borrar");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 70, 30));
+        getContentPane().add(BorrarL, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 160, 30));
+
+        OpcID2.setBackground(new java.awt.Color(187, 143, 206));
+        OpcID2.setText("ID");
+        OpcID2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OpcID2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(OpcID2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 93, -1));
+
+        OpcTitulo2.setBackground(new java.awt.Color(187, 143, 206));
+        OpcTitulo2.setText("Titulo");
+        OpcTitulo2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OpcTitulo2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(OpcTitulo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, 93, -1));
+
+        BBorrarL.setBackground(new java.awt.Color(74, 35, 90));
+        BBorrarL.setForeground(new java.awt.Color(255, 255, 255));
+        BBorrarL.setText("Borrar");
+        BBorrarL.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BBorrarLActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BBorrarL, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 480, 73, -1));
+
+        OpcID5.setBackground(new java.awt.Color(187, 143, 206));
+        OpcID5.setText("ID");
+        OpcID5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OpcID5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(OpcID5, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 200, 93, -1));
+
+        OpcNombre5.setBackground(new java.awt.Color(187, 143, 206));
+        OpcNombre5.setText("Nombre de usuario");
+        OpcNombre5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OpcNombre5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(OpcNombre5, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 230, 140, -1));
+
+        BBuscarL1.setBackground(new java.awt.Color(74, 35, 90));
+        BBuscarL1.setForeground(new java.awt.Color(255, 255, 255));
+        BBuscarL1.setText("Buscar");
+        BBuscarL1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BBuscarL1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BBuscarL1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, 73, -1));
+
+        jLabel9.setFont(new java.awt.Font("Sylfaen", 0, 16)); // NOI18N
+        jLabel9.setText("Borrar");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 350, 70, 30));
+        getContentPane().add(BuscarL3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 380, 210, 30));
+
+        BBorrarUE.setBackground(new java.awt.Color(74, 35, 90));
+        BBorrarUE.setForeground(new java.awt.Color(255, 255, 255));
+        BBorrarUE.setText("Borra");
+        BBorrarUE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BBorrarUEActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BBorrarUE, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 490, 73, -1));
+
+        OpcID4.setBackground(new java.awt.Color(187, 143, 206));
+        OpcID4.setText("ID");
+        OpcID4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OpcID4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(OpcID4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 420, 93, -1));
+
+        OpcNombre4.setBackground(new java.awt.Color(187, 143, 206));
+        OpcNombre4.setText("Nombre");
+        OpcNombre4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OpcNombre4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(OpcNombre4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 450, 93, -1));
+
+        OpcID3.setBackground(new java.awt.Color(187, 143, 206));
+        OpcID3.setText("ID");
+        OpcID3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OpcID3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(OpcID3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 200, 93, -1));
+
+        OpcNombre3.setBackground(new java.awt.Color(187, 143, 206));
+        OpcNombre3.setText("Nombre");
+        OpcNombre3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OpcNombre3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(OpcNombre3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, 93, -1));
+
+        OpcFecha5.setBackground(new java.awt.Color(187, 143, 206));
+        OpcFecha5.setText("Fecha");
+        OpcFecha5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OpcFecha5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(OpcFecha5, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 260, 140, -1));
+
+        BBuscarUE1.setBackground(new java.awt.Color(74, 35, 90));
+        BBuscarUE1.setForeground(new java.awt.Color(255, 255, 255));
+        BBuscarUE1.setText("Buscar");
+        BBuscarUE1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BBuscarUE1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BBuscarUE1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, 73, -1));
+
+        jLabel10.setFont(new java.awt.Font("Sylfaen", 0, 16)); // NOI18N
+        jLabel10.setText("Borrar");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 340, 70, 30));
+        getContentPane().add(BorrarPM, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 370, 160, 30));
+
+        BBuscarMP1.setBackground(new java.awt.Color(74, 35, 90));
+        BBuscarMP1.setForeground(new java.awt.Color(255, 255, 255));
+        BBuscarMP1.setText("Buscar");
+        BBuscarMP1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BBuscarMP1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BBuscarMP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 510, 73, -1));
+
+        OpcID6.setBackground(new java.awt.Color(187, 143, 206));
+        OpcID6.setText("ID");
+        OpcID6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OpcID6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(OpcID6, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 410, 93, -1));
+
+        OpcNombre6.setBackground(new java.awt.Color(187, 143, 206));
+        OpcNombre6.setText("Nombre de usuario");
+        OpcNombre6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OpcNombre6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(OpcNombre6, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 440, 140, -1));
+
+        OpcFecha6.setBackground(new java.awt.Color(187, 143, 206));
+        OpcFecha6.setText("Fecha");
+        OpcFecha6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OpcFecha6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(OpcFecha6, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 470, 140, -1));
+
+        BoxUE1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario", "Empleado" }));
+        getContentPane().add(BoxUE1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 210, 90, -1));
+
+        BoxUE2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario", "Empleado" }));
+        getContentPane().add(BoxUE2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 430, 90, -1));
+
+        BoxMP1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Multa", "Prestamo" }));
+        getContentPane().add(BoxMP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 200, 90, -1));
+
+        BoxMP2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Multa", "Prestamo" }));
+        getContentPane().add(BoxMP2, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 410, 90, -1));
+
+        Error1.setForeground(new java.awt.Color(255, 0, 0));
+        Error1.setText("Elija una opción");
+        getContentPane().add(Error1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 90, -1));
+
+        Error2.setForeground(new java.awt.Color(255, 0, 0));
+        Error2.setText("Elija una opción");
+        getContentPane().add(Error2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 490, 90, -1));
+
+        Error3.setForeground(new java.awt.Color(255, 0, 0));
+        Error3.setText("Elija una opción");
+        getContentPane().add(Error3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 280, 90, -1));
+
+        Error4.setForeground(new java.awt.Color(255, 0, 0));
+        Error4.setText("Elija una opción");
+        getContentPane().add(Error4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 500, 90, -1));
+
+        Error5.setForeground(new java.awt.Color(255, 0, 0));
+        Error5.setText("Elija una opción");
+        getContentPane().add(Error5, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 300, 90, -1));
+
+        Error6.setForeground(new java.awt.Color(255, 0, 0));
+        Error6.setText("Elija una opción");
+        getContentPane().add(Error6, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 510, 90, -1));
+
+        BSalir.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
+        BSalir.setText("Cerrar sesión");
         BSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BSalirActionPerformed(evt);
             }
         });
-        getContentPane().add(BSalir);
-        BSalir.setBounds(668, 636, 109, 23);
+        getContentPane().add(BSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 570, 150, 23));
 
-        Error6.setForeground(new java.awt.Color(204, 0, 0));
-        Error6.setText("Elegir una opcion");
-        getContentPane().add(Error6);
-        Error6.setBounds(270, 510, 81, 14);
+        jButton2.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
+        jButton2.setText("Mis datos");
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 570, 130, 23));
 
-        Error3.setForeground(new java.awt.Color(204, 0, 0));
-        Error3.setText("Elegir una opcion");
-        getContentPane().add(Error3);
-        Error3.setBounds(260, 310, 81, 14);
-
-        Error1.setForeground(new java.awt.Color(204, 0, 0));
-        Error1.setText("Elegir una opcion");
-        getContentPane().add(Error1);
-        Error1.setBounds(270, 130, 81, 14);
-
-        jPanel1.setBackground(new java.awt.Color(126, 114, 131));
-
-        TBorrarPM.setBorder(javax.swing.BorderFactory.createCompoundBorder());
-
-        jLabel8.setFont(new java.awt.Font("Yu Gothic UI", 2, 14)); // NOI18N
-        jLabel8.setText("Borrar");
-
-        BVerPrestamos.setFont(new java.awt.Font("Lucida Bright", 0, 12)); // NOI18N
-        BVerPrestamos.setText("Ver todos los préstamos");
-        BVerPrestamos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BVerPrestamosActionPerformed(evt);
-            }
-        });
-
-        opcID6.setBackground(new java.awt.Color(126, 114, 131));
-        opcID6.setText("ID");
-        opcID6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcID6ActionPerformed(evt);
-            }
-        });
-
-        opcFecha6.setBackground(new java.awt.Color(126, 114, 131));
-        opcFecha6.setText("Fecha");
-        opcFecha6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcFecha6ActionPerformed(evt);
-            }
-        });
-
-        BVerMultas.setFont(new java.awt.Font("Lucida Bright", 0, 12)); // NOI18N
-        BVerMultas.setText("Ver todos las multas");
-        BVerMultas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BVerMultasActionPerformed(evt);
-            }
-        });
-
-        TBorrarUE.setBorder(javax.swing.BorderFactory.createCompoundBorder());
-
-        jLabel5.setFont(new java.awt.Font("Yu Gothic UI", 2, 14)); // NOI18N
-        jLabel5.setText("Borrar");
-
-        BVerUsuarios.setFont(new java.awt.Font("Lucida Bright", 0, 12)); // NOI18N
-        BVerUsuarios.setText("Ver todos los usuarios");
-        BVerUsuarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BVerUsuariosActionPerformed(evt);
-            }
-        });
-
-        BVerEmpleados.setFont(new java.awt.Font("Lucida Bright", 0, 12)); // NOI18N
-        BVerEmpleados.setText("Ver todos los empleados");
-        BVerEmpleados.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BVerEmpleadosActionPerformed(evt);
-            }
-        });
-
-        opcNombre5.setBackground(new java.awt.Color(126, 114, 131));
-        opcNombre5.setText("Nombre de usuario");
-        opcNombre5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcNombre5ActionPerformed(evt);
-            }
-        });
-
-        opcID5.setBackground(new java.awt.Color(126, 114, 131));
-        opcID5.setText("ID");
-        opcID5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcID5ActionPerformed(evt);
-            }
-        });
-
-        opcFecha5.setBackground(new java.awt.Color(126, 114, 131));
-        opcFecha5.setText("Fecha");
-        opcFecha5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcFecha5ActionPerformed(evt);
-            }
-        });
-
-        BoxBuscarPM.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tipo", "Préstamos", "Multas" }));
-
-        opcNombre6.setBackground(new java.awt.Color(126, 114, 131));
-        opcNombre6.setText("Nombre de usuario");
-        opcNombre6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcNombre6ActionPerformed(evt);
-            }
-        });
-
-        BoxBorrarPM.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tipo", "Préstamos", "Multas" }));
-
-        BAgregarPM.setFont(new java.awt.Font("Lucida Bright", 0, 12)); // NOI18N
-        BAgregarPM.setText("Agregar");
-        BAgregarPM.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BAgregarPMActionPerformed(evt);
-            }
-        });
-
-        TBorrarL.setBorder(javax.swing.BorderFactory.createCompoundBorder());
-
-        opcID2.setBackground(new java.awt.Color(126, 114, 131));
-        opcID2.setText("ID");
-        opcID2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcID2ActionPerformed(evt);
-            }
-        });
-
-        opcTitulo2.setBackground(new java.awt.Color(126, 114, 131));
-        opcTitulo2.setText("Titulo");
-        opcTitulo2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcTitulo2ActionPerformed(evt);
-            }
-        });
-
-        BorraLibro.setActionCommand("Borrar");
-        BorraLibro.setBackground(new java.awt.Color(71, 63, 75));
-        BorraLibro.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        BorraLibro.setForeground(new java.awt.Color(255, 255, 255));
-        BorraLibro.setLabel("Borrar");
-        BorraLibro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BorraLibroActionPerformed(evt);
-            }
-        });
-
-        BVerLibros.setFont(new java.awt.Font("Lucida Bright", 0, 12)); // NOI18N
-        BVerLibros.setText("Ver todos");
-        BVerLibros.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BVerLibrosActionPerformed(evt);
-            }
-        });
-
-        BAgregarL.setFont(new java.awt.Font("Lucida Bright", 0, 12)); // NOI18N
-        BAgregarL.setText("Agregar");
-        BAgregarL.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BAgregarLActionPerformed(evt);
-            }
-        });
-
-        jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 2, 14)); // NOI18N
-        jLabel2.setText("Borrar");
-
-        opcNombre3.setBackground(new java.awt.Color(126, 114, 131));
-        opcNombre3.setText("Nombre");
-        opcNombre3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcNombre3ActionPerformed(evt);
-            }
-        });
-
-        BoxBuscarUE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tipo", "Usuario", "Empleado" }));
-
-        BuscarUE.setBackground(new java.awt.Color(71, 63, 75));
-        BuscarUE.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        BuscarUE.setForeground(new java.awt.Color(255, 255, 255));
-        BuscarUE.setLabel("Buscar");
-        BuscarUE.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BuscarUEActionPerformed(evt);
-            }
-        });
-
-        opcID4.setBackground(new java.awt.Color(126, 114, 131));
-        opcID4.setText("ID");
-        opcID4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcID4ActionPerformed(evt);
-            }
-        });
-
-        opcNombre4.setBackground(new java.awt.Color(126, 114, 131));
-        opcNombre4.setText("Nombre");
-        opcNombre4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcNombre4ActionPerformed(evt);
-            }
-        });
-
-        BoxBorrarUE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tipo", "Usuario", "Empleado" }));
-
-        BorrarUE.setActionCommand("Borrar");
-        BorrarUE.setBackground(new java.awt.Color(71, 63, 75));
-        BorrarUE.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        BorrarUE.setForeground(new java.awt.Color(255, 255, 255));
-        BorrarUE.setLabel("Borrar");
-        BorrarUE.setName(""); // NOI18N
-        BorrarUE.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BorrarUEActionPerformed(evt);
-            }
-        });
-
-        BorrarPM.setActionCommand("Borrar");
-        BorrarPM.setBackground(new java.awt.Color(71, 63, 75));
-        BorrarPM.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        BorrarPM.setForeground(new java.awt.Color(255, 255, 255));
-        BorrarPM.setLabel("Borrar");
-        BorrarPM.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BorrarPMActionPerformed(evt);
-            }
-        });
+        jPanel1.setBackground(new java.awt.Color(187, 143, 206));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(opcNombre5)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(opcID5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(opcNombre3)
-                                    .addComponent(opcFecha5))))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(BoxBuscarPM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(313, 313, 313)
-                                .addComponent(BoxBorrarPM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(BoxBuscarUE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(216, 216, 216)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(opcID4, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(BorrarUE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(opcNombre4)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(BoxBorrarUE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(opcNombre6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                    .addComponent(TBorrarPM, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                    .addComponent(opcID6)
-                                    .addGap(6, 6, 6)
-                                    .addComponent(opcFecha6)
-                                    .addGap(147, 147, 147))))))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(BVerPrestamos)
-                            .addComponent(BVerMultas))
-                        .addGap(43, 43, 43))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(BAgregarPM)
-                        .addGap(75, 75, 75))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(TBorrarL, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(51, 51, 51)
-                        .addComponent(BVerLibros)
-                        .addGap(123, 123, 123))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(BAgregarL)
-                                .addGap(133, 133, 133))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(BorraLibro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(366, 366, 366))))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(367, 367, 367)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(97, 97, 97)
-                        .addComponent(BuscarUE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(393, 393, 393)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(opcID2)
-                                .addGap(18, 18, 18)
-                                .addComponent(opcTitulo2))
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(TBorrarUE, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(BVerEmpleados)
-                            .addComponent(BVerUsuarios))
-                        .addGap(49, 49, 49))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(BorrarPM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(385, 385, 385))))
+            .addGap(0, 840, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(91, 91, 91)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(TBorrarL, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(opcID2)
-                                    .addComponent(opcTitulo2))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(BorraLibro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(TBorrarUE, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(17, 17, 17)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(opcNombre3)
-                                    .addComponent(BoxBuscarUE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(opcID4)
-                                    .addComponent(opcNombre4)
-                                    .addComponent(BoxBorrarUE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(BuscarUE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(BorrarUE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(65, 65, 65))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(111, 111, 111)
-                        .addComponent(BVerLibros)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(BAgregarL)
-                        .addGap(120, 120, 120)
-                        .addComponent(BVerUsuarios)
-                        .addGap(18, 18, 18)
-                        .addComponent(BVerEmpleados)
-                        .addGap(120, 120, 120)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(47, 47, 47)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(opcID5)
-                                    .addComponent(opcFecha5))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(opcNombre5))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(TBorrarPM, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGap(13, 13, 13)
-                                                .addComponent(BoxBuscarPM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(opcNombre6)))
-                                        .addGap(3, 3, 3)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(opcID6)
-                                            .addComponent(opcFecha6)))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(BoxBorrarPM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(10, 10, 10)))))
-                        .addComponent(BorrarPM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(60, 60, 60))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(BVerPrestamos)
-                        .addGap(18, 18, 18)
-                        .addComponent(BVerMultas)
-                        .addGap(18, 18, 18)
-                        .addComponent(BAgregarPM)
-                        .addGap(97, 97, 97))))
+            .addGap(0, 620, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 840, 675);
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void opcTitulo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcTitulo1ActionPerformed
+    private void OpcEditorial1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcEditorial1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_opcTitulo1ActionPerformed
+    }//GEN-LAST:event_OpcEditorial1ActionPerformed
 
-    private void opcID1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcID1ActionPerformed
+    private void OpcID1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcID1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_opcID1ActionPerformed
+    }//GEN-LAST:event_OpcID1ActionPerformed
 
-    private void opcAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcAutorActionPerformed
+    private void OpcTitulo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcTitulo1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_opcAutorActionPerformed
+    }//GEN-LAST:event_OpcTitulo1ActionPerformed
 
-    private void opcEditorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcEditorialActionPerformed
+    private void OpcAutor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcAutor1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_opcEditorialActionPerformed
+    }//GEN-LAST:event_OpcAutor1ActionPerformed
 
-    private void BuscarLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarLibroActionPerformed
-        if(opcID1.isSelected()){
+    private void OpcID2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcID2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_OpcID2ActionPerformed
+
+    private void OpcTitulo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcTitulo2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_OpcTitulo2ActionPerformed
+
+    private void OpcID5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcID5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_OpcID5ActionPerformed
+
+    private void OpcNombre5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcNombre5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_OpcNombre5ActionPerformed
+
+    private void OpcID4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcID4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_OpcID4ActionPerformed
+
+    private void OpcNombre4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcNombre4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_OpcNombre4ActionPerformed
+
+    private void OpcID3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcID3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_OpcID3ActionPerformed
+
+    private void OpcNombre3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcNombre3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_OpcNombre3ActionPerformed
+
+    private void OpcFecha5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcFecha5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_OpcFecha5ActionPerformed
+
+    private void OpcID6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcID6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_OpcID6ActionPerformed
+
+    private void OpcNombre6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcNombre6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_OpcNombre6ActionPerformed
+
+    private void OpcFecha6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcFecha6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_OpcFecha6ActionPerformed
+
+    private void BBuscarL1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BBuscarL1ActionPerformed
+        if(OpcID1.isSelected()){ //buscar libro por ID
             Error1.setVisible(false); 
 
-        }else if(opcTitulo1.isSelected()){
+        }else if(OpcTitulo1.isSelected()){ //buscar libro por titulo
             Error1.setVisible(false); 
 
-        }else if(opcAutor.isSelected()){
+        }else if(OpcAutor1.isSelected()){ //buscar libro por autor
             Error1.setVisible(false); 
 
-        }else if(opcEditorial.isSelected()){
+        }else if(OpcEditorial1.isSelected()){ //buscar libro por editorial
             Error1.setVisible(false); 
 
-        }else{
+        }else{ //si no elige nada
             Error1.setVisible(true); 
         }
-    }//GEN-LAST:event_BuscarLibroActionPerformed
+    }//GEN-LAST:event_BBuscarL1ActionPerformed
 
-    private void BDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BDatosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BDatosActionPerformed
+    private void BBorrarLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BBorrarLActionPerformed
+        if(OpcID2.isSelected()){ //borra libro por ID
+            Error2.setVisible(false); 
 
-    private void opcID3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcID3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opcID3ActionPerformed
+        }else if(OpcTitulo2.isSelected()){ //borra libro por titulo
+            Error2.setVisible(false); 
 
-    private void BuscarPMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarPMActionPerformed
-        int opc=BoxBuscarPM.getSelectedIndex();
-        if(opcID5.isSelected() && opc== 1){ //Buscar prestamo por id
-            Error6.setVisible(false); 
-
-        }else if(opcNombre5.isSelected() && opc ==1){ //Buscar prestamo por nombre de usuario
-            Error6.setVisible(false); 
-
-        }else if(opcFecha5.isSelected() && opc ==1){ //Buscar prestamo por fecha
-            Error6.setVisible(false); 
-
-        }if(opcID5.isSelected() && opc== 2){ //Buscar multa por id
-            Error6.setVisible(false); 
-
-        }else if(opcNombre5.isSelected() && opc ==2){ //Buscar multa por nombre de usuario
-            Error6.setVisible(false); 
-
-        }else if(opcFecha5.isSelected() && opc ==2){ //Buscar multa por fecha
-            Error6.setVisible(false); 
-
-        }else{ //si no elige bien
-            Error6.setVisible(true); 
+        }else{ //si no elige nada
+            Error2.setVisible(true); 
         }
-    }//GEN-LAST:event_BuscarPMActionPerformed
+    }//GEN-LAST:event_BBorrarLActionPerformed
+
+    private void BBuscarUE1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BBuscarUE1ActionPerformed
+        int opcion = BoxUE1.getSelectedIndex();
+        if(opcion==0){ //usuario
+            if(OpcID3.isSelected()){ //buscar por id
+                Error3.setVisible(false); 
+
+            }else if(OpcNombre3.isSelected()){ //buscar por nombre
+                Error3.setVisible(false); 
+
+            }else{ //si no elige nada
+                Error3.setVisible(true); 
+            } 
+        }
+        else if(opcion==1){ //empleado
+            if(OpcID3.isSelected()){ //buscar por id
+                Error3.setVisible(false); 
+
+            }else if(OpcNombre3.isSelected()){ //buscar por nombre
+                Error3.setVisible(false);  
+            }
+        }
+    }//GEN-LAST:event_BBuscarUE1ActionPerformed
+
+    private void BBorrarUEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BBorrarUEActionPerformed
+        int opcion = BoxUE2.getSelectedIndex();
+        if(opcion==0){ //usuario
+            if(OpcID4.isSelected()){ //borrar por id
+                Error4.setVisible(false); 
+
+            }else if(OpcNombre4.isSelected()){ //borrar por nombre
+                Error4.setVisible(false); 
+
+            }else{ //si no elige nada
+                Error4.setVisible(true); 
+            } 
+        }
+        else if(opcion==1){ //empleado
+            if(OpcID4.isSelected()){ //borrar por id
+                Error4.setVisible(false); 
+
+            }else if(OpcNombre4.isSelected()){ //borrar por nombre
+                Error4.setVisible(false);  
+            }
+        }
+    }//GEN-LAST:event_BBorrarUEActionPerformed
+
+    private void BBuscarMPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BBuscarMPActionPerformed
+        int opcion = BoxMP1.getSelectedIndex();
+        if(opcion==0){ //multa
+            if(OpcID5.isSelected()){ //buscar por id
+                Error5.setVisible(false); 
+
+            }else if(OpcNombre5.isSelected()){ //buscar por nombre
+                Error5.setVisible(false); 
+
+            }else if(OpcFecha5.isSelected()){ //buscar por fecha
+                Error5.setVisible(false); 
+
+            }else{ //si no elige nada
+                Error5.setVisible(true); 
+            } 
+        }
+        else if(opcion==1){ //prestamo
+            if(OpcID5.isSelected()){ //buscar por id
+                Error5.setVisible(false); 
+
+            }else if(OpcNombre5.isSelected()){ //buscar por nombre
+                Error5.setVisible(false); 
+
+            }else if(OpcFecha5.isSelected()){ //buscar por fecha
+                Error5.setVisible(false); 
+
+            }else{ //si no elige nada
+                Error5.setVisible(true); 
+            }
+        }
+    }//GEN-LAST:event_BBuscarMPActionPerformed
+
+    private void BBuscarMP1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BBuscarMP1ActionPerformed
+        int opcion = BoxMP1.getSelectedIndex();
+        if(opcion==0){ //multa
+            if(OpcID6.isSelected()){ //borrar por id
+                Error6.setVisible(false); 
+
+            }else if(OpcNombre6.isSelected()){ //borrar por nombre
+                Error6.setVisible(false); 
+
+            }else if(OpcFecha6.isSelected()){ //borrar por fecha
+                Error6.setVisible(false); 
+
+            }else{ //si no elige nada
+                Error6.setVisible(true); 
+            } 
+        }
+        else if(opcion==1){ //prestamo
+            if(OpcID6.isSelected()){ //borrar por id
+                Error6.setVisible(false); 
+
+            }else if(OpcNombre6.isSelected()){ //borrar por nombre
+                Error6.setVisible(false); 
+
+            }else if(OpcFecha6.isSelected()){ //borrar por fecha
+                Error6.setVisible(false); 
+
+            }else{ //si no elige nada
+                Error6.setVisible(true); 
+            }
+        }
+    }//GEN-LAST:event_BBuscarMP1ActionPerformed
 
     private void BSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BSalirActionPerformed
+        /*
         if(evt.getSource()==BSalir){           
             VentanaPricipal regresar = new VentanaPricipal();
             regresar.setVisible(true);
             dispose();
         }
+        */
     }//GEN-LAST:event_BSalirActionPerformed
-
-    private void BorrarPMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BorrarPMActionPerformed
-        int opc=BoxBorrarPM.getSelectedIndex();
-        if(opcID6.isSelected() && opc== 1){ //Borrar prestamo por id
-            Error6.setVisible(false);
-
-        }else if(opcNombre6.isSelected() && opc ==1){ //Borrar prestamo por nombre de usuario
-            Error6.setVisible(false);
-
-        }else if(opcFecha6.isSelected() && opc ==1){ //Borrar prestamo por fecha
-            Error6.setVisible(false);
-
-        }if(opcID6.isSelected() && opc== 2){ //Borrar multa por id
-            Error6.setVisible(false);
-
-        }else if(opcNombre6.isSelected() && opc ==2){ //Borrar multa por nombre de usuario
-            Error6.setVisible(false);
-
-        }else if(opcFecha6.isSelected() && opc ==2){ //Borrar multa por fecha
-            Error6.setVisible(false);
-
-        }else{ //si no elige bien
-            Error6.setVisible(true);
-        }
-    }//GEN-LAST:event_BorrarPMActionPerformed
-
-    private void BorrarUEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BorrarUEActionPerformed
-        int opc=BoxBorrarUE.getSelectedIndex();
-        if(opcID4.isSelected() && opc== 1){ //Borrar usuario por id
-            Error3.setVisible(false);
-
-        }else if(opcNombre4.isSelected() && opc ==1){ //Borrar usuarios por nombre
-            Error3.setVisible(false);
-
-        }else if(opcID4.isSelected() && opc ==2){ //Borrar empleado por id
-            Error3.setVisible(false);
-
-        }else if(opcNombre4.isSelected() && opc ==2){ //Borrar empleado por nombre
-            Error3.setVisible(false);
-
-        }else{ //si no elige bien
-            Error3.setVisible(true);
-        }
-    }//GEN-LAST:event_BorrarUEActionPerformed
-
-    private void opcNombre4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcNombre4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opcNombre4ActionPerformed
-
-    private void opcID4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcID4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opcID4ActionPerformed
-
-    private void BuscarUEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarUEActionPerformed
-        int opc=BoxBuscarUE.getSelectedIndex();
-        if(opcID3.isSelected() && opc== 1){ //Buscar usuario por id
-            Error3.setVisible(false);
-
-        }else if(opcNombre3.isSelected() && opc ==1){ //Buscar usuarios por nombre
-            Error3.setVisible(false);
-
-        }else if(opcID3.isSelected() && opc ==2){ //buscar empleado por id
-            Error3.setVisible(false);
-
-        }else if(opcNombre3.isSelected() && opc ==2){ //buscar empleado por nombre
-            Error3.setVisible(false);
-
-        }else{ //si no elige bien
-            Error3.setVisible(true);
-        }
-    }//GEN-LAST:event_BuscarUEActionPerformed
-
-    private void opcNombre3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcNombre3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opcNombre3ActionPerformed
-
-    private void BAgregarLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BAgregarLActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BAgregarLActionPerformed
-
-    private void BVerLibrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BVerLibrosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BVerLibrosActionPerformed
-
-    private void BorraLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BorraLibroActionPerformed
-        if(opcID2.isSelected()){
-            Error1.setVisible(false);
-
-        }else if(opcTitulo2.isSelected()){
-            Error1.setVisible(false);
-
-        }else{
-            Error1.setVisible(true);
-        }
-    }//GEN-LAST:event_BorraLibroActionPerformed
-
-    private void opcTitulo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcTitulo2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opcTitulo2ActionPerformed
-
-    private void opcID2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcID2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opcID2ActionPerformed
-
-    private void BAgregarPMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BAgregarPMActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BAgregarPMActionPerformed
-
-    private void opcNombre6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcNombre6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opcNombre6ActionPerformed
-
-    private void opcFecha5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcFecha5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opcFecha5ActionPerformed
-
-    private void opcID5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcID5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opcID5ActionPerformed
-
-    private void opcNombre5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcNombre5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opcNombre5ActionPerformed
-
-    private void BVerEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BVerEmpleadosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BVerEmpleadosActionPerformed
-
-    private void BVerUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BVerUsuariosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BVerUsuariosActionPerformed
-
-    private void BVerMultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BVerMultasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BVerMultasActionPerformed
-
-    private void opcFecha6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcFecha6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opcFecha6ActionPerformed
-
-    private void opcID6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcID6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opcID6ActionPerformed
-
-    private void BVerPrestamosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BVerPrestamosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BVerPrestamosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -942,6 +681,12 @@ public class VEmpleado extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -952,41 +697,54 @@ public class VEmpleado extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BAgregarL;
-    private javax.swing.JButton BAgregarPM;
-    private javax.swing.JButton BDatos;
+    private javax.swing.JButton BBorrarL;
+    private javax.swing.JButton BBorrarUE;
+    private javax.swing.JButton BBuscarL1;
+    private javax.swing.JButton BBuscarMP;
+    private javax.swing.JButton BBuscarMP1;
+    private javax.swing.JButton BBuscarUE1;
     private javax.swing.JButton BSalir;
-    private javax.swing.JButton BVerEmpleados;
-    private javax.swing.JButton BVerLibros;
-    private javax.swing.JButton BVerMultas;
-    private javax.swing.JButton BVerPrestamos;
-    private javax.swing.JButton BVerUsuarios;
-    private java.awt.Button BorraLibro;
-    private java.awt.Button BorrarPM;
-    private java.awt.Button BorrarUE;
-    private javax.swing.JComboBox<String> BoxBorrarPM;
-    private javax.swing.JComboBox<String> BoxBorrarUE;
-    private javax.swing.JComboBox<String> BoxBuscarPM;
-    private javax.swing.JComboBox<String> BoxBuscarUE;
-    private java.awt.Button BuscarLibro;
-    private java.awt.Button BuscarPM;
-    private java.awt.Button BuscarUE;
+    private javax.swing.JTextField BorrarL;
+    private javax.swing.JTextField BorrarPM;
+    private javax.swing.JComboBox<String> BoxMP1;
+    private javax.swing.JComboBox<String> BoxMP2;
+    private javax.swing.JComboBox<String> BoxUE1;
+    private javax.swing.JComboBox<String> BoxUE2;
+    private javax.swing.JTextField BuscarL;
+    private javax.swing.JTextField BuscarL2;
+    private javax.swing.JTextField BuscarL3;
+    private javax.swing.JTextField Buscarpm;
     private javax.swing.JLabel Error1;
+    private javax.swing.JLabel Error2;
     private javax.swing.JLabel Error3;
+    private javax.swing.JLabel Error4;
+    private javax.swing.JLabel Error5;
     private javax.swing.JLabel Error6;
-    private javax.swing.JLabel NomUsuario;
-    private javax.swing.JTextField TBorrarL;
-    private javax.swing.JTextField TBorrarPM;
-    private javax.swing.JTextField TBorrarUE;
-    private javax.swing.JTextField TBuscarL;
-    private javax.swing.JTextField TBuscarPM;
-    private javax.swing.JTextField TBuscarUE;
+    private javax.swing.JLabel Inicio;
+    private javax.swing.JRadioButton OpcAutor1;
+    private javax.swing.JRadioButton OpcEditorial1;
+    private javax.swing.JRadioButton OpcFecha5;
+    private javax.swing.JRadioButton OpcFecha6;
+    private javax.swing.JRadioButton OpcID1;
+    private javax.swing.JRadioButton OpcID2;
+    private javax.swing.JRadioButton OpcID3;
+    private javax.swing.JRadioButton OpcID4;
+    private javax.swing.JRadioButton OpcID5;
+    private javax.swing.JRadioButton OpcID6;
+    private javax.swing.JRadioButton OpcNombre3;
+    private javax.swing.JRadioButton OpcNombre4;
+    private javax.swing.JRadioButton OpcNombre5;
+    private javax.swing.JRadioButton OpcNombre6;
+    private javax.swing.JRadioButton OpcTitulo1;
+    private javax.swing.JRadioButton OpcTitulo2;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup grupoOpciones;
     private javax.swing.ButtonGroup grupoOpciones2;
     private javax.swing.ButtonGroup grupoOpciones3;
     private javax.swing.ButtonGroup grupoOpciones4;
     private javax.swing.ButtonGroup grupoOpciones5;
     private javax.swing.ButtonGroup grupoOpciones6;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -998,21 +756,5 @@ public class VEmpleado extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JRadioButton opcAutor;
-    private javax.swing.JRadioButton opcEditorial;
-    private javax.swing.JRadioButton opcFecha5;
-    private javax.swing.JRadioButton opcFecha6;
-    private javax.swing.JRadioButton opcID1;
-    private javax.swing.JRadioButton opcID2;
-    private javax.swing.JRadioButton opcID3;
-    private javax.swing.JRadioButton opcID4;
-    private javax.swing.JRadioButton opcID5;
-    private javax.swing.JRadioButton opcID6;
-    private javax.swing.JRadioButton opcNombre3;
-    private javax.swing.JRadioButton opcNombre4;
-    private javax.swing.JRadioButton opcNombre5;
-    private javax.swing.JRadioButton opcNombre6;
-    private javax.swing.JRadioButton opcTitulo1;
-    private javax.swing.JRadioButton opcTitulo2;
     // End of variables declaration//GEN-END:variables
 }
