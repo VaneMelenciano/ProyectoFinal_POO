@@ -17,15 +17,15 @@ public class Biblioteca {
     private ArrayList<Empleado> empleados;
     private ArrayList<Documentos> documentos;
     
-    /*public Biblioteca() throws FileNotFoundException{
+    public Biblioteca() throws FileNotFoundException, IOException{
         libros = leerArchivoLibros();
         usuarios = leerArchivoUsuarios();
         empleados = leerArchivoEmpleados();
-        documentos = leerArchivoDocumentos(); PARA QUÉ ES ESTA????
-    }*/
-    public Biblioteca(){
-        
+        documentos = leerArchivoDocumentos();
     }
+    //public Biblioteca(){
+        
+    //}
     public Biblioteca(String nom, String dir, String tel, String cor){
         libros = new ArrayList();
         usuarios = new ArrayList();
@@ -302,8 +302,11 @@ public class Biblioteca {
         
     }
             
-    public static ArrayList<Libro> leerArchivoLibros() throws FileNotFoundException{
+    public static ArrayList<Libro> leerArchivoLibros() throws FileNotFoundException, IOException{
         File file = new File("ArchivoLibros.txt");
+        if (!file.exists()) {
+            file.createNewFile();
+        }
         Scanner s = new Scanner(file);
         
         ArrayList<Libro> lista = new ArrayList();
@@ -327,8 +330,11 @@ public class Biblioteca {
         return lista;
     }
         
-    public static ArrayList<Usuario> leerArchivoUsuarios() throws FileNotFoundException{
+    public static ArrayList<Usuario> leerArchivoUsuarios() throws FileNotFoundException, IOException{
         File file = new File("ArchivoUsuarios.txt");
+        if (!file.exists()) {
+            file.createNewFile();
+        }
         Scanner s = new Scanner(file);
         
         ArrayList<Usuario> lista = new ArrayList();
@@ -352,8 +358,11 @@ public class Biblioteca {
         }
         return lista;
     }    
-    public static ArrayList<Empleado> leerArchivoEmpleados() throws FileNotFoundException{
+    public static ArrayList<Empleado> leerArchivoEmpleados() throws FileNotFoundException, IOException{
         File file = new File("ArchivoEmpleados.txt");
+        if (!file.exists()) {
+            file.createNewFile();
+        }
         Scanner s = new Scanner(file);
         
         ArrayList<Empleado> lista = new ArrayList();
@@ -378,8 +387,11 @@ public class Biblioteca {
         }
         return lista;
     }    
-    public static ArrayList<Documentos> leerArchivoDocumentos() throws FileNotFoundException{
+    public static ArrayList<Documentos> leerArchivoDocumentos() throws FileNotFoundException, IOException{
         File file = new File("ArchivoDocumentos.txt");
+        if (!file.exists()) {
+            file.createNewFile();
+        }
         Scanner s = new Scanner(file);
         
         ArrayList<Documentos> lista = new ArrayList();
@@ -407,11 +419,5 @@ public class Biblioteca {
             }
         }
         return lista;
-    }
-    public static void main(String args[]) throws FileNotFoundException{
-        Biblioteca biblio = new Biblioteca();
-        for(Documentos d : biblio.documentos){
-            if(d instanceof Prestamo) System.out.println(d.getDescripcion()+"\n\n");
-        }
     }
 }
