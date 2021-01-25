@@ -23,9 +23,6 @@ public class Biblioteca {
         empleados = leerArchivoEmpleados();
         documentos = leerArchivoDocumentos();
     }
-    //public Biblioteca(){
-        
-    //}
     public Biblioteca(String nom, String dir, String tel, String cor){
         libros = new ArrayList();
         usuarios = new ArrayList();
