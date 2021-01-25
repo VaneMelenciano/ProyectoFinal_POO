@@ -1,0 +1,6 @@
+0|La iliada|Homero|Porrua|Mexico|2017|12|0
+0|La Odisea|Homero|Porrua|Mexico|2017|10|0
+0|Un Mundo Feliz|Aldous Huxley|DeBolsillo|Mexico|2016|16|0
+47317|Hola|Nombre del autor|Perrito|Paris|1024|2|0
+43752|NuevoLibro|Autor|Edi|México|1928|43|0
+19914|Milaa|Ana|Pato|1989|3049|2|0

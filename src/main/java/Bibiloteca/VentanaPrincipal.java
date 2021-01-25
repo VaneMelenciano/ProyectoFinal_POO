@@ -5,6 +5,10 @@
  */
 package Bibiloteca;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Vanessa
@@ -96,7 +100,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_IniciarActionPerformed
 
     private void RegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarseActionPerformed
-        VRegistrarse vr = new VRegistrarse();
+        VRegistrarse vr = null;
+        try {
+            vr = new VRegistrarse();
+        } catch (IOException ex) {
+            Logger.getLogger(VentanaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
         vr.setVisible(true);
         dispose();
     }//GEN-LAST:event_RegistrarseActionPerformed

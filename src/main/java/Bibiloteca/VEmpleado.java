@@ -5,21 +5,33 @@
  */
 package Bibiloteca;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Vanessa
  */
 public class VEmpleado extends javax.swing.JFrame {
+
+    private final Biblioteca MiBiblioteca;
     //private Empleado empleado;
 
     /**
      * Creates new form VUsuario
+     * @throws java.io.IOException
      */
-    public VEmpleado() {
+    private int idEmpleado;
+    private String nombreEmpleado;
+    public VEmpleado(int id) throws IOException {
         super("Biblioteca/Empleado");
-        //empleado = emp;
+        this.MiBiblioteca = Biblioteca.getInstance();
         initComponents();
-        String nombre = "Bienvenido  " + "Vanessa"; //+ empleado.getNombre();
+        idEmpleado = id;
+        nombreEmpleado = MiBiblioteca.BuscarEmpleado(idEmpleado).getNombre();
+        String nombre = "Bienvenido  " + nombreEmpleado; //+ empleado.getNombre();
         Inicio.setText(nombre);
         
         //grupos de botones
@@ -46,6 +58,10 @@ public class VEmpleado extends javax.swing.JFrame {
         Error4.setVisible(false); 
         Error5.setVisible(false); 
         Error6.setVisible(false); 
+    }
+
+    VEmpleado() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -115,6 +131,14 @@ public class VEmpleado extends javax.swing.JFrame {
         Error6 = new javax.swing.JLabel();
         BSalir = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        BALibro = new javax.swing.JButton();
+        BLibros = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
 
         jMenu1.setText("jMenu1");
@@ -234,7 +258,7 @@ public class VEmpleado extends javax.swing.JFrame {
         getContentPane().add(BBorrarL, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 480, 73, -1));
 
         OpcID5.setBackground(new java.awt.Color(187, 143, 206));
-        OpcID5.setText("ID");
+        OpcID5.setText("ID de usurio");
         OpcID5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 OpcID5ActionPerformed(evt);
@@ -243,7 +267,7 @@ public class VEmpleado extends javax.swing.JFrame {
         getContentPane().add(OpcID5, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 200, 93, -1));
 
         OpcNombre5.setBackground(new java.awt.Color(187, 143, 206));
-        OpcNombre5.setText("Nombre de usuario");
+        OpcNombre5.setText("ID");
         OpcNombre5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 OpcNombre5ActionPerformed(evt);
@@ -427,6 +451,70 @@ public class VEmpleado extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 570, 130, 23));
 
+        BALibro.setText("Agregar nuevo libro");
+        BALibro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BALibroActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BALibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 670, 200, -1));
+
+        BLibros.setText("Mostrar Todos los libros");
+        BLibros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BLibrosActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BLibros, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 630, 200, -1));
+
+        jButton4.setText("Mostrar Todos los usuarios");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 670, 190, -1));
+
+        jButton5.setText("Agregar nuevo prestamo");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 630, 170, -1));
+
+        jButton6.setText("Mostrar Todos los empleado");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 630, 190, -1));
+
+        jButton7.setText("Agregar nueva multa");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 670, 170, -1));
+
+        jButton8.setText("Mostar todas los prestamos");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 630, 190, -1));
+
+        jButton9.setText("Mostar todas las multas");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 670, 190, -1));
+
         jPanel1.setBackground(new java.awt.Color(187, 143, 206));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -437,7 +525,7 @@ public class VEmpleado extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 620, Short.MAX_VALUE)
+            .addGap(0, 710, Short.MAX_VALUE)
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, -1));
@@ -510,26 +598,58 @@ public class VEmpleado extends javax.swing.JFrame {
     }//GEN-LAST:event_OpcFecha6ActionPerformed
 
     private void BBuscarL1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BBuscarL1ActionPerformed
+
         if(OpcID1.isSelected()){ //buscar libro por ID
             Error1.setVisible(false); 
-            VBuscar MiBusqueda = new VBuscar();
+            ArrayList<String> busqueda = new ArrayList();
+            ArrayList<Libro> lib = new ArrayList();
+            int id = Integer.parseInt(BuscarL2.getText());
+            lib.add(MiBiblioteca.BuscarLibro(id));
+            for(Libro l:lib){
+                String dato = l.getDescripcion();
+                busqueda.add(dato);
+            }
+            VBuscar MiBusqueda = new VBuscar(busqueda);
             MiBusqueda.setVisible(true);
             
         }else if(OpcTitulo1.isSelected()){ //buscar libro por titulo
             Error1.setVisible(false); 
-            VBuscar MiBusqueda = new VBuscar();
+            ArrayList<String> busqueda = new ArrayList();
+            ArrayList<Libro> lib = new ArrayList();
+            String titulo = BuscarL2.getText();
+            lib = MiBiblioteca.BuscarLibro(titulo);
+            for(Libro l:lib){
+                String dato = l.getDescripcion();
+                busqueda.add(dato);
+            }
+            VBuscar MiBusqueda = new VBuscar(busqueda);
             MiBusqueda.setVisible(true);
 
         }else if(OpcAutor1.isSelected()){ //buscar libro por autor
             Error1.setVisible(false); 
-            VBuscar MiBusqueda = new VBuscar();
+            ArrayList<String> busqueda = new ArrayList();
+            ArrayList<Libro> lib = new ArrayList();
+            String autor = BuscarL2.getText();
+            lib = MiBiblioteca.BuscarAutor(autor);
+            for(Libro l:lib){
+                String dato = l.getDescripcion();
+                busqueda.add(dato);
+            }
+            VBuscar MiBusqueda = new VBuscar(busqueda);
             MiBusqueda.setVisible(true);
             
         }else if(OpcEditorial1.isSelected()){ //buscar libro por editorial
             Error1.setVisible(false); 
-            VBuscar MiBusqueda = new VBuscar();
+            ArrayList<String> busqueda = new ArrayList();
+            ArrayList<Libro> lib = new ArrayList();
+            String editorial = BuscarL2.getText();
+            lib = MiBiblioteca.BuscarEditorial(editorial);
+            for(Libro l:lib){
+                String dato = l.getDescripcion();
+                busqueda.add(dato);
+            }
+            VBuscar MiBusqueda = new VBuscar(busqueda);
             MiBusqueda.setVisible(true);
-
         }else{ //si no elige nada
             Error1.setVisible(true);
         }
@@ -556,16 +676,32 @@ public class VEmpleado extends javax.swing.JFrame {
     private void BBuscarUE1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BBuscarUE1ActionPerformed
         int opcion = BoxUE1.getSelectedIndex();
         if(opcion==0){ //usuario
+            
             if(OpcID3.isSelected()){ //buscar por id
                 Error3.setVisible(false); 
-                    VBuscar MiBusqueda = new VBuscar();
+                ArrayList<String> busqueda = new ArrayList();
+                ArrayList<Usuario> u = new ArrayList();
+                    int id = Integer.parseInt(BuscarL.getText());
+                    u.add(MiBiblioteca.BuscarUsuario(id));
+                    for(Usuario us: u){
+                        String dato = us.getDescripcion();
+                        busqueda.add(dato);
+                    }
+                    VBuscar MiBusqueda = new VBuscar(busqueda);
                     MiBusqueda.setVisible(true);
 
             }else if(OpcNombre3.isSelected()){ //buscar por nombre
                 Error3.setVisible(false); 
-                    VBuscar MiBusqueda = new VBuscar();
+                ArrayList<String> busqueda = new ArrayList();
+                ArrayList<Usuario> u = new ArrayList();
+                    String nombre = BuscarL.getText();
+                    u = MiBiblioteca.BuscarUsuario(nombre);
+                    for(Usuario l:u){
+                        String dato = l.getDescripcion();
+                        busqueda.add(dato);
+                    }
+                    VBuscar MiBusqueda = new VBuscar(busqueda);
                     MiBusqueda.setVisible(true);
-
             }else{ //si no elige nada
                 Error3.setVisible(true); 
             } 
@@ -573,12 +709,28 @@ public class VEmpleado extends javax.swing.JFrame {
         else if(opcion==1){ //empleado
             if(OpcID3.isSelected()){ //buscar por id
                 Error3.setVisible(false); 
-                    VBuscar MiBusqueda = new VBuscar();
-                       MiBusqueda.setVisible(true);
+                ArrayList<String> busqueda = new ArrayList();
+                ArrayList<Empleado> e = new ArrayList();
+                    int id = Integer.parseInt(BuscarL.getText());
+                    e.add(MiBiblioteca.BuscarEmpleado(id));
+                    for(Empleado em: e){
+                        String dato = em.getDescripcion();
+                        busqueda.add(dato);
+                    }
+                    VBuscar MiBusqueda = new VBuscar(busqueda);
+                    MiBusqueda.setVisible(true);
 
             }else if(OpcNombre3.isSelected()){ //buscar por nombre
                 Error3.setVisible(false);  
-                    VBuscar MiBusqueda = new VBuscar();
+                ArrayList<String> busqueda = new ArrayList();
+                ArrayList<Empleado> e = new ArrayList();
+                    String nombre = BuscarL.getText();
+                    e = MiBiblioteca.BuscarEmpleado(nombre);
+                    for(Empleado em: e){
+                        String dato = em.getDescripcion();
+                        busqueda.add(dato);
+                    }
+                    VBuscar MiBusqueda = new VBuscar(busqueda);
                     MiBusqueda.setVisible(true);
             }else{ //si no elige nada
                 Error3.setVisible(true); 
@@ -623,19 +775,42 @@ public class VEmpleado extends javax.swing.JFrame {
         int opcion = BoxMP1.getSelectedIndex();
         if(opcion==0){ //multa
             if(OpcID5.isSelected()){ //buscar por id
+                ArrayList<String> busqueda = new ArrayList();
+                ArrayList<Multa> m = new ArrayList();
                 Error5.setVisible(false); 
-                VBuscar MiBusqueda = new VBuscar();
-                MiBusqueda.setVisible(true);
+                    int id = Integer.parseInt(Buscarpm.getText());
+                    m = MiBiblioteca.BuscarMultasUsuario(id);
+                    for(Multa mu: m){
+                        String dato = mu.getDescripcion();
+                        busqueda.add(dato);
+                    }
+                    VBuscar MiBusqueda = new VBuscar(busqueda);
+                    MiBusqueda.setVisible(true);
 
             }else if(OpcNombre5.isSelected()){ //buscar por nombre
+                ArrayList<String> busqueda = new ArrayList();
+                ArrayList<Multa> m = new ArrayList();
                 Error5.setVisible(false); 
-                VBuscar MiBusqueda = new VBuscar();
-                MiBusqueda.setVisible(true);
-
+                    int id = Integer.parseInt(Buscarpm.getText());
+                    m.add(MiBiblioteca.BuscarMulta(id));
+                    for(Multa mu: m){
+                        String dato = mu.getDescripcion();
+                        busqueda.add(dato);
+                    }
+                    VBuscar MiBusqueda = new VBuscar(busqueda);
+                    MiBusqueda.setVisible(true);
             }else if(OpcFecha5.isSelected()){ //buscar por fecha
                 Error5.setVisible(false); 
-                VBuscar MiBusqueda = new VBuscar();
-                MiBusqueda.setVisible(true);
+                ArrayList<String> busqueda = new ArrayList();
+                ArrayList<Multa> m = new ArrayList();
+                    String fecha = Buscarpm.getText();
+                    m = MiBiblioteca.BuscarMultasFecha(fecha);
+                    for(Multa mu: m){
+                        String dato = mu.getDescripcion();
+                        busqueda.add(dato);
+                    }
+                    VBuscar MiBusqueda = new VBuscar(busqueda);
+                    MiBusqueda.setVisible(true);
 
             }else{ //si no elige nada
                 Error5.setVisible(true); 
@@ -643,19 +818,43 @@ public class VEmpleado extends javax.swing.JFrame {
         }
         else if(opcion==1){ //prestamo
             if(OpcID5.isSelected()){ //buscar por id
+                ArrayList<String> busqueda = new ArrayList();
+                ArrayList<Prestamo> p = new ArrayList();
                 Error5.setVisible(false); 
-                VBuscar MiBusqueda = new VBuscar();
-                MiBusqueda.setVisible(true);
+                int id = Integer.parseInt(Buscarpm.getText());
+                    p = MiBiblioteca.BuscarPrestamosUsuario(id);
+                    for(Prestamo pre:p){
+                        String dato = pre.getDescripcion();
+                        busqueda.add(dato);
+                    }
+                    VBuscar MiBusqueda = new VBuscar(busqueda);
+                    MiBusqueda.setVisible(true);
 
             }else if(OpcNombre5.isSelected()){ //buscar por nombre
+                ArrayList<String> busqueda = new ArrayList();
+                ArrayList<Prestamo> p = new ArrayList();
                 Error5.setVisible(false); 
-                VBuscar MiBusqueda = new VBuscar();
-                MiBusqueda.setVisible(true);
+                    int id = Integer.parseInt(Buscarpm.getText());
+                    p.add(MiBiblioteca.BuscarPrestamo(id));
+                    for(Prestamo pre:p){
+                        String dato = pre.getDescripcion();
+                        busqueda.add(dato);
+                    }
+                    VBuscar MiBusqueda = new VBuscar(busqueda);
+                    MiBusqueda.setVisible(true);
 
             }else if(OpcFecha5.isSelected()){ //buscar por fecha
                 Error5.setVisible(false); 
-                VBuscar MiBusqueda = new VBuscar();
-                MiBusqueda.setVisible(true);
+                ArrayList<String> busqueda = new ArrayList();
+                ArrayList<Prestamo> p = new ArrayList();
+                    String fecha = Buscarpm.getText();
+                    p = MiBiblioteca.BuscarPrestamosFecha(fecha);
+                    for(Prestamo pre:p){
+                        String dato = pre.getDescripcion();
+                        busqueda.add(dato);
+                    }
+                    VBuscar MiBusqueda = new VBuscar(busqueda);
+                    MiBusqueda.setVisible(true);
 
             }else{ //si no elige nada
                 Error5.setVisible(true); 
@@ -718,9 +917,104 @@ public class VEmpleado extends javax.swing.JFrame {
     }//GEN-LAST:event_BSalirActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-            VBuscar MiBusqueda = new VBuscar();
-            MiBusqueda.setVisible(true);
+        Empleado e = new Empleado();
+        ArrayList<String> datos = new ArrayList();
+        e = MiBiblioteca.BuscarEmpleado(idEmpleado);
+            String dato = e.getDescripcion();
+            datos.add(dato);
+        VBuscar MiBusqueda = new VBuscar(datos);
+        MiBusqueda.setVisible(true); 
+        
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        ArrayList<Usuario> us = new ArrayList();
+        ArrayList<String> datos = new ArrayList();
+        us = MiBiblioteca.getUsuarios();
+        for(Usuario u:us){
+            String dato = u.getDescripcion();
+            datos.add(dato);
+        }
+        VBuscar MiBusqueda = new VBuscar(datos);
+            MiBusqueda.setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void BLibrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BLibrosActionPerformed
+        ArrayList<Libro> lib = new ArrayList();
+        ArrayList<String> datos = new ArrayList();
+        lib = MiBiblioteca.getLibros();
+        for(Libro l:lib){
+            String dato = l.getDescripcion();
+            datos.add(dato);
+        }
+        VBuscar MiBusqueda = new VBuscar(datos);
+            MiBusqueda.setVisible(true);
+    }//GEN-LAST:event_BLibrosActionPerformed
+
+    private void BALibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BALibroActionPerformed
+        try {
+            VAgregarL libronew = new VAgregarL();
+            libronew.setVisible(true);
+        } catch (IOException ex) {
+            Logger.getLogger(VEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_BALibroActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        try {
+            VAgregarPM NewPrestamo = new VAgregarPM();
+        } catch (IOException ex) {
+            Logger.getLogger(VEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        try {
+            VAgregarPM NewPrestamo = new VAgregarPM();
+        } catch (IOException ex) {
+            Logger.getLogger(VEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        ArrayList<Empleado> emp = new ArrayList();
+        ArrayList<String> datos = new ArrayList();
+        emp = MiBiblioteca.getEmpleado();
+        for(Empleado e: emp){
+            String dato = e.getDescripcion();
+            datos.add(dato);
+        }
+        VBuscar MiBusqueda = new VBuscar(datos);
+            MiBusqueda.setVisible(true);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        ArrayList<Documentos> doc = new ArrayList();
+        ArrayList<String> datos = new ArrayList();
+        doc = MiBiblioteca.getDocumentos();
+        for(Documentos d:doc){
+            if(d instanceof Prestamo){
+                String dato = d.getDescripcion();
+                datos.add(dato);
+            }
+        }
+        VBuscar MiBusqueda = new VBuscar(datos);
+            MiBusqueda.setVisible(true);
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        ArrayList<Documentos> doc = new ArrayList();
+        ArrayList<String> datos = new ArrayList();
+        doc = MiBiblioteca.getDocumentos();
+        for(Documentos d:doc){
+            if(d instanceof Multa){
+                String dato = d.getDescripcion();
+                datos.add(dato);
+            }
+        }
+        VBuscar MiBusqueda = new VBuscar(datos);
+            MiBusqueda.setVisible(true);
+    }//GEN-LAST:event_jButton9ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -765,12 +1059,14 @@ public class VEmpleado extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BALibro;
     private javax.swing.JButton BBorrarL;
     private javax.swing.JButton BBorrarUE;
     private javax.swing.JButton BBuscarL1;
     private javax.swing.JButton BBuscarMP;
     private javax.swing.JButton BBuscarMP1;
     private javax.swing.JButton BBuscarUE1;
+    private javax.swing.JButton BLibros;
     private javax.swing.JButton BSalir;
     private javax.swing.JTextField BorrarL;
     private javax.swing.JTextField BorrarPM;
@@ -813,6 +1109,12 @@ public class VEmpleado extends javax.swing.JFrame {
     private javax.swing.ButtonGroup grupoOpciones5;
     private javax.swing.ButtonGroup grupoOpciones6;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

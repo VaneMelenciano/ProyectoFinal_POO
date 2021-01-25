@@ -5,27 +5,43 @@
  */
 package Bibiloteca;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Vanessa
  */
 public class VUsuario extends javax.swing.JFrame {
+
+    private final Biblioteca MiBiblioteca;
+    private String nombreUsuario;
     //private Usuario usuario;
 
     /**
      * Creates new form VUsuario
      */
-    public VUsuario() {
+    private int id;
+    public VUsuario(int i) throws IOException {
         super("Biblioteca/Usuario");
-        //usuario = usu;
+        this.MiBiblioteca = Biblioteca.getInstance();
         initComponents();
+        id = i;
+        nombreUsuario = MiBiblioteca.BuscarUsuario(id).getNombre();
+        
         grupoOpciones.add(opcID);
         grupoOpciones.add(opcTitulo);
         grupoOpciones.add(opcAutor);
         grupoOpciones.add(opcEditorial);
-        String nombre = "Bienvenido  " + "Vanessa"; //´+ usuario.getNombre();
+        String nombre = "Bienvenido  " + nombreUsuario; //´+ usuario.getNombre();
         NomUsuario.setText(nombre);
         jLabel1.setVisible(false); //si no eligue ninguna opcion para buscar
+    }
+
+    private VUsuario() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -239,8 +255,14 @@ public class VUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ButtonPedirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonPedirActionPerformed
-        VBuscar MiBusqueda = new VBuscar();
-            MiBusqueda.setVisible(true);
+        VAgregarPM pre;
+        try {
+            pre = new VAgregarPM();
+            pre.setVisible(true);
+        } catch (IOException ex) {
+            Logger.getLogger(VUsuario.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }//GEN-LAST:event_ButtonPedirActionPerformed
 
     private void opcTituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcTituloActionPerformed
@@ -262,22 +284,52 @@ public class VUsuario extends javax.swing.JFrame {
     private void BuscarLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarLibroActionPerformed
         if(opcID.isSelected()){
             jLabel1.setVisible(false);
-              VBuscar MiBusqueda = new VBuscar();
-              MiBusqueda.setVisible(true);
+              ArrayList<String> busqueda = new ArrayList();
+            ArrayList<Libro> lib = new ArrayList();
+            int id = Integer.parseInt(jTextField1.getText());
+            lib.add(MiBiblioteca.BuscarLibro(id));
+            for(Libro l:lib){
+                String dato = l.getDescripcion();
+                busqueda.add(dato);
+            }
+            VBuscar MiBusqueda = new VBuscar(busqueda);
+            MiBusqueda.setVisible(true);
         }else if(opcTitulo.isSelected()){
             jLabel1.setVisible(false);
-              VBuscar MiBusqueda = new VBuscar();
-              MiBusqueda.setVisible(true);
-
+              ArrayList<String> busqueda = new ArrayList();
+            ArrayList<Libro> lib = new ArrayList();
+            String titulo = jTextField1.getText();
+            lib = MiBiblioteca.BuscarLibro(titulo);
+            for(Libro l:lib){
+                String dato = l.getDescripcion();
+                busqueda.add(dato);
+            }
+            VBuscar MiBusqueda = new VBuscar(busqueda);
+            MiBusqueda.setVisible(true);
         }else if(opcAutor.isSelected()){
             jLabel1.setVisible(false);
-            VBuscar MiBusqueda = new VBuscar();
-              MiBusqueda.setVisible(true);
-
+                ArrayList<String> busqueda = new ArrayList();
+            ArrayList<Libro> lib = new ArrayList();
+            String autor = jTextField1.getText();
+            lib = MiBiblioteca.BuscarAutor(autor);
+            for(Libro l:lib){
+                String dato = l.getDescripcion();
+                busqueda.add(dato);
+            }
+            VBuscar MiBusqueda = new VBuscar(busqueda);
+            MiBusqueda.setVisible(true);
         }else if(opcEditorial.isSelected()){
             jLabel1.setVisible(false);
-            VBuscar MiBusqueda = new VBuscar();
-              MiBusqueda.setVisible(true);
+                ArrayList<String> busqueda = new ArrayList();
+            ArrayList<Libro> lib = new ArrayList();
+            String editorial = jTextField1.getText();
+            lib = MiBiblioteca.BuscarEditorial(editorial);
+            for(Libro l:lib){
+                String dato = l.getDescripcion();
+                busqueda.add(dato);
+            }
+            VBuscar MiBusqueda = new VBuscar(busqueda);
+            MiBusqueda.setVisible(true);
 
         }else{
             jLabel1.setVisible(true);
@@ -285,23 +337,49 @@ public class VUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_BuscarLibroActionPerformed
 
     private void ButtonLibrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLibrosActionPerformed
-        VBuscar MiBusqueda = new VBuscar();
+        ArrayList<Libro> lib = new ArrayList();
+        ArrayList<String> datos = new ArrayList();
+        lib = MiBiblioteca.getLibros();
+        for(Libro l:lib){
+            String dato = l.getDescripcion();
+            datos.add(dato);
+        }
+        VBuscar MiBusqueda = new VBuscar(datos);
             MiBusqueda.setVisible(true);
     }//GEN-LAST:event_ButtonLibrosActionPerformed
 
     private void ButtonDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonDatosActionPerformed
-        VBuscar MiBusqueda = new VBuscar();
-            MiBusqueda.setVisible(true);
+        Usuario u = new Usuario();
+        ArrayList<String> datos = new ArrayList();
+        u = MiBiblioteca.BuscarUsuario(id);
+            String dato = u.getDescripcion();
+            datos.add(dato);
+        VBuscar MiBusqueda = new VBuscar(datos);
+        MiBusqueda.setVisible(true);
     }//GEN-LAST:event_ButtonDatosActionPerformed
 
     private void ButtonPrestamosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonPrestamosActionPerformed
-        VBuscar MiBusqueda = new VBuscar();
-            MiBusqueda.setVisible(true);
+        ArrayList<String> datos = new ArrayList();
+        ArrayList<Prestamo> pre = new ArrayList();
+        pre = MiBiblioteca.BuscarPrestamosUsuario(id);
+        for(Prestamo p:pre){
+            String dato = p.getDescripcion();
+            datos.add(dato);
+        }
+        VBuscar MiBusqueda = new VBuscar(datos);
+         MiBusqueda.setVisible(true);
     }//GEN-LAST:event_ButtonPrestamosActionPerformed
 
     private void ButtonMultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonMultasActionPerformed
-        VBuscar MiBusqueda = new VBuscar();
-            MiBusqueda.setVisible(true);
+        ArrayList<String> datos = new ArrayList();
+        ArrayList<Multa> m = new ArrayList();
+        m = MiBiblioteca.BuscarMultasUsuario(id);
+        for(Multa mul:m){
+            String dato = mul.getDescripcion();
+            datos.add(dato);
+        }
+        VBuscar MiBusqueda = new VBuscar(datos);
+         MiBusqueda.setVisible(true);
     }//GEN-LAST:event_ButtonMultasActionPerformed
 
     private void ButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSalirActionPerformed

@@ -5,6 +5,9 @@
  */
 package Bibiloteca;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -16,9 +19,12 @@ public class VRegistrarse extends javax.swing.JFrame {
     /**
      * Creates new form VRegistrarse
      */
+    private int idPersona;
     private int opcion; //guardar la opcion de ser usuario o empleado
-    public VRegistrarse() {
+    Biblioteca MiBiblioteca;
+    public VRegistrarse() throws IOException {
         super("Nuevo usuario");
+        this.MiBiblioteca = Biblioteca.getInstance();
         initComponents();
         Registro.setVisible(false);
             TOpc1.setVisible(false);
@@ -210,9 +216,8 @@ public class VRegistrarse extends javax.swing.JFrame {
                     String Correo = TCor.getText();
                     String Contrasenia = TCont.getText();
                     String FechaAct = TOpc1.getText();
-                    //guardar datos en usuario
-                    Biblioteca MiBiblioteca = new Biblioteca();
-                    id = MiBiblioteca.AgregarUsuario(Nombre, FechaNac, Tel, Dir, Correo, Edad, Dir, FechaAct);
+                    id = MiBiblioteca.AgregarUsuario(Nombre, FechaAct, Tel, Dir, Correo, Edad, Dir, FechaAct);
+                        idPersona=id;
                         Registro.setVisible(true);
                         String datos = "Se ha registarado correctamnete.\n Su ID es: " + id; //+ la descripcion de los datos y su ID
                         Registro.setText(datos);
@@ -234,9 +239,8 @@ public class VRegistrarse extends javax.swing.JFrame {
                     String Contrasenia = TCont.getText();
                     String Puesto = TOpc1.getText();
                     float Sueldo = Float.parseFloat(TOpc2.getText());
-                    //guardar datos en empleados
-                    Biblioteca MiBiblioteca = new Biblioteca();
                     id = MiBiblioteca.AgregarEmpleado(Nombre, FechaNac, Tel, Dir, Correo, Edad, Dir, Puesto, Sueldo);
+                        idPersona=id;
                         Registro.setVisible(true);
                         String datos = "Se ha registarado correctamnete.\n Su ID es: " + id; //+ la descripcion de los datos y su ID
                         Registro.setText(datos);
@@ -252,13 +256,26 @@ public class VRegistrarse extends javax.swing.JFrame {
 
     private void BAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BAceptarActionPerformed
         if(opcion == 1){//usuario
-            VUsuario u = new VUsuario(); //se manda a Usuario, el usuario que inició
-            u.setVisible(true);
-            dispose();
+            VUsuario u;
+            try {
+                u = new VUsuario(idPersona); //se manda a Usuario, el usuario que inició
+                u.setVisible(true);
+                dispose();
+            } catch (IOException ex) {
+                Logger.getLogger(VRegistrarse.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            
         }else if(opcion == 2){//empleado
-            VEmpleado e = new VEmpleado(); //se manda a Empleado, el empleado que inició
-            e.setVisible(true);
-            dispose();
+            VEmpleado e;
+            try {
+                e = new VEmpleado(idPersona); //se manda a Empleado, el empleado que inició
+                e.setVisible(true);
+                dispose();
+            } catch (IOException ex) {
+                Logger.getLogger(VRegistrarse.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
         }
     }//GEN-LAST:event_BAceptarActionPerformed
 
@@ -292,7 +309,11 @@ public class VRegistrarse extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VRegistrarse().setVisible(true);
+                try {
+                    new VRegistrarse().setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(VRegistrarse.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }

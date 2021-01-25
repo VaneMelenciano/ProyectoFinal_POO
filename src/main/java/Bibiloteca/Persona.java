@@ -26,7 +26,9 @@ public abstract class  Persona extends Descripcion{
         this.edad = edad;
         this.contrasenia=con;
     }
-    
+    public Persona(){
+        
+    }
     public void setNombre(String nombre){this.nombre = nombre;}
     public void setFechaNacimiento(String fechaNacimiento){this.fechaNacimiento = fechaNacimiento;}
     public void setTelefono(String telefono){this.telefono = telefono;}

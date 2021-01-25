@@ -1,0 +1,3 @@
+0|Rodolfo Mango Mango|18/02/2000|4525785322|Villa de los Archos Villahermosa|rodom@hotmail.com|20|santaclaus1|Encargado de limpieza|34000.0
+0|Ana Jordana|11/03/2000|4324555557|Zacatecas, Zacatecas, la Encantada|jordana@hotmail.com|20|egipto234|Recepcionista|45000.0
+10469|Vanessa Melenciano|11-01-01|4921897656|Colonia ...|vane@gmail.com|20|Colonia ...|Directora|30.0

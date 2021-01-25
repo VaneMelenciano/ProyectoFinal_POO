@@ -17,6 +17,9 @@ public class Empleado extends Persona{
         this.puesto = puesto;
         this.sueldo = sueldo;
     }
+    public Empleado(){
+        super();
+    }
     
     public void setPuesto(String puesto){this.puesto = puesto;}
     public void setSueldo(float sueldo){this.sueldo = sueldo;}

@@ -15,6 +15,9 @@ public class Usuario extends Persona{
         super(id, nombre, fechaNacimiento, telefono, direccion, correo, edad, con);
         this.fechaRegistro = fechaRegistro;
     }
+    public Usuario(){
+        
+    }
     
     public void setFechaRegistro(String fechaRegistro){this.fechaRegistro = fechaRegistro;}
     public String getFechaRegistro(){return fechaRegistro;}

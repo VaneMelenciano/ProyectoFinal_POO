@@ -5,19 +5,27 @@
  */
 package Bibiloteca;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Vanessa
  */
 public class VIniciar extends javax.swing.JFrame {
 
+    private final Biblioteca MiBiblioteca;
+
     /**
      * Creates new form Iniciar
      */
-    public VIniciar() {
+    public VIniciar() throws IOException {
         super("Iniciar sesion");
         initComponents();
         Button.setVisible(false);
+        this.MiBiblioteca = Biblioteca.getInstance();
+        incorrecto.setVisible(false);
     }
 
     /**
@@ -38,6 +46,7 @@ public class VIniciar extends javax.swing.JFrame {
         TextFCon = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        incorrecto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -85,15 +94,25 @@ public class VIniciar extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(139, 99, 50));
 
+        incorrecto.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        incorrecto.setForeground(new java.awt.Color(255, 0, 0));
+        incorrecto.setText("Incorrecto");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 390, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(261, Short.MAX_VALUE)
+                .addComponent(incorrecto)
+                .addGap(65, 65, 65))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 253, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(195, Short.MAX_VALUE)
+                .addComponent(incorrecto)
+                .addGap(44, 44, 44))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, -1));
@@ -103,17 +122,56 @@ public class VIniciar extends javax.swing.JFrame {
 
     private void ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonActionPerformed
         int opcion = ComboBox.getSelectedIndex();
-        if(opcion ==1){
-            //veridicar que el usuario exista
-            VUsuario u = new VUsuario(); //se manda a Usuario, el usuario que inició
-            u.setVisible(true);
-            dispose();
+        if(opcion ==1){ //usuario
+            boolean bandera = false;
+            int id = Integer.parseInt(TextFID.getText());
+            String con = TextFCon.getText();
+            Usuario usuario = MiBiblioteca.BuscarUsuario(id);
+            if(usuario!=null){
+                if(usuario.getContrasenia().equals(con)){
+                    bandera =true;
+                }
+                    
+            }
+            if(bandera==true){  
+                incorrecto.setVisible(false);
+                VUsuario u;
+                try {
+                    u = new VUsuario(id); //se manda a Usuario, el usuario que inició
+                    u.setVisible(true);
+                    dispose();
+                } catch (IOException ex) {
+                    Logger.getLogger(VRegistrarse.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }else{
+                incorrecto.setVisible(true);
+            }
             
-        }else if(opcion == 2){
-            //veridicar que el empleado exista
-            VEmpleado e = new VEmpleado(); //se manda a Empleado, el empleado que inició
-            e.setVisible(true);
-            dispose();
+        }else if(opcion == 2){ //empleado
+             boolean bandera = false;
+            int id = Integer.parseInt(TextFID.getText());
+            String con = TextFCon.getText();
+            Empleado em = new Empleado();
+            em = MiBiblioteca.BuscarEmpleado(id);
+            if(em!=null){
+                if(em.getContrasenia().equals(con)){
+                    bandera =true;
+                }
+                    
+            }
+            if(bandera==true){  
+                incorrecto.setVisible(false);
+                VEmpleado e;
+                try {
+                    e = new VEmpleado(id); //se manda a Empleado, el empleado que inició
+                    e.setVisible(true);
+                    dispose();
+                } catch (IOException ex) {
+                    Logger.getLogger(VRegistrarse.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }else{
+                incorrecto.setVisible(true);
+            }
         }
     }//GEN-LAST:event_ButtonActionPerformed
 
@@ -152,7 +210,11 @@ public class VIniciar extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VIniciar().setVisible(true);
+                try {
+                    new VIniciar().setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(VIniciar.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
@@ -162,6 +224,7 @@ public class VIniciar extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> ComboBox;
     private javax.swing.JTextField TextFCon;
     private javax.swing.JTextField TextFID;
+    private javax.swing.JLabel incorrecto;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

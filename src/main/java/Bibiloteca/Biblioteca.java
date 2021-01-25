@@ -26,33 +26,11 @@ public class Biblioteca {
         return instance;
     }
     
-    public Biblioteca() throws FileNotFoundException, IOException{
+    private Biblioteca() throws FileNotFoundException, IOException{
         libros = leerArchivoLibros();
         usuarios = leerArchivoUsuarios();
         empleados = leerArchivoEmpleados();
         documentos = leerArchivoDocumentos();
-    }
-    public Biblioteca(String nom, String dir, String tel, String cor){
-        libros = new ArrayList();
-        usuarios = new ArrayList();
-        empleados = new ArrayList();
-        documentos = new ArrayList();
-        nombre = nom;
-        direccion = dir;
-        telefono = tel;
-        correo=cor;
-    }
-    public Biblioteca(String nom, String dir, String tel, String cor, ArrayList<Libro> lib, ArrayList<Usuario> usua, ArrayList<Empleado> emp){
-        libros = new ArrayList();
-        usuarios = new ArrayList();
-        documentos = new ArrayList();
-        libros = lib;
-        usuarios = usua;
-        nombre = nom;
-        direccion = dir;
-        telefono = tel;
-        correo=cor;
-        empleados = emp;
     }
     
     public void setLibros(ArrayList lib){libros = lib;}
@@ -252,9 +230,9 @@ public class Biblioteca {
         }
     }
     
-    public void AgregarPrestamo(int usuarioId, String librosPrestados, String fechaActual, String plazoDev, String fechaDev) throws IOException{
+    public int AgregarPrestamo(int usuarioId, String librosPrestados, String fechaActual, String plazoDev, String fechaDev) throws IOException{
         Prestamo newPre = new Prestamo(usuarioId, librosPrestados, fechaActual, plazoDev, fechaDev);
-        int id;
+        int id=0;
         while(true){
             boolean sameId = false;
             id = Descripcion.generarId();
@@ -266,6 +244,7 @@ public class Biblioteca {
         newPre.setId(id);
         documentos.add(newPre);
         guardarEnArchivo("ArchivoDocumentos.txt", newPre.objetoATexto(), true);
+        return id;
     }
     //se muestra TODOS los encontreados
     public Prestamo BuscarPrestamo(int id){

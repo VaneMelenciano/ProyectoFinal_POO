@@ -5,6 +5,8 @@
  */
 package Bibiloteca;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Vanessa
@@ -14,9 +16,28 @@ public class VBuscar extends javax.swing.JFrame {
     /**
      * Creates new form VBuscar
      */
-    public VBuscar() {
+    private ArrayList<String> lista;
+    public VBuscar(ArrayList lis) {
         super("Busqueda");
         initComponents();
+        lista = new ArrayList();
+        lista = lis;
+        mostrar();
+    }
+    public void mostrar(){
+        for(String dato:lista){
+            //String texto = br.readLine();
+        
+                //jTextArea1.setText(texto);
+                //while(lista !=null){
+                    jTextArea1.append(dato+"\n\n");//agregar algo nuevo a la caja de texto, sin quitar lo que ya estaba
+                    //texto = br.readLine();
+                //}
+        }
+    }
+
+    private VBuscar() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
