@@ -47,6 +47,7 @@ El proyecto está hecho para ayudar a la administración de una biblioteca. Est�
    - Una lista de libros que servirá para buscar un libro en concreto, añadir nuevos libros, eliminarlos y permitirá llevar un conteo del numero de copias de cada libro.
   - Lista de los empleados que trabajan en la biblioteca, con esta lista es posible agregar nuevos empleados, buscar y borrar, así como llevar un registro de sus datos.
   - Lista de usuarios, esta lista permite, además de llevar un registro de los datos más importantes de los usuarios, agregar nuevos usuarios y eliminarlos de la lista.
+  - Una lista de Documentos, esta permite almacenar tanto prestamos como multas, bajo el principio del polimorfismo, ambas clases hijas pueden comportarse como Documento y así    	estar almacenadas en la misma lista.
   
   En la clase libro han sido declarados atributos útiles para el registro de cada libro, un número identificador, el título del libro, autor, editorial, año de edición, número de unidades del libro y número de libros prestados.
   
@@ -57,3 +58,5 @@ El proyecto está hecho para ayudar a la administración de una biblioteca. Est�
   La clase Documento es la clase base de las clases Prestamo y Multa. Esta clase cuenta con tres atributos, el ID del usuario al que pertenece, un String con los libros que se tomaron prestados y la fecha en la que se creó el documento. Existen dos tipos de documentos, el préstamo y la multa.
   En la clase Préstamo eixsten atributos que permitirán registrar la fecha en que se prestaron los libros, el plazo esperado de devolución y la fecha real de devolución. 
   La clase Multa se encarga de almacenar los dias fuera del plazo de entrega de los libros, así como el costo de la multa que el usuario deberá pagar por entregar libros fuera del plazo establecido.
+  
+  Por último encontramos distintas ventanas que nos servirán para utilizar los métodos, almacenando datos y consultandolos en un ambiente gráfico amigable para un usuario común. Estas ventanas utilizan una única instancia de la clase Biblioteca para operar y consultar los datos, esto se consigue con un singleton. Además en las ventanas podemos ver distintos componentes gráficos, existen clases anónimas y también una implementación de lo más parecido a la herencia múltiple en java, las interfaces.
