@@ -241,6 +241,7 @@
         <Property name="text" type="java.lang.String" value="Buscar"/>
       </Properties>
       <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BBuscarMPMouseClicked"/>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BBuscarMPActionPerformed"/>
       </Events>
       <Constraints>
@@ -331,6 +332,7 @@
         <Property name="text" type="java.lang.String" value="Buscar"/>
       </Properties>
       <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BBuscarL1MouseClicked"/>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BBuscarL1ActionPerformed"/>
       </Events>
       <Constraints>
@@ -437,6 +439,7 @@
         <Property name="text" type="java.lang.String" value="Buscar"/>
       </Properties>
       <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BBuscarUE1MouseClicked"/>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BBuscarUE1ActionPerformed"/>
       </Events>
       <Constraints>
@@ -810,6 +813,7 @@
             <Property name="text" type="java.lang.String" value="Buscar"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BBuscarMP1MouseClicked"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BBuscarMP1ActionPerformed"/>
           </Events>
         </Component>
@@ -845,6 +849,7 @@
             <Property name="text" type="java.lang.String" value="Borra"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BBorrarUEMouseClicked"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BBorrarUEActionPerformed"/>
           </Events>
         </Component>
@@ -867,6 +872,7 @@
             <Property name="text" type="java.lang.String" value="Borrar"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BBorrarLMouseClicked"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BBorrarLActionPerformed"/>
           </Events>
         </Component>

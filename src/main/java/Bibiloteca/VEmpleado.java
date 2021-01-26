@@ -5,6 +5,8 @@
  */
 package Bibiloteca;
 
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -14,7 +16,7 @@ import java.util.logging.Logger;
  *
  * @author Vanessa
  */
-public class VEmpleado extends javax.swing.JFrame {
+public class VEmpleado extends javax.swing.JFrame implements MouseListener{
 
     private final Biblioteca MiBiblioteca;
     //private Empleado empleado;
@@ -216,6 +218,11 @@ public class VEmpleado extends javax.swing.JFrame {
         BBuscarMP.setBackground(new java.awt.Color(74, 35, 90));
         BBuscarMP.setForeground(new java.awt.Color(255, 255, 255));
         BBuscarMP.setText("Buscar");
+        BBuscarMP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BBuscarMPMouseClicked(evt);
+            }
+        });
         BBuscarMP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BBuscarMPActionPerformed(evt);
@@ -264,6 +271,11 @@ public class VEmpleado extends javax.swing.JFrame {
         BBuscarL1.setBackground(new java.awt.Color(74, 35, 90));
         BBuscarL1.setForeground(new java.awt.Color(255, 255, 255));
         BBuscarL1.setText("Buscar");
+        BBuscarL1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BBuscarL1MouseClicked(evt);
+            }
+        });
         BBuscarL1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BBuscarL1ActionPerformed(evt);
@@ -321,6 +333,11 @@ public class VEmpleado extends javax.swing.JFrame {
         BBuscarUE1.setBackground(new java.awt.Color(74, 35, 90));
         BBuscarUE1.setForeground(new java.awt.Color(255, 255, 255));
         BBuscarUE1.setText("Buscar");
+        BBuscarUE1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BBuscarUE1MouseClicked(evt);
+            }
+        });
         BBuscarUE1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BBuscarUE1ActionPerformed(evt);
@@ -446,6 +463,11 @@ public class VEmpleado extends javax.swing.JFrame {
         BBuscarMP1.setBackground(new java.awt.Color(74, 35, 90));
         BBuscarMP1.setForeground(new java.awt.Color(255, 255, 255));
         BBuscarMP1.setText("Buscar");
+        BBuscarMP1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BBuscarMP1MouseClicked(evt);
+            }
+        });
         BBuscarMP1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BBuscarMP1ActionPerformed(evt);
@@ -460,6 +482,11 @@ public class VEmpleado extends javax.swing.JFrame {
         BBorrarUE.setBackground(new java.awt.Color(74, 35, 90));
         BBorrarUE.setForeground(new java.awt.Color(255, 255, 255));
         BBorrarUE.setText("Borra");
+        BBorrarUE.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BBorrarUEMouseClicked(evt);
+            }
+        });
         BBorrarUE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BBorrarUEActionPerformed(evt);
@@ -472,6 +499,11 @@ public class VEmpleado extends javax.swing.JFrame {
         BBorrarL.setBackground(new java.awt.Color(74, 35, 90));
         BBorrarL.setForeground(new java.awt.Color(255, 255, 255));
         BBorrarL.setText("Borrar");
+        BBorrarL.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BBorrarLMouseClicked(evt);
+            }
+        });
         BBorrarL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BBorrarLActionPerformed(evt);
@@ -529,6 +561,7 @@ public class VEmpleado extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(347, Short.MAX_VALUE)
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
                 .addComponent(BorrarPM, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1015,6 +1048,42 @@ public class VEmpleado extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_BorrarLActionPerformed
 
+    private void BBuscarL1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BBuscarL1MouseClicked
+        if(evt.getSource()==BBuscarL1){
+            BuscarL2.setText(" ");
+        }
+    }//GEN-LAST:event_BBuscarL1MouseClicked
+
+    private void BBuscarUE1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BBuscarUE1MouseClicked
+        if(evt.getSource()==BBuscarUE1){
+            BuscarL.setText(" ");
+        }
+    }//GEN-LAST:event_BBuscarUE1MouseClicked
+
+    private void BBuscarMPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BBuscarMPMouseClicked
+        if(evt.getSource()==BBuscarMP){
+            Buscarpm.setText(" ");
+        }
+    }//GEN-LAST:event_BBuscarMPMouseClicked
+
+    private void BBorrarLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BBorrarLMouseClicked
+        if(evt.getSource()==BBorrarL){
+            BorrarL.setText(" ");
+        }
+    }//GEN-LAST:event_BBorrarLMouseClicked
+
+    private void BBorrarUEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BBorrarUEMouseClicked
+        if(evt.getSource()==BBorrarUE){
+            BuscarL3.setText(" ");
+        }
+    }//GEN-LAST:event_BBorrarUEMouseClicked
+
+    private void BBuscarMP1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BBuscarMP1MouseClicked
+        if(evt.getSource()==BBuscarMP1){
+            BorrarPM.setText(" ");
+        }
+    }//GEN-LAST:event_BBuscarMP1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1122,4 +1191,29 @@ public class VEmpleado extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
