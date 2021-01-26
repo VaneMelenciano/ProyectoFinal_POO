@@ -1194,7 +1194,24 @@ public class VEmpleado extends javax.swing.JFrame implements MouseListener{
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(e.getSource()==BBuscarMP1){
+            BorrarPM.setText(" ");
+        }
+        else if(e.getSource()==BBorrarL){
+            BorrarL.setText(" ");
+        }
+        else if(e.getSource()==BBorrarUE){
+            BuscarL3.setText(" ");
+        }
+        else if(e.getSource()==BBuscarMP){
+            Buscarpm.setText(" ");
+        }
+        else if(e.getSource()==BBuscarUE1){
+            BuscarL.setText(" ");
+        }
+        else if(e.getSource()==BBuscarL1){
+            BuscarL2.setText(" ");
+        }
     }
 
     @Override
