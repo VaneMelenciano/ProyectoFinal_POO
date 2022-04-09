@@ -60,3 +60,5 @@ El proyecto está hecho para ayudar a la administración de una biblioteca. Est�
   La clase Multa se encarga de almacenar los dias fuera del plazo de entrega de los libros, así como el costo de la multa que el usuario deberá pagar por entregar libros fuera del plazo establecido.
   
   Por último encontramos distintas ventanas que nos servirán para utilizar los métodos, almacenando datos y consultandolos en un ambiente gráfico amigable para un usuario común. Estas ventanas utilizan una única instancia de la clase Biblioteca para operar y consultar los datos, esto se consigue con un singleton. Además en las ventanas podemos ver distintos componentes gráficos, existen clases anónimas y también una implementación de lo más parecido a la herencia múltiple en java, las interfaces.
+  
+[Explicaión del proyecto](https://www.youtube.com/watch?v=pJLZmIX8vVM)
